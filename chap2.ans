@@ -1,0 +1,335 @@
+
+\ansno2.1:
+ There's no agreement about this; three answers are defensible:
+(1)~We can say that $\sum_{k=m}^nq_k$ is always equivalent to $\sum_{m\le k
+\le n}q_k$; then the stated sum is zero. (2)~A person might say that the given
+sum is $q_4+q_3+q_2+q_1+q_0$, by summing over decreasing values of $k$. But
+this conflicts with the generally accepted convention that $\sum_{k=1}^nq_k=0$
+when $n=0$. (3)~We can say that $\sum_{k=m}^nq_k=\sum_{k\le n}q_k-\sum_{k<m}q_k$;
+then the stated sum is equal to
+$-q_1-q_2-q_3$. This convention may appear strange,
+but it obeys the useful law $\sum_{k=a}^b+\sum_{k=b+1}^c=\sum_{k=a}^c$ for
+all $a,b,c$.\par
+It's best to use the notation $\sum_{k=m}^n$ only when
+$n-m\ge-1$; then both conventions (1) and (3) agree.
+
+\ansno2.2:
+ This is $\vert x\vert$. Incidentally, the quantity
+$\bigl(\[x>0]-\[x<0]\bigr)$ is often called sign$(x)$ or "signum"$(x)$;
+it is $+1$ when $x>0$, \ $0$~when $x=0$, and $-1$ when $x<0$.
+\source{"Iverson" [|APL|, p.~11].}
+
+\ansno2.3:
+ The first sum is, of course, $a_0+a_1+a_2+a_3+a_4+a_5$; the second
+is $a_4+a_1+a_0+a_1+a_4$,
+because the sum is over the values $k\in\{-2,-1,0,+1,+2\}$.
+The commutative law doesn't hold here because the function $p(k)=k^2$
+is not a permutation. Some values of~$n$ (e.g., $n=3$) have no $k$ such
+that $p(k)=n$; others (e.g., $n=4$) have two such~$k$.
+\source{[|knuth1|, exercise 1.2.3--2].}
+
+\ansno2.4:
+ (a)~\def\:{\hskip0pt plus4pt}$\sum_{i=1}^4\:\sum_{j=i+1}^4\:
+\sum_{k=j+1}^4\: a_{ijk}=
+\sum_{i=1}^2\:\sum_{j=i+1}^3\:\sum_{k=j+1}^4\:a_{ijk}=
+\bigl((a_{123}+a_{124})+a_{134}\bigr)+a_{234}$.\par
+(b)~$\sum_{k=1}^4\sum_{j=1}^{k-1}\sum_{i=1}^{j-1} a_{ijk}=
+\sum_{k=3}^4\sum_{j=2}^{k-1}\sum_{i=1}^{j-1} a_{ijk}=
+a_{123}+\bigl(a_{124}+(a_{134}+a_{234})\bigr)$.
+
+\ansno2.5:
+ The same index `$k$' is being used for two different index variables,
+although $k$ is bound in the inner sum. This is a famous mistake
+in mathematics (and computer programming). The result turns out to
+be correct if $a_j=a_k$ for all $j$ and $k$, \ $1\le j,k\le n$.
+\source{[|knuth1|, exercise 1.2.3--25].}
+
+\ansno2.6:
+ It's $\[1\le j\le n](n-j+1)$. The first factor is necessary here
+because we should get zero when $j<1$ or $j>n$.
+
+\ansno2.7:
+ $mx\_^{m-1}$. A version of finite calculus based on $\nabla$ instead
+of~$\Delta$ would therefore give special prominence to {\it rising\/}
+factorial powers.
+
+\ansno2.8:
+ $0$, if $m\ge1$; $1/\vert m\vert!$, if $m\le0$.
+
+\ansno2.9:
+ $x\_^{m+n} = x\_^m \, (x+m)\_^n$, for integers $m$ and $n$.
+Setting $m=-n$ tells us that $x\_^{-n}=1/(x-n)\_^n=1/(x-1)\_n$.
+
+\ansno2.10:
+ Another possible right-hand side is $Eu\,\Delta v \,+\,v\,\Delta u$.
+
+\ansno2.11:
+ Break the left-hand side into two sums, and change $k$ to $k+1$
+in the second of these.
+
+\ansno2.12:
+ If $p(k)=n$ then $n+c=k+\bigl((-1)^k+1\bigr)c$
+and $\bigl((-1)^k+1\bigr)$
+is even; hence $(-1)^{n+c}=(-1)^k$ and $k=n-(-1)^{n+c}c$.
+Conversely, this value of $k$ yields $p(k)=n$.
+
+\ansno2.13:
+ Let $R_0=\alpha$, and $R_n=R_{n-1}+(-1)^n(\beta+n\gamma+n^2\delta)$
+for $n>0$. Then $R(n)=A(n)\alpha+B(n)\beta+C(n)\gamma+D(n)\delta$.
+Setting $R_n=1$ yields $A(n)=1$.
+Setting $R_n=(-1)^n$ yields $A(n)+2B(n)=(-1)^n$.
+Setting $R_n=(-1)^nn$ yields $-B(n)+2C(n)=(-1)^nn$.
+Setting $R_n=(-1)^nn^2$ yields $B(n)-2C(n)+2D(n)=(-1)^nn^2$.
+Therefore $2D(n)=(-1)^n(n^2+n)$; the stated sum is~$D(n)$.
+
+\ansno2.14:
+ The suggested rewrite is legitimate since we have
+$k=\sum_{1\le j\le k}1$
+when $1\le k\le n$. Sum first on~$k$; the multiple sum reduces to
+\begindisplay
+\sum_{1\le j\le n}(2^{n+1}-2^j)=n2^{n+1}-(2^{n+1}-2)\,.
+\enddisplay
+
+\ansno2.15:
+ The first step replaces $k(k+1)$ by $2\sum_{1\le j\le k}j$. The
+\font\manfnt=manfnt
+\def\Cu{\mskip1.5mu\hbox{\manfnt\char28}\mskip1.5mu}%
+second step gives $\Cu_n+\Sq_n=\bigl(\sum_{k=1}^nk\bigr)^2+\Sq_n$.
+
+\ansno2.16:
+ $x\_m(x-m)\_n=x\_{m+n}=x\_n(x-n)\_m$, by \equ(2.|falling-exp|).
+
+\ansno2.17:
+ Use induction for the first two $=$'s, and \equ(2.|falling-exp|) for
+the third. The second line follows from the first.
+
+\ansno2.18:
+ Use the facts that $(\Re z)^+\le\vert z\vert$,
+$(\Re z)^-\le\vert z\vert$,
+$(\Im z)^+\le\vert z\vert$,
+$(\Im z)^-\le\vert z\vert$, and
+$\vert z\vert\le(\Re z)^++(\Re z)^-+(\Im z)^++(\Im z)^-$.
+
+\ansno2.19:
+ Multiply both sides by $2^{n-1}\!/n!$ and let $S_n=2^nT_n/n!$=
+$S_{n-1}+3\cdot2^{n-1}=3(2^n-1)+S_0$. The solution is $T_n=3\cdot n!
++n!/2^{n-1}$. (We'll see in Chapter~4 that $T_n$ is an integer only
+when $n$~is $0$ or a power of~$2$.)
+
+\ansno2.20:
+ The perturbation method gives
+\g\noindent\llap{``}It is a profoundly erroneous truism, repeated by all copybooks and by eminent
+people when they are making speeches, that we should cultivate the habit
+of "thinking" of what we are doing. The precise opposite is the case.
+Civilization advances by extending the number of important operations
+which we can perform without thinking about them. Operations of thought
+are like cavalry charges in a battle\dash---they are strictly limited in
+number, they require fresh "horses", and must only be made at decisive
+moments.''\par"!philosophy"
+\hfill\dash---A.\thinspace N. "!Whitehead"White-\par
+\hfill head [|whitehead-intro|]\g
+\begindisplay
+S_n+(n+1)H_{n+1}=S_n+\biggl(\sum_{0\le k\le n}H_k\biggr)+n+1\,.
+\enddisplay
+
+\ansno2.21:
+ Extracting the final term of $S_{n+1}$ gives $S_{n+1}=1-S_n$;
+extracting the first term gives
+\begindisplay
+S_{n+1}=(-1)^{n+1}+\sum_{1\le k\le n+1}\!(-1)^{n+1-k}
+&=(-1)^{n+1}+\sum_{0\le k\le n}\!(-1)^{n-k}\cr
+&=(-1)^{n+1}+S_n\,.\cr
+\enddisplay
+Hence $2S_n=1+(-1)^n$ and we have $S_n=\[\hbox{$n$ is even}]$.
+Similarly, we find
+\begindisplay
+T_{n+1}=n+1-T_n=\sum_{k=0}^n(-1)^{n-k}(k+1)=T_n+S_n\,,
+\enddisplay
+hence $2T_n=n+1-S_n$ and we have $T_n=\half\bigl(n+
+\[\hbox{$n$ is odd}]\bigr)$.
+%(Using the notation of the next chapter, we can also write $T_n=\lceil n/2\rceil$.)
+Finally, the same approach yields
+\begindisplay
+U_{n+1}=(n+1)^2-U_n&=U_n+2T_n+S_n\cr
+&=U_n+n+\[\hbox{$n$ is odd}]+\[\hbox{$n$ is even}]\cr
+&=U_n+n+1\,.\cr
+\enddisplay
+Hence $U_n$ is the triangular number $\half(n+1)n$.
+
+\ansno2.22:
+ Twice the general sum gives a ``vanilla'' sum over $1\le j,k\le n$,
+which splits and yields twice
+$\bigl(\sum_ka_kA_k\bigr)\bigl(\sum_kb_kB_k\bigr)-
+ \bigl(\sum_ka_kB_k\bigr)\bigl(\sum_kb_kA_k\bigr)$.
+\source{"Binet" [|binet-det|, \S4].}
+
+\ansno2.23:
+ (a) This approach gives four sums that evaluate to $2n+H_n-
+2n+(H_n+{1\over n+1}-1)$.
+(It would have been easier to replace the summand by $1/k+1/(k+1)$.)
+ (b)~Let $u(x)=2x+1$ and $\Delta v(x)=
+1/x(x+1)=(x-1)\_{-2}$; then
+$\Delta u(x)=2$ and $v(x)=-(x-1)\_{-1}=-1/x$. The answer is $2H_n-{n\over n+1}$.
+\source{1982 final.}
+
+\ansno2.24:
+ Summing by parts, $\sum x\_m H_x\,\delta x=x\_{m+1}H_x/(m+1)
+-x\_{m+1}/(m+1)^2+C$; hence $\sum_{0\le k<n}k\_mH_k=n\_{m+1}\bigl(H_n
+-1/(m+1)\bigr)/(m+1)+0\_{m+1}/(m+1)^2$. In our case $m=-2$, so the
+sum comes to $1-(H_n+1)/(n+1)$.
+
+\ansno2.25:
+ Here are some of the basic analogies:
+\begindisplay \openup3pt%
+ \def\preamble{$\thickmuskip=\displaythick\displaystyle{##}$\hfil%
+  &\enspace$\longleftrightarrow$\enspace%
+  $\thickmuskip=\displaythick\displaystyle{##}$\hfil}
+\sum_{k\in K}ca_k=c\sum_{k\in K}a_k
+ &\prod_{k\in K}a_k^c=\biggl(\prod_{k\in K}a_k\biggr)^c\cr
+\sum_{k\in K}(a_k{+}b_k)=\sum_{k\in K}\!a_k+\sum_{k\in K}\!b_k
+ &\prod_{k\in K}a_kb_k
+ \!=\!\biggl(\prod_{k\in K}a_k\mskip-2mu\biggr)
+      \biggl(\prod_{k\in K}b_k\mskip-2mu\biggr)\cr
+\sum_{k\in K}a_k=\sum_{p(k)\in K}a_{p(k)}
+ &\prod_{k\in K}a_k=\prod_{p(k)\in K}a_{p(k)}\cr
+\sum\twoconditions{j\in J}{k\in K}a_{j,k}=\sum_{j\in J}\,\sum_{k\in K}a_{j,k}
+ &\prod\twoconditions{j\in J}{k\in K}a_{j,k}=\prod_{j\in J}\,\prod_{k\in K}a_{j,k}\cr
+\sum_{k\in K}a_k=\sum_ka_k\[k\in K]
+ &\prod_{k\in K}a_k=\prod_ka_k^{[k\in K]}\cr % \[ in exponent
+\sum_{k\in K}1=\#K
+ &\prod_{k\in K}c=c^{@\#K}\cr
+\enddisplay
+
+\ansno2.26:
+ \def\\{\kern-.4pt}% need to squeeze the first line
+$P^2=\bigl(\prod_{1\le j,k\le n}\\a_ja_k\bigr)\bigl(\prod_{1\le j=k\le n}
+\\a_ja_k\bigr)$. The first factor is equal to
+$\bigl(\prod_{k=1}^n \\a_k^n\bigr){}^2$;
+the second factor is $\prod_{k=1}^n a_k^2$.
+Hence $P=\bigl(\prod_{k=1}^n a_k\bigr)^{n+1}$.
+\source{[|knuth1|, exercise 1.2.3--26].}
+
+\ansno2.27:
+ $\Delta(c\_x)=c\_x(c-x-1)=c\_{x+2}/(c-x)$. Setting $c=-2$ and
+decreasing $x$ by~$2$ yields $\Delta(-(-2)\_{x-2})=(-2)\_x/x$, hence the
+stated sum is $(-2)\_{-1}-(-2)\_{n-1}=(-1)^nn!-1$.
+
+\ansno2.28:
+ The interchange of summation between the second and third lines
+is not justifiable; the terms of this sum do not converge
+absolutely. Everything else is perfectly correct,
+\g As opposed to imperfectly correct.\g
+except that the result of $\sum_{k\ge1}\[k=j-1]@k/j$ should perhaps
+have been written $\[j-1\ge1](j-1)/j$ and simplified explicitly.
+
+\ansno2.29:
+ Use partial fractions to get
+\begindisplay
+{k\over4k^2-1}={1\over4}\left({1\over2k+1}+{1\over2k-1}\right)\,.
+\enddisplay
+The $(-1)^k$ factor now makes the two halves of each term cancel
+with their neighbors. Hence the answer is $-1/4+(-1)^n\!/(8n+4)$.
+\source{1979 midterm.}
+
+\ansno2.30:
+ $\sum_a^b x\,\delta x=\half(b\_2-a\_2)=\half(b-a)(b+a-1)$.
+So we have
+\begindisplay
+(b-a)(b+a-1)=2100=2^2\cdt3\cdt5^2\cdt7\,.
+\enddisplay
+There is one solution
+for each way to write $2100=x\cdt y$ where $x$~is even and $y$~is odd;
+we let $a=\half\left\vert x-y\right\vert+\half$ and $b=\half(x+y)+\half$.
+So the number of solutions is the number of divisors of $3\cdt5^2\cdt7$,
+namely~$12$. In general, there are $\prod_{p>2}(n_p+1)$ ways to represent
+$\prod_p p^{n_p}$, where the products range over primes.
+\source{1973 midterm.}
+
+\ansno2.31:
+ $\sum_{j,k\ge2}j^{-k}=\sum_{j\ge2}1/j^2(1-1/j)=
+\sum_{j\ge2}1/j(j-1)$. The second sum is, similarly, $3/4$.
+\source{"Stieltjes" [|stieltjes-table|].}
+
+\ansno2.32:
+ If $2n\le x<2n+1$, the sums are $0+\cdots+n+(x{-}n{-}1)+\cdots
++(x{-}2n)=n(x{-}n)=(x{-}1)+(x{-}3)+\cdots+(x{-}2n{+}1)$. If $2n-1\le x<2n$
+they are, similarly, both equal to $n(x-n)$. (Looking ahead to
+Chapter~3, the formula $\bigl\lfloor\half(x+1)\bigr\rfloor
+\bigl(x-\bigl\lfloor\half(x+1)\bigr\rfloor\bigr)$ covers both cases.)
+
+\ansno2.33:
+ If $K$ is empty, $\bigwedge_{k\in K}a_k=\infty$.
+The basic analogies are:
+\begindisplay \openup3pt%
+ \def\preamble{$\thickmuskip=\displaythick\displaystyle{##}$\hfil%
+  &\quad$\longleftrightarrow$\quad%
+  $\thickmuskip=\displaythick\displaystyle{##}$\hfil}
+\sum_{k\in K}ca_k=c\sum_{k\in K}a_k
+ &\bigwedge_{k\in K}(c+a_k)=c+\bigwedge_{k\in K}a_k\cr
+\sum_{k\in K}(a_k{+}b_k)=\sum_{k\in K}a_k+\sum_{k\in K}b_k
+ &\bigwedge_{k\in K}\min(a_k,b_k)\cr
+\noalign{\vskip-4pt}
+ &\omit\hskip5em$\thickmuskip=\displaythick\displaystyle
+   =\min\biggl(\bigwedge_{k\in K}a_k,\bigwedge_{k\in K}b_k\biggr)$\hfil\cr
+\sum_{k\in K}a_k=\sum_{p(k)\in K}a_{p(k)}
+ &\bigwedge_{k\in K}a_k=\bigwedge_{p(k)\in K}a_{p(k)}\cr
+\sum\twoconditions{j\in J}{k\in K}a_{j,k}=\sum_{j\in J}\sum_{k\in K}a_{j,k}
+ &\bigwedge\twoconditions{j\in J}{k\in K}a_{j,k}
+ =\bigwedge_{j\in J}\bigwedge_{k\in K}a_{j,k}\cr
+\sum_{k\in K}a_k=\sum_ka_k\[k\in K]
+ &\bigwedge_{k\in K}a_k=\bigwedge_ka_k\cdt\infty^{[k\notin K]}\cr
+\enddisplay
+
+\ansno2.34:
+ Let $K^+=\{k\mid a_k\ge0\}$ and $K^-=\{k\mid a_k<0\}$.
+\g A permutation that consumes terms of one sign faster than those of the other
+can steer the sum toward any value that it likes.\g
+Then if, for example, $n$ is odd, we choose $F_n$ to be $F_{n-1}\cup E_n$,
+where $E_n\subseteq K^-$ is sufficiently large that $\sum_{k\in(F_{n-1}\cap
+K^+)}a_k-\sum_{k\in E_n}(-a_k)<A^-$.
+\source{"Riemann" [|riemann-sums|, \S3].}
+
+\ansno2.35:
+ Goldbach's sum can be shown to equal
+\begindisplay
+\sum_{m,n\ge2}m^{-n}
+=\sum_{m\ge2}{1\over m(m-1)}=1
+\enddisplay
+as follows: By unsumming a geometric series, it equals
+$\sum_{k\in P,\,l\ge1}k^{-l\,}$; therefore the proof will be complete
+if we can find a one-to-one correspondence between ordered pairs
+$(m,n)$ with $m,n\ge2$ and ordered pairs $(k,l)$ with $k\in P$ and $l\ge1$,
+where $m^n=k^l$ when the pairs correspond. If $m\notin P$ we let
+$(m,n)\longleftrightarrow(m^n,1)$; but if $m=a^b\in P$, we let
+$(m,n)\longleftrightarrow(a^n,b)$.
+\source{"Euler" [|euler-goof|] gave a fallacious ``proof'' using divergent
+series.}
+
+\ansno2.36:
+ (a) By definition, $g(n)-g(n-1)=f(n)$.
+\g With this self-description, Golomb's sequence wouldn't do~too~well
+on the Dating~Game.\g
+ (b) By part~(a),
+$g\bigl(g(n)\bigr)-g\bigl(g(n-1)\bigr)=\sum_kf(k)\bigi[g(n-1)<k\le g(n)\bigr]
+=n\bigl(g(n)-g(n-1)\bigr)
+=nf(n)$. (c)~By part~(a) again, $g\bigl(g(g(n))\bigr)-g\bigl(g(g(n-1))\bigr)$ is
+\begindisplay
+&\sum_kf(k)\bigi[g(g(n-1))<k\le g(g(n))\bigr]\cr
+ &\qquad=\sum_{j,k}j\,\bigi[j=f(k)\bigr]\bigi[g(g(n-1))<k\le g(g(n))\bigr]\cr
+ &\qquad=\sum_{j,k}j\,\bigi[j=f(k)\bigr]\bigi[g(n-1)<j\le g(n)\bigr]\cr
+%&\qquad=\sum_{j,k}j\,\bigi[g(j-1)<k\le g(j)\bigr]\bigi[g(n-1)<j\le g(n)\bigr]\cr
+ &\qquad=\sum_{j}j\,\bigl(g(j)-g(j-1)\bigr)\bigi[g(n-1)<j\le g(n)\bigr]\cr
+ &\qquad=\sum_{j}jf(j)\,\bigi[g(n{-}1)<j\le g(n)\bigr]
+        =n\sum_j j\,\bigi[g(n{-}1)<j\le g(n)\bigr]\,.\cr
+\enddisplay
+Colin "Mallows" observes that the sequence can also be defined by the recurrence
+\begindisplay
+f(1)=1\,;\qquad f(n+1)=1+f\bigl(n+1-f(f(n))\bigr)\,,\quad\hbox{for $n\ge0$.}
+\enddisplay
+\source{"Golomb" [|golomb-self|]; "Vardi" [|vardi-self|].}
+
+\ansno2.37:
+ (RLG thinks they probably won't fit; DEK thinks they probably will;
+"!Knuth, Don" "!Graham, Ron" "!Patashnik, Oren"
+OP is not committing himself.)
+\source{Leo "Moser".*}

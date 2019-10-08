@@ -1,0 +1,733 @@
+
+\ansno4.1:
+ $1$, $2$, $4$, $6$, $16$, $12$.
+
+\ansno4.2:
+ Note that $m_p+n_p=\min(m_p,n_p)+\max(m_p,n_p)$. The recurrence
+$\lcm(m,n)=\bigl(n/(n\bmod m)\bigr)\lcm(n\bmod m,m)$ is valid but not
+really advisable for computing lcm's; the best way known to compute
+$\lcm(m,n)$ is to compute $\gcd(m,n)$ first and then to divide $mn$
+by the gcd.
+
+\ansno4.3:
+ This holds if $x$ is an integer, but $\pi(x)$ is defined
+for all real~$x$. The correct formula,
+\begindisplay
+\pi(x)-\pi(x-1)=\bigi[\hbox{$\lfloor x\rfloor$ is prime}\bigr]\,,
+\enddisplay
+is easy to verify.
+
+\ansno4.4:
+ Between $1\over0$ and $0\over-1$ we'd have a left-right reflected
+Stern--Brocot tree with all denominators negated, etc. So the result is
+{\it all\/} fractions $m/n$ with $m\rp n$. The condition $m'n-mn'=1$
+still holds throughout the construction. (This is called the
+"!wreath"
+{\it "Stern--Brocot wreath"}, because we can conveniently regard the final
+$0\over1$ as identical to the first~$0\over1$, thereby joining the
+trees in a cycle at the top. The Stern--Brocot wreath has interesting
+applications to computer graphics because it represents all rational
+directions in the plane.)
+\source{[|knuthd|, \S526].}
+
+\ansno4.5:
+ $L^k={1\,k\choose0\,1}$ and $R^k={1\,0\choose k\,1}$; this
+holds even when $k<0$. (We will find a general formula for any product
+of $L$'s and $R$'s in Chapter~6.)
+
+\ansno4.6:
+ $a=b$. (Chapter 3 defined $x\bmod0=x$,
+"!mod~$0$"
+\g After all, `mod~y' sort~of means ``pretend y~is zero.\qback'' So if it
+already is, there's nothing to pretend.\g
+primarily so that this would be true.)
+
+\ansno4.7:
+ We need $m\bmod10=0$, $m\bmod9=k$, and $m\bmod8=1$. But $m$
+can't be both even and odd.
+
+\ansno4.8:
+ We want $10x+6y\=10x+y$ \tmod{15}; hence $5y\=0$ \tmod{15};
+hence $y\=0$ \tmod3. We must have $y=0$ or $3$, and $x=0$ or $1$.
+
+\ansno4.9:
+ $3^{2k+1}\bmod4=3$, so $(3^{2k+1}-1)/2$ is odd. The
+stated number is divisible by $(3^7-1)/2$ and $(3^{11}-1)/2$
+(and by other numbers).
+
+\ansno4.10:
+ $999(1-{1\over3})(1-{1\over37})=648$.
+
+\ansno4.11:
+ $\sigma(0)=1$; $\sigma(1)=-1$; $\sigma(n)=0$ for $n>1$.
+(Generalized "M\"obius functions" defined on arbitrary partially ordered
+structures have interesting and important properties, first explored by
+"Weisner"~[|weisner|] and developed by many other people, notably Gian-Carlo
+"Rota" [|rota-mobius|].)
+
+\ansno4.12:
+ $\sum_{d\divides m}\sum_{k\divides d}\mu(d/k)\,g(k)=
+\sum_{k\divides m}\sum_{d\divides(m/k)}\mu(d)\,g(k)=
+\sum_{k\divides m}g(k)\hskip0pt minus3pt\*\[m/k=1]=g(m)$,
+by \equ(4.|swap-div|) and \equ(4.|interch-div|).
+
+\ansno4.13:
+ (a) $n_p\le1$ for all $p$; (b) $\mu(n)\ne0$.
+
+\ansno4.14:
+ True when $k>0$. Use \equ(4.|prod-exp|), \equ(4.|gcd-exp|),
+and \equ(4.|lcm-exp|).
+
+\ansno4.15:
+ No. For example, $e_n\bmod5=[2\,{\rm or}\,3]$;
+$e_n\bmod11=[2,3,7,{\rm or}\,10]$.
+
+\ansno4.16:
+ $1/e_1+1/e_2+\cdots+1/e_n=1-1\big/\bigl(e_n(e_n-1)\bigr)
+=1-1/(e_{n+1}-1)$.
+\source{"Sylvester" [|sylvester|].}
+
+\ansno4.17:
+ We have $f_n\bmod f_m=2$; hence $\gcd(f_n,f_m)=\gcd(2,f_m)=1$.
+(Incidentally, the relation
+$f_n=f_0f_1\ldots f_{n-1}+2$ is very similar to the recurrence that
+defines the Euclid numbers $e_n$.)
+
+\ansno4.18:
+ If $n=qm$ and $q$ is odd, $2^n+1=(2^m+1)(2^{n-m}-2^{n-2m}+\cdots
+-2^m+1)$.
+
+\ansno4.19:
+ The first sum is $\pi(n)$, since the summand is $[k+1$ is prime$]$.
+The inner sum in the second is $\sum_{1\le k<m}\[k\divides m]$, so it is
+greater than~$1$ if and only if $m$ is composite; again we get $\pi(n)$.
+Finally $\bigl\lceil\{m/n\}\bigr\rceil=\[n\ndivides m]$,
+so the third sum is an application of "Wilson's theorem". To evaluate $\pi(n)$
+by any of these formulas is, of course, sheer lunacy.
+\source{[|texbook|, pp.~148--149].}
+
+\ansno4.20:
+ Let $p_1=2$ and let $p_n$ be the smallest prime greater than $2^{p_{n-1}}$.
+Then $2^{p_{n-1}}<p_n<2^{p_{n-1}+1}$, and it follows that we can take
+$b=\lim_{n\to\infty}\lg^{(n)}p_n$ where $\lg^{(n)}$ is the function $\lg$
+iterated $n$~times. The stated numerical value comes from $p_2=5$,
+$p_3=37$. It turns out that $p_4=2^{37}+9$, and this gives the more
+precise value
+\begindisplay
+b\approx1.2516475977905
+\enddisplay
+(but no clue about $p_5$).
+\source{"Bertrand" [|bertrand|, p.~129]; "Chebyshev" [|chebyshev|];
+"Wright" [|wright-primes|].}
+
+\ansno4.21:
+ By Bertrand's postulate, $P_n<10^n$. Let
+\begindisplay
+K=\sum_{k\ge1}10^{-k^2}P_k=.200300005\ldots\,\,.
+\enddisplay
+Then $10^{n^2}K\=P_n+{\rm fraction}$ \tmod{10^{2n-1}}.
+
+\ansno4.22:
+ $(b^{mn}-1)/(b-1)=\bigl((b^m-1)/(b-1)\bigr)(b^{mn-m}+\cdots+1)$.
+[The only prime numbers of the form $(10^p-1)/9$ for $p<20000$ occur when
+$p=2$, $19$, $23$, $317$, $1031$.] Numbers of this form are called
+``"repunits".\qback''
+\source{"Brillhart" [|brillhart|]; "Williams" and "Dubner"~[|williams-dubner|];
+ "Dubner"~[|dubner|].}
+
+\ansno4.23:
+ $\rho(2k+1)=0$; $\rho(2k)=\rho(k)+1$, for $k\ge1$. By induction
+we can show that $\rho(n)=\rho(n-2^m)$, if $n>2^m$ and $m>\rho(n)$.
+The $k$th Hanoi move is disk $\rho(k)$, if we number the disks $0$,
+$1$, \dots,~$n-1$. This is clear if $k$ is a power of~$2$. And if
+$2^m<k<2^{m+1}$, we have $\rho(k)<m$; moves $k$ and $k-2^m$ correspond
+in the sequence that transfers $m+1$ disks in $T_m+1+T_m$ steps.
+\source{"Crowe" [|crowe|].}
+
+\ansno4.24:
+ The digit that contributes $dp^m$ to $n$ contributes
+$dp^{m-1}+\cdots+d=d(p^m-1)/(p-1)$ to $\epsilon_p(n!)$, hence
+$\epsilon_p(n!)=\bigl(n-\nu_p(n)\bigr)/(p-1)$.
+\source{"Legendre" [|legendre-theorie|, second edition, introduction].}
+
+\ansno4.25:
+ $m\edivides n\iff m_p=0$ or $m_p=n_p$, for all $p$. It follows that
+(a)~is true. But (b) fails, in our favorite example $m=12$, $n=18$.
+(This is a common fallacy.)
+
+\ansno4.26:
+ Yes, since ${\scr G}_N$ defines a subtree of the Stern--Brocot tree.
+\source{[|knuth2|, exercise 4.5.3--43].}
+
+\ansno4.27:
+ Extend the shorter string with $M$'s (since $M$ lies
+alphabetically between $L$ and $R$) until both strings are
+the same length, then use dictionary order. For example, the topmost
+levels of the tree are $LL<LM<LR<MM<RL<RM<RR$.
+(Another solution is to append the infinite string $RL^\infty$ to both
+inputs, and to keep comparing until finding $L<R$.)
+
+\ansno4.28:
+ We need to use only the first part of the representation:
+\begindisplay
+\unitlength=15pt
+\countdef\m=0 \countdef\mp=2 \countdef\n=4 \countdef\np=6
+\m=0 \mp=1 \n=1 \np=0
+\def\\#1{\if #1R\advance\m\mp \advance\n\np{\number\m\over\number\n}
+ \else\advance\mp\m \advance\np\n{\number\mp\over\number\np}\fi
+ ,\mskip-8mu\raise\unitlength\hbox{$\scriptstyle#1$}}
+\textstyle
+\\R\\R\\R\\L\\L\\L\\L\\L\\L\\L\\R\\R\\R\\R\\R\\R
+\ldots\,.
+\enddisplay
+The fraction $4\over1$ appears because it's a better upper bound than $1\over0$,
+not because it's closer than $3\over1$. Similarly, $25\over8$ is a better
+lower bound than $3\over1$. The simplest upper bounds and the simplest
+lower bounds all appear,
+but the next really good approximation doesn't occur until just before the
+string of $R$'s switches back to $L$.
+
+\ansno4.29:
+ $1/\alpha$. To get $1-x$ from~$x$ in binary notation,
+ we interchange $0$ and~$1$;
+to get $1/\alpha$ from~$\alpha$ in Stern--Brocot notation,
+ we interchange $L$ and $R$. (The
+finite cases must also be considered, but they must work since the
+correspondence is order preserving.)
+
+\ansno4.30:
+ The $m$ integers $x\in[A\dts A+m)$ are different mod~$m$; so their
+residues $(x\bmod m_1,\ldots,x\bmod m_r)$ run through all $m_1\ldots m_r=m$
+possible values, one of which must be equal to
+$(a_1\bmod m_1,\ldots,a_r\bmod m_r)$ by the pigeonhole principle.
+
+\ansno4.31:
+ A number in radix~$b$ notation is divisible by~$d$ if and only
+if the sum of its digits is divisible by~$d$, whenever $b\=1$ \tmod d.
+This follows because $(a_m\ldots a_0)_b=a_mb^m+\cdots+a_0b^0\=a_m+\cdots+a_0$.
+\source{"Pascal" [|pascal-digits|].}
+
+\ansno4.32:
+ The $\varphi(m)$ numbers $\{\,kn\bmod m\mid {k\rp m}$ and
+ ${0\le k<m}\,\}$
+are the num\-bers $\{\,k\mid k\rp m$ and $0\le k<m\,\}$ in some order.
+Multiply them together and divide by $\prod_{0\le k<m,\,k\rp m}k$.
+
+\ansno4.33:
+ Obviously $h(1)=1$. If $m\rp n$ then $h(mn)=
+\sum_{d\divides mn}f(d)\,g(mn/d)=\sum_{c\divides m,d\divides n}f(cd)\,
+ g\bigl((m/c)(n/d)\bigr)=\sum_{c\divides m}\sum_{d\divides n}f(c)\,g(m/c)\,
+ f(d)\,g(n/d)$; this is $h(m)\,h(n)$, since $c\rp d$ for every term in the sum.
+
+\ansno4.34:
+ $g(m)=\sum_{d\divides m}f(d)=\sum_{d\divides m}f(m/d)
+=\sum_{d\ge1}f(m/d)$ if $f(x)$ is zero when $x$ is not an integer.
+
+\ansno4.35:
+ The base cases are
+\begindisplay
+I(0,n)=0\,;\qquad I(m,0)=1\,.
+\enddisplay
+When $m,n>0$, there are two rules, where the first is trivial if $m>n$
+and the second is trivial if $m<n$:
+\begindisplay
+I(m,n)&=I(m,n\bmod m)-\lfloor n/m\rfloor I(n\bmod m,m)\,;\cr
+I(m,n)&=I(m\bmod n, n)\,.
+\enddisplay
+
+\ansno4.36:
+ A factorization of any of the given quantities into nonunits
+must have $m^2-10n^2=\pm2$ or $\pm3$, but this is impossible mod~$10$.
+\source{"Hardy" and "Wright" [|hardy-wright|, \S14.5].}
+
+\ansno4.37:
+ Let $a_n=2^{-n}\ln(e_n-\half)$ and $b_n=2^{-n}\ln(e_n+\half)$.
+Then
+\begindisplay
+\textstyle e_n=\lfloor E^{2^n}+\half\rfloor\iff a_n\le\ln E<b_n\,.
+\enddisplay
+And $a_{n-1}<a_n<b_n<b_{n-1}$, so we can take $E=\lim_{n\to\infty}e^{a_n}$.
+In fact, it turns out that
+\begindisplay
+E^2={3\over2}\prod_{n\ge1}\left(1+{1\over(2e_n-1)^2}\right)^{\!1/2^n},
+\enddisplay
+a product that converges rapidly to $(1.26408473530530111\ldots\,)^2$.
+But these observations
+ don't tell us what $e_n$ is, unless we can find another expression
+for~$E$ that doesn't depend on Euclid numbers.
+\source{"Aho" and "Sloane" [|aho-sloane|].}
+
+\ansno4.38:
+ Let $r=n\bmod m$. Then $a^n-b^n=(a^m-b^m)(a^{n-m}b^0+a^{n-2m}b^m+\cdots
+ +a^rb^{n-m-r})+b^{m\lfloor n/m\rfloor}(a^r-b^r)$.
+\source{"Lucas" [|lucas-gcd|].}
+
+\ansno4.39:
+ If $a_1\ldots a_t$ and $b_1\ldots b_u$ are perfect squares,
+so is
+\begindisplay
+a_1\ldots a_tb_1\ldots b_u/c_1^2\ldots c_v^2\,,
+\enddisplay
+where $\{a_1,\ldots,a_t\}\cap\{b_1,\ldots,b_u\}=\{c_1,\ldots,c_v\}$.
+(It can be shown, in fact, that the sequence $\<S(1),S(2),S(3),\ldots,\,\>$
+contains every nonprime positive integer exactly once.)
+\source{[|graham-squareprod|].}
+
+\ansno4.40:
+ Let $f(n)=\prod_{1\le k\le n,\,p\ndivides k}k=n!/p^{\lfloor n/p\rfloor}
+\lfloor n/p\rfloor!$ and $g(n)=n!/p^{\epsilon_p(n!)}$. Then
+\begindisplay
+g(n)=f(n)@f\bigl(\lfloor n/p\rfloor\bigr)@f\bigl(\lfloor n/p^2\rfloor\bigr)
+ \ldots\, =f(n)@g\bigl(\lfloor n/p\rfloor\bigr)\,.
+\enddisplay
+Also $f(n)\=a_0!(p-1)!^{\lfloor n/p\rfloor}\=a_0!(-1)^{\lfloor n/p\rfloor}$
+\tmod p, and $\epsilon_p(n!)=\lfloor n/p\rfloor +
+\epsilon_p\bigl(\lfloor n/p\rfloor!\bigr)$. These recurrences make it easy
+to prove the result by induction. (Several other solutions are possible.)
+\source{"Stickelberger" [|stickelberger|].}
+
+\ansno4.41:
+ (a)~If $n^2\=-1$ \tmod p then $(n^2)^{(p-1)/2}\=-1$; but
+Fermat says it's $+1$. (b)~Let $n=\bigl((p-1)/2\bigr)!$; we have
+$n\=(-1)^{(p-1)/2}\prod_{1\le k<p/2}(p-k)=(p-1)!/n$, hence $n^2\=(p-1)!$.
+\source{"Legendre" [|legendre-theorie|, \S135];
+"Hardy" and "Wright"~[|hardy-wright|, theorem 82].}
+
+\ansno4.42:
+ First we observe that $k\rp l\iff k\rp l+ak$ for any integer~$a$,
+since $\gcd(k,l)=\gcd(k,l+ak)$ by Euclid's algorithm. Now
+\begindisplay \thickmuskip=4mu
+m\rp n \And n'\rp n\quad&\iff\quad mn'\rp n\cr
+&\iff\quad mn'+nm'\rp n\,.
+\enddisplay
+Similarly
+\begindisplay \thickmuskip=4mu
+m'\rp n' \And  n\rp n'\quad\iff\quad mn'+nm'\rp n'\,.
+\enddisplay
+Hence
+\begindisplay \thickmuskip=4mu
+m\rp n\!\And\!m'\rp n'\!\And\!n\rp n'\iff mn'{+}nm'\rp nn'\,.
+\enddisplay
+\source{[|knuth2|, exercise 4.5.1--6].}
+
+\ansno4.43:
+ We want to multiply by $L^{-1}R$, then by $R^{-1}L^{-1}RL$, then
+$L^{-1}R$, then $R^{-2}L^{-1}RL^2$, etc.; the $n$th multiplier is
+$R^{-\rho(n)}L^{-1}RL^{\rho(n)}$, since we must cancel $\rho(n)$ $R$'s.
+And $R^{-m}L^{-1}RL^m=\setmathsize{\scriptstyle 2m+1}
+{0\,\mathsize{\scriptstyle\hfil-1}\choose1\,2m+1}$.
+
+\ansno4.44:
+ We can find the simplest rational number that lies in
+\g\leftskip=0pt plus 1fil \rightskip=\leftskip
+\parfillskip=0pt
+\vskip20pt\noindent
+\vbox{\hrule\hbox{\vrule height 10pt depth 3pt\kern3pt John .316\/\kern3pt
+ \vrule}\hrule}\smallskip
+\rightskip=0pt
+\dash---banner displayed during the 1993 World Series,\par
+when John "Kruk" came to bat.\g
+\begindisplay
+\textstyle[@0.3155\dts0.3165)=\bigl[{631\over2000}\dts{633\over2000}\bigr)
+\enddisplay
+by looking at
+the "Stern--Brocot representation"s of $631\over2000$ and $633\over2000$
+and stopping just before the former has~$L$ where the latter has~$R$:
+\begindisplay
+&(m_1,n_1,m_2,n_2):=(631,2000,633,2000);\hidewidth\cr
+&\hbox{{\bf while} \ $m_1>n_1$ \ {\bf or} \ $m_2<n_2$ \ {\bf do}}\hidewidth\cr
+&\quad\hbox{\bf if} \ m_2<n_2 \ &\hbox{\bf then} \ &\bigl(\hbox{output}(L); \
+(n_1,n_2):=(n_1,n_2)-(m_1,m_2)\bigr)\cr
+&&\hbox{\bf else} \ &\bigl(\hbox{output}(R); \
+(m_1,m_2):=(m_1,m_2)-(n_1,n_2)\bigr)\,.\cr
+\enddisplay
+The output is $LLLRRRRR={6\over19}\approx.3158$. Incidentally, an
+average of $.334$ implies at least 287 at bats.
+\source{[|knuth2|, exercise 4.5.3--39].}
+
+\ansno4.45:
+ $x^2\=x$ \tmod{10^n} $\iff$ $x(x-1)\=0$ \tmod{2^n} and
+$x(x-1)\=0$ \tmod{5^n} $\iff$ $x\bmod2^n=[@0\,{\rm or}\,1]$ and
+$x\bmod5^n=[@0\,{\rm or}\,1]$. (The last step is justified because
+$x(x-1)\bmod5=0$ implies that either $x$ or~$x-1$ is a multiple of~$5$,
+in which case the other factor is relatively prime to $5^n$ and can
+be divided from the congruence.)\par
+So there are at most four solutions, of which two ($x=0$ and $x=1$)
+don't qualify for the title ``$n$-digit number'' unless $n=1$.
+The other two solutions have the forms $x$ and $10^n+1-x$, and at
+least one of these numbers is $\ge10^{n-1}$.
+ When $n=4$ the other solution,
+ $10001-9376=625$, is not a four-digit number. We expect to get two
+$n$-digit solutions for about 90\% of all~$n$, but this conjecture
+has not been proved.
+\par (Such self-reproducing numbers "!automorphic numbers"
+have been called ``automorphic.'')
+\source{[|knuth2|, exercise 4.3.2--13].}
+
+\ansno4.46:
+ (a) If $j'j-k'k=\gcd(j,k)$, we have $n^{k'k}n^{\gcd(j,k)}=n^{j'j}\=1$
+and $n^{k'k}\=1$. (b)~Let $n=pq$, where $p$ is the smallest prime
+divisor of~$n$.
+If $2^n\=1$ \tmod n then $2^n\=1$ \tmod p. Also $2^{p-1}\=1$ \tmod p; hence
+$2^{\gcd(p-1,n)}\=1$ \tmod p. But $\gcd(p-1,n)=1$ by the definition of~$p$.
+
+\ansno4.47:
+ If $n^{m-1}\=1$ \tmod m we must have $n\rp m$. If
+$n^k\=n^j$ for some $1\le j<k<m$, then $n^{k-j}\=1$ because we can
+divide by~$n^j$. Therefore if the numbers $n^1\bmod m$, \dots,
+$n^{m-1}\bmod m$ are not distinct, there is a $k<m-1$ with $n^k\=1$.
+The least such $k$ divides $m-1$, by exercise |order-mod-n|(a).
+But then $kq=(m-1)/p$ for some prime~$p$ and some positive integer~$q$;
+this is impossible, since $n^{kq}\not\=1$. Therefore the numbers
+$n^1\bmod m$, \dots, $n^{m-1}\bmod m$ are distinct and relatively prime to~$m$.
+Therefore the numbers $1$, \dots,~$m-1$ are relatively prime to~$m$,
+and $m$ must be prime.
+\source{"Lehmer" [|lehmer-primality|].}
+
+\ansno4.48:
+ By pairing numbers up with their inverses, we can reduce
+the product (mod~$m$) to
+$\prod_{1\le n<m,\,n^2\bmod m=1}n$. Now we can use our knowledge of the
+solutions to $n^2\bmod@ m=1$. By residue arithmetic we find that the
+result is $m-1$ if $m=4$, $p^k$, or $2p^k$ ($p>2$); otherwise it's~$+1$.
+\source{"Gauss" [|gauss-disq|, \S78]; "Crelle" [|crelle|].}
+
+\ansno4.49:
+ (a) Either $m<n$ ($\Phi(N-1)$ cases) or $m=n$ (one case) or
+$m>n$ ($\Phi(N-1)$ again). Hence $R(N)=2\Phi(N-1)+1$.
+(b)~From \equ(4.|bigphi-gen|) we get
+\begindisplay
+2\Phi(N-1)+1=1+\sum_{d\ge1}\mu(d)\lfloor N/d\rfloor\lfloor N/d-1\rfloor\,;
+\enddisplay
+hence the stated result holds if and only if
+\begindisplay
+\sum_{d\ge1}\mu(d)\lfloor N/d\rfloor=1\,,\qquad\hbox{for $N\ge1$}.
+\enddisplay
+And this is a special case of \equ(4.|mobius-real-inversion|) if we
+set $f(x)=\[x\ge1]$.
+
+\ansno4.50:
+ (a) If $f$ is any function,
+\begindisplay \openup3pt
+\sum_{0\le k<m}f(k)
+&=\sum_{d\divides m}\,\sum_{0\le k<m}f(k)\bigi[d=\gcd(k,m)\bigr]\cr
+&=\sum_{d\divides m}\,\sum_{0\le k<m}f(k)\bigi[k/d\rp m/d\bigr]\cr
+&=\sum_{d\divides m}\,\sum_{0\le k<m/d}f(kd)\bigi[k\rp m/d\bigr]\cr
+&=\sum_{d\divides m}\,\sum_{0\le k<d}f(km/d)\bigi[k\rp d\bigr]\,;\cr
+\enddisplay
+we saw a special
+case of this in the derivation of \equ(4.|necklaces|). An analogous derivation
+holds for $\prod$ instead of~$\sum$. Thus we have
+\begindisplay \advance\belowdisplayskip-4pt \postdisplaypenalty=10000
+z^m-1=\prod_{0\le k<m}(z-\omega^k)=\prod_{d\divides m}\,
+ \prod\twoconditions{0\le k<d}{k\rp d}(z-\omega^{km/d})
+ =\prod_{d\divides m}\Psi_d(z)
+\enddisplay
+because $\omega^{m/d}=e^{2\pi i/d}$.\par
+Part (b) follows from part (a) by the analog of \equ(4.|mobius-inversion|)
+for products instead of sums. Incidentally, this formula shows that
+$\Psi_m(z)$ has integer coefficients, since $\Psi_m(z)$ is obtained
+by multiplying and dividing polynomials whose leading coefficient is~$1$.
+
+\ansno4.51:
+ $(x_1+\cdots+x_n)^p=\sum_{k_1+\cdots+k_n=p}p!/(k_1!\ldots k_n!)
+x_1^{k_1}\ldots x_n^{k_n}$, and the coefficient is divisible by~$p$
+unless some $k_j=p$. Hence $(x_1+\cdots+x_n)^p\=x_1^p+\cdots+x_n^p$
+\tmod p. Now we can set all the $x$'s to $1$, obtaining $n^p\=n$.
+
+\ansno4.52:
+ If $p>n$ there is nothing to prove. Otherwise $x\rp p$,
+so $x^{k(p-1)}\=1$ \tmod p; this means that at least
+$\bigl\lfloor(n-1)/(p-1)\bigr\rfloor$ of the given numbers are
+multiples of~$p$. And $(n-1)/(p-1)\ge n/p$ since $n\ge p$.
+\source{1974 midterm.}
+
+\ansno4.53:
+\g\noindent\llap{``}Die ganzen Zahlen hat der liebe Gott gemacht,
+alles andere ist\par Menschenwerk.''\par\hfill\hskip0pt minus3pt
+\dash---L.\thinspace"Kronecker"~[|weber|]\looseness=-1\g
+ First show that if $m\ge6$ and $m$ is not prime then $(m-2)!
+\=0$ \tmod m. (If $m=p^2$, the product for $(m-2)!$ includes $p$ and $2p$;
+otherwise it includes $d$ and $m/d$ where $d<m/d$.) Next consider cases:
+\par Case 0, $n<5$. The condition holds for $n=1$ only.
+\par Case 1, $n\ge5$ and $n$ is prime. Then
+$(n-1)!/(n+1)$ is an integer and it can't be a multiple of~$n$.
+\par Case 2, $n\ge5$, $n$ is composite, and $n+1$ is composite. Then
+$n$ and $n+1$ divide $(n-1)!$, and $n\rp n+1$; hence $n(n+1)\divides
+(n-1)!$.
+\par Case 3, $n\ge5$, $n$ is composite, and $n+1$ is prime. Then $(n-1)!
+\=1$ \tmod{n+1} by Wilson's theorem, and
+\begindisplay
+\bigl\lfloor(n-1)!/(n+1)\bigr\rfloor=\bigl((n-1)!+n\bigr)/(n+1)\,;
+\enddisplay
+this is divisible by~$n$.
+\par Therefore the answer is: Either $n=1$ or $n\ne4$ is composite.
+\source{1973 midterm, inspired by "Rao" [|d-r-rao|].}
+
+\ansno4.54:
+ $\epsilon_2(1000!)>500$ and $\epsilon_5(1000!)=249$, hence
+$1000!=a\cdt10^{249}$ for some even integer~$a$.
+Since $1000=(1300)_5$, exercise |factorial-residue| tells us that
+$a\cdt2^{249}=1000!/5^{249}\=-1$ \tmod5.
+Also $2^{249}\=2$, hence $a\=2$, hence $a\bmod10=2$ or~$7$;
+hence the answer is $2\cdt10^{249}$.
+\source{1974 midterm.}
+
+\ansno4.55:
+ One way is to prove by induction that $P_{2n}/P_n^4(n+1)$
+is an integer; this stronger result helps the induction go through.
+Another way is based on showing that each prime~$p$ divides the numerator
+at least as often as it divides the denominator. This reduces to
+proving the inequality
+\begindisplay
+\sum_{k=1}^{2n}\lfloor k/m\rfloor\ge4\sum_{k=1}^n\lfloor k/m\rfloor\,,
+\enddisplay
+which follows from
+\begindisplay
+\bigl\lfloor(2n-1)/m\bigr\rfloor+\bigl\lfloor 2n/m\bigr\rfloor
+ \ge\lfloor n/m\rfloor\,.
+\enddisplay
+The latter is true when $0\le n<m$, and both sides increase by~$4$ when
+$n$ is increased by~$m$.
+
+\ansno4.56:
+ Let $f(m)=\sum_{k=1}^{2n-1}\min(k,2n{-}k)\[m\divides k]$, \
+$g(m)=\sum_{k=1}^{n-1}{(2n{-}2k{-}1)}\*\bigi[m\divides(2k+1)\bigr]$. The number
+of times $p$ divides the numerator of the stated product is $f(p)+f(p^2)+
+f(p^3)+\cdots\,$, and the number of times $p$ divides the denominator is
+$g(p)+g(p^2)+g(p^3)+\cdots\,$. But $f(m)=g(m)$ whenever $m$ is odd, by
+exercise 2.|dotminus-cancellation|. The stated product therefore
+reduces to $2^{n(n-1)}$, by exercise 3.|2-power-floors|.
+\source{"Logan" [|logan-orth|, eq.~(6.15)].}
+
+\ansno4.57:
+ The hint suggests a standard interchange of summation, since
+\begindisplay
+\sum_{1\le m\le n}\[d\divides m]=\sum_{0<k\le n/d}\[m=dk]=\lfloor n/d\rfloor\,.
+\enddisplay
+Calling the hinted sum $\Sigma(n)$, we have
+\begindisplay
+\Sigma(m+n)-\Sigma(m)-\Sigma(n)
+=\sum_{d\in S(m,n)}\varphi(d)\,.
+\enddisplay
+On the other hand, we know from \equ(4.|phi-sum|) that
+$\Sigma(n)=\half n(n+1)$. Hence $\Sigma(m+n)-\Sigma(m)-\Sigma(n)=mn$.
+\source{A special case appears in [|amm-phi-problem|].}
+
+\ansno4.58:
+ The function $f(m)$ is multiplicative, and when $m=p^k$
+it equals $1+p+\cdots+p^k$. This is a power of~$2$ if and only if
+$p$ is a "Mersenne prime" and $k=1$. For $k$ must be odd, and in that case
+the sum is
+\begindisplay
+(1+p)(1+p^2+p^4+\cdots+p^{k-1})
+\enddisplay
+and $(k-1)/2$ must be odd, etc.
+The necessary and sufficient condition is that $m$ be a product of
+distinct Mersenne primes.
+\source{"Sierpi\'nski" [|sierpinski-2|].}
+
+\ansno4.59:
+ Proof of the hint: If $n=1$ we have $x_1=\alpha=2$, so there's no problem.
+If $n>1$ we can assume that $x_1\le\cdots\le x_n$. Case~1: $x_1^{-1}+\cdots
++x_{n-1}^{-1}+(x_n-1)^{-1}\ge1$ and $x_n>x_{n-1}$. Then we can find $\beta
+\ge x_n-1\ge x_{n-1}$ such that $x_1^{-1}+\cdots+x_{n-1}^{-1}+\beta^{-1}=1$;
+hence $x_n\le\beta+1\le e_n$ and $x_1\ldots x_n\le x_1\ldots x_{n-1}(\beta+1)
+\le e_1\ldots e_n$, by induction. There is a positive integer~$m$ such that
+$\alpha=x_1\ldots x_n/m$; hence $\alpha\le e_1\ldots e_n=e_{n+1}-1$,
+and we have $x_1\ldots x_n(\alpha+1)\le e_1\ldots e_ne_{n+1}$. Case~2:
+$x_1^{-1}+\cdots+x_{n-1}^{-1}+(x_n-1)^{-1}\ge1$ and $x_n=x_{n-1}$.
+Let $a=x_n$ and $a^{-1}+(a-1)^{-1}=(a-2)^{-1}+\zeta^{-1}$. Then we can
+show that $a\ge4$ and $(a-2)(\zeta+1)\ge a^2$. So there's a $\beta\ge\zeta$
+such that $x_1^{-1}+\cdots+x_{n-2}^{-1}+(a-2)^{-1}+\beta^{-1}=1$; it
+follows by induction that $x_1\ldots x_n\le x_1\ldots x_{n-2}(a-2)(\zeta+1)
+\le x_1\ldots x_{n-2}(a-2)(\beta+1)\le e_1\ldots e_n$, and we can finish
+as before. Case~3: $x_1^{-1}+\cdots+x_{n-1}^{-1}+(x_n-1)^{-1}<1$.
+Let $a=x_n$, and let $a^{-1}+\alpha^{-1}=(a-1)^{-1}+\beta^{-1}$. It can
+be shown that $(a-1)(\beta+1)>a(\alpha+1)$, because this identity is
+equivalent to
+\begindisplay
+a\alpha^2-a^2\alpha+a\alpha-a^2+\alpha+a>0\,,
+\enddisplay
+which is a consequence of $a\alpha(\alpha-a)+(1+a)\alpha\ge(1+a)\alpha>a^2-a$.
+Hence we can replace $x_n$ and~$\alpha$ by $a-1$ and~$\beta$, repeating this
+transformation until cases 1 or~2 apply.\par
+Another consequence of the hint is that
+$1/x_1+\cdots+1/x_n<1$ implies
+$1/x_1+\cdots+1/x_n\le1/e_1+\cdots+1/e_n$; see exercise |recip-euclid|.
+\source{"Curtiss" [|curtiss|]; "Erd\H os" [|erdos-curtiss|].}
+
+\ansno4.60:
+ The main point is that $\theta<{2\over3}$. Then we can take
+$p_1$ sufficiently large (to meet the conditions below) and $p_n$ to
+be the least prime greater than $p_{n-1}^3$. With this definition let
+$a_n=3^{-n}\ln p_n$ and $b_n=3^{-n}\ln(p_n+1)$. If we can show that
+$a_{n-1}\le a_n<b_n\le b_{n-1}$, we can take $P=\lim_{n\to\infty}e^{a_n}$
+as in exercise~|euclid-sol-proof|. But this hypothesis is equivalent to
+$p_{n-1}^3\le p_n<(p_{n-1}+1)^3$. If there's no prime $p_n$ in this
+\g\noindent\llap{``}Man made\par the integers:\par
+ All else is\par "Dieudonn\'e".''\par\hfill\dash---R.\thinspace K. "Guy"\g
+range, there must be a prime~$p<p_{n-1}^3$ such that $p+cp^\theta>
+(p_{n-1}+1)^3$. But this implies that $cp^\theta>3p^{2/3}$, which is
+impossible when $p$~is sufficiently large.\par
+We can almost certainly take $p_1=2$, since all available evidence
+indicates that the known bounds on gaps between primes are much
+weaker than the truth (see exercise |prime-gaps|). Then $p_2=11$,
+$p_3=1361$, $p_4=2521008887$, and $1.306377883863<P<1.306377883869$.
+\source{"Mills" [|mills|].}
+
+\ansno4.61:
+ Let $\hat m$ and $\hat n$ be the right-hand sides; observe that
+$\hat mn'-m'\hat n=1$, hence $\hat m\rp\hat n$. Also $\hat m/\hat n>
+m'/n'$ and $N=\bigl((n+N)/n'\bigr)n'-n\ge\hat n>\bigl((n+N)/n'-1\bigr)n'-n
+=N-n'\ge0$.
+So we have $\hat m/\hat n\ge m''/n''$. If equality doesn't hold, we have
+$n''=(\hat mn'-m'\hat n)n''=n'(\hat mn''-m''\hat n)+\hat n(m''n'-m'n'')
+\ge n'+\hat n>N$, a contradiction.\par
+Incidentally, this exercise implies that $(m+m'')/(n+n'')=m'/n'$, although
+the former fraction is not always reduced.
+\source{[|knuth1|, exercise 1.3.2--19].}
+
+\ansno4.62:
+ \def\\#1 {2^{-#1}}$\\1 +\\2 +\\3 -\\6 -\\7 +\\12 +\\13 -\\20
+-\\21 +\\30 +\\31 -\\42 -\\43 +\cdots\,$ can be written
+\begindisplay
+\half+3\sum_{k\ge0}\bigl(2^{-4k^2-6k-3}-2^{-4k^2-10k-7}\bigr)\,.
+\enddisplay
+This sum, incidentally, can be expressed in closed form using the ``"theta
+function"'' $\theta(z,\lambda)=\sum_ke^{-\pi\lambda k^2+2izk}$; we have
+\begindisplay
+\textstyle e\;\leftrightarrow\;\half+{3\over8}\theta({4\over\pi}\ln 2,\,
+3i\ln 2)-{3\over128}\theta({4\over\pi}\ln 2,\,5i\ln 2)\,.
+\enddisplay
+
+\ansno4.63:
+ Any $n>2$ either has a prime divisor $d$ or is divisible
+by $d=4$. In either case, a solution with exponent~$n$ implies
+\g I have discovered a wonderful proof of Fermat's Last Theorem,
+but there's no room for it here.\g
+a solution $(a^{n/d})^d+(b^{n/d})^d=(c^{n/d})^d$
+with exponent~$d$. Since $d=4$ has no solutions, $d$~must be prime.
+\par The hint follows from the binomial theorem, since $(a^p+(x-a)^p)/x\=
+pa^{p-1}$ (mod~$x$) when $p$ is odd. The smallest counterexample,
+if \equ(4.|fermat-last|) fails, has $a\rp x$. If $x$ is not
+divisible by~$p$ then $x$ is relatively prime to $c^p\!/x$; this means that
+whenever $q$ is prime and $q^e\edivides x$ and $q^f\edivides c$, we have
+$e=fp$. Hence $x=m^p$ for some~$m$. On the other hand
+if $x$ is divisible by~$p$, then $c^p\!/x$ is divisible
+by $p$ but not by $p^2$, and $c^p$ has no other factors in common with~$x$.
+\source{"Barlow" [|barlow|]; "Abel" [|abel|].}
+
+\ansno4.64:
+ Equal fractions in $\Pscr_N$ appear in
+``"organ-pipe order"'':
+\begindisplay \def\\#1{{#1m\over#1n}}
+\\2,\,\\4,\,\ldots,\,\\r,\,\ldots,\,\\3,\,\\{}\,.
+\enddisplay
+Suppose that $\Pscr_N$ is correct; we want to prove that $\Pscr_{N+1}$ is
+correct. This means that if $kN$ is odd, we want to show that
+\begindisplay
+{k-1\over N+1}=\Pscr_{N,kN}\,;
+\enddisplay
+if $kN$ is even, we want to show that
+\begindisplay
+\Pscr_{N,kN-1}\;\Pscr_{N,kN}\;{k-1\over N+1}\;\Pscr_{N,kN}\;\Pscr_{N,kN+1}\,.
+\enddisplay
+In both cases it will be helpful to know the number of fractions that
+are strictly less than $(k-1)/(N+1)$
+in $\Pscr_N$; this is
+\begindisplay
+\sum_{n=1}^N\sum_m\Bigi[\displaystyle0\le{m\over n}<{k-1\over N+1}\Bigr]
+&=\sum_{n=1}^N\biggl\lceil{(k-1)n\over N+1}\biggr\rceil
+ =\sum_{n=0}^N\biggl\lfloor{(k-1)n+N\over N+1}\biggr\rfloor\cr
+&={(k-2)N\over2}+{d-1\over2}+d\left\lfloor N\over d\right\rfloor\cr
+\enddisplay
+by \equ(3.|f-progression|), where $d=\gcd(k-1,N+1)$. And this reduces
+to $\half(kN-d+1)$, since $N\bmod d=d-1$.\par
+Furthermore, the number of fractions equal to $(k-1)/(N+1)$ in
+$\Pscr_N$ that should precede it in $\Pscr_{N+1}$ is
+$\half\bigl(d-1-\[\hbox{$d$~even}]\bigr)$, by the nature of organ-pipe order.
+\par If $kN$ is odd, then $d$ is even and $(k-1)/(N+1)$ is preceded by
+$\half(kN-1)$ elements of $\Pscr_N$; this is just the correct
+number to make things
+work. If $kN$ is even, then $d$ is odd and $(k-1)/(N+1)$ is preceded by
+$\half(kN)$ elements of~$\Pscr_N$. If $d=1$, none of these equals $(k-1)/(N+1)$
+and $\Pscr_{N,kN}$ is `$<$'; otherwise $(k-1)/(N+1)$ falls between two
+equal elements and $\Pscr_{N,kN}$ is `$=$'.
+(C.\thinspace S. "Peirce" [|peirce-tree|] independently discovered
+the "Stern--Brocot tree" at about the same time as he discovered
+$\Pscr_N$.)
+\source{"Peirce" [|peirce-seq|].}
+
+\ansno4.65:
+ The analogous question for the (analogous) Fermat numbers $f_n$
+\g\noindent\llap{``}No square less than $25\times10^{14}$ divides a Euclid number.''\par
+\hfill\dash---Ilan "Vardi"\g
+is a famous unsolved problem. This one might be easier or harder.
+
+\ansno4.66:
+ It is known that no square less than $36\times10^{18}$ divides
+a Mersenne number or Fermat number.
+But there has still been no proof of "Schinzel"'s
+conjecture that there exist infinitely many squarefree Mersenne numbers.
+It is not even known if there are infinitely many~$p$ such that
+$p\edivides(a\pm b)$, where all prime factors of $a$ and~$b$ are~$\le31$.
+\source{"Ribenboim" [|ribenboim|];
+ "Sierpi\'nski"~[|sierpinski-probs|, problem $\rm P_{10}^2$].}
+
+\ansno4.67:
+ M. "Szegedy" has proved this conjecture for all large~$n$;
+see [|szegedy|], [|erdos-graham|, pp.~78--79], and~[|chaimovich-et-al|].
+\source{[|graham-amm|].}
+
+\ansno4.68:
+ This is a much weaker conjecture than the result in the
+following exercise.
+
+\ansno4.69:
+ "Cram\'er" [|cramer|] showed that this conjecture is plausible on
+probabilistic grounds, and computational experience bears this out:
+"Brent"~[|brent-gaps|] has shown that $P_{n+1}-P_n\le602$ for
+$P_{n+1}<2.686\times10^{12}$. But the much weaker bounds in
+exercise~|mills-proof| are the best that have been published
+so far~[|lou-yao|].
+Exercise~|prime-gaps-weak| has a ``yes'' answer if $P_{n+1}-P_n<2P_n^{1/2}$
+for all sufficiently large~$n$.
+According to Guy~ [|guy|, problem~A8], Paul "Erd\H os" offers \$10,000 for proof
+"!reward"
+that there are infinitely many $n$ such that
+\begindisplay
+P_{n+1}-P_n>{c\ln n\,\ln\ln n\,\ln\ln\ln\ln n\over
+ (\ln\ln\ln n)^2}
+\enddisplay
+for all $c>0$.
+\source{"Cram\'er" [|cramer|].}
+
+\ansno4.70:
+ This holds if and only if $\nu_2(n)=\nu_3(n)$, according
+to exercise~|epsilon-nu|. The methods of [|ruzsa-et-al|] may
+help to crack this conjecture.
+\source{Paul "Erd\H os".*}
+
+\ansno4.71:
+ When $k=3$ the smallest solution is $n=4700063497=19\cdt47\cdt
+5263229$; no other solutions are known in this case.
+\source{[|erdos-graham|, p.~96].}
+
+\ansno4.72:
+ This is known to be true for infinitely many values of~$a$,
+including $-1$ (of course) and~$0$ (not so obviously).
+ "Lehmer"~[|lehmer-conj|] has a
+famous conjecture that $\varphi(n)\divides(n-1)$ if and only if $n$~is prime.
+\source{[|erdos-graham|, p.~103].}
+
+\ansno4.73:
+ This is known to be equivalent to the "Riemann hypothesis"
+(that the complex "zeta function" $\zeta(z)$ is nonzero when the real part
+of~$z$ is greater than~$1/2$).
+\source{"Landau" [|landau-vorlesungen|, volume 2, eq.~648].}
+
+\ansno4.74:
+ Experimental evidence suggests that there are about
+${p(1-1/e)}$ distinct values, just as if the factorials were randomly
+distributed modulo~$p$.

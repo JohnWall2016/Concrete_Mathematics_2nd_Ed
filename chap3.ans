@@ -1,0 +1,626 @@
+
+\ansno3.1:
+ $m=\lfloor \lg n\rfloor $; \ $l=n-2^m=n-2^{\lfloor \lg n\rfloor }$.
+
+\ansno3.2:
+ (a) $\lfloor x+.5\rfloor$. (b) $\lceil x-.5\rceil$.
+
+\ansno3.3:
+ This is $\lfloor mn-\{m\alpha\}n/\alpha\rfloor
+ =mn-1$, since $0<\{m\alpha\}<1$.
+
+\ansno3.4:
+ Something where no proof is required, only a lucky guess (I guess).
+
+\ansno3.5:
+ We have $\lfloor nx\rfloor =
+\bigl\lfloor n\lfloor x\rfloor+n\{x\}\bigr\rfloor=n\lfloor x\rfloor+
+\bigl\lfloor n\{x\}\bigr\rfloor$ by \equ(3.|brace|) and \equ(3.|n-in/out|).
+Therefore $\lfloor nx\rfloor=n\lfloor x\rfloor\iff
+\bigl\lfloor n\{x\}\bigr\rfloor=0\iff
+0\le n\{x\}<1\iff \{x\}<1/n$, assuming that $n$ is a positive integer.
+(Notice that $n\lfloor x\rfloor\le\lfloor nx\rfloor$ for all~$x$ in this case.)
+
+\ansno3.6:
+ $\lfloor f(x)\rfloor =\lfloor f(\lceil x\rceil )\rfloor $.
+\source{Ernst "Mayr", 1982 homework.}
+
+\ansno3.7:
+ $\lfloor n/m\rfloor+n\bmod m$.
+
+\ansno3.8:
+ If all boxes contain $<\lceil n/m\rceil$ objects, then
+$n\le\bigl(\lceil n/m\rceil-1\bigr)m$, so $n/m+1\le\lceil n/m\rceil$,
+contradicting \equ(3.|alt-f-c-def|). The other proof is similar.
+\source{"Dirichlet" [|dirichlet-schubfach|].}
+
+\ansno3.9:
+ We have $m/n-1/q={(n\mathbin{\rm mumble}m)}/qn$. The process must
+terminate, because $0\le{n\mathbin{\rm mumble}m}<m$.
+The denominators of the representation are strictly increasing,
+hence distinct, because $qn/(n\mathbin{\rm mumble}m)>q$.
+\source{"Chace" [|rhind|]; "Fibonacci" [|fibonacci|, pp.~77--83].}
+
+\ansno3.10:
+ $\lceil x+\half\rceil-\bigi[\hbox{$(2x+1)/4$ is not an integer}\bigr]$
+is the nearest integer to~$x$, if $\{x\}\ne\half$;
+otherwise it's the nearest even integer.
+"!unbiased rounding" "!rounding, unbiased"
+(See exercise |rounding|.) Thus the formula gives an ``unbiased'' way to round.
+
+\ansno3.11:
+ If $n$ is an integer,
+$\alpha<n<\beta\iff\lfloor \alpha\rfloor <n<\lceil \beta\rceil $.
+ The number of integers satisfying
+$a<n<b$ when $a$ and~$b$ are integers is $(b-a-1)\[b>a]$. We would therefore
+get the wrong answer if $\alpha=\beta=\rm integer$.
+
+\ansno3.12:
+ Subtract $\lfloor n/m\rfloor$ from both sides, by \equ(3.|n-in/out|),
+getting $\lceil(n\bmod m)/m\rceil=\lfloor (n\bmod m+m-1)/m\rfloor$.
+Both sides are now equal to $\[n\bmod m>0]$, since $0\le n\bmod m<m$.
+\par A shorter but
+less direct proof simply observes that the first term in \equ(3.|c-groups|)
+must equal the last term in \equ(3.|f-groups|).
+\source{[|knuth1|, exercise 1.2.4--48(a)].}
+
+\ansno3.13:
+ If they form a partition, the text's formula for $N(\alpha,n)$
+implies that $1/\alpha+1/\beta = 1$,
+because the coefficients of~$n$ in the equation $N(\alpha,n)+N(\beta,n)=n$
+must agree if the equation is to hold for large~$n$.
+ Hence $\alpha$ and $\beta$
+are both rational or both irrational. If both are irrational, we do
+get a partition, as shown in the text. If both can be written with
+numerator~$m$, the value $m-1$ occurs in neither spectrum,
+and $m$ occurs in both.
+(However, "Golomb"~[|sales-tax|] has observed that the sets
+$\{\lfloor n\alpha\rfloor\mid n\ge1\}$ and
+$\{\lceil n\beta\rceil-1\mid n\ge1\}$ always do form a partition,
+when $1/\alpha+1/\beta = 1$.)
+\source{"Beatty" [|beatty|]; "Niven" [|niven|, theorem~3.7].}
+
+\ansno3.14:
+ It's obvious by \equ(3.|mod0|) if $ny=0$,
+otherwise true by \equ(3.|bmod-def|) and \equ(3.|n-in/out|).
+
+\ansno3.15:
+ Plug in $\lceil mx\rceil$ for $n$ in \equ(3.|c-groups|):
+$\lceil mx \rceil
+= \lceil x \rceil
++ \lceil x - {1\over m} \rceil
++ \cdots
++ \lceil x - {m-1\over m} \rceil$.
+
+\ansno3.16:
+ The formula $n\bmod3=1+
+ {1\over3}\bigl((\omega-1)\omega^n-(\omega+2)\omega^{2n}\bigr)$ can be verified
+by checking it when $0\le n<3$.\par
+A general formula for $n\bmod m$, when $m$ is any positive integer,
+appears in exercise 7.|bmod-omega|.
+
+\ansno3.17:
+ $\sum_{j,k}\[0\le k<m]\[1\le j\le x+k/m]\hfil=\hfil
+\sum_{j,k}\[0\le k<m]\[1\le j\le\lceil x\rceil]\*\bigi[k\ge m(j-x)\bigr]=
+\sum_{1\le j\le\lceil x\rceil}\sum_k\[0\le k<m]
+-\sum_{j=\lceil x\rceil}\sum_k\bigi[0\le k<m(j-x)\bigr]=
+m\lceil x\rceil-\bigl\lceil m(\lceil x\rceil-x)\bigr\rceil=-\lceil-mx\rceil
+=\lfloor mx\rfloor$.
+
+\ansno3.18:
+ We have
+\begindisplay
+S=\sum_{0\le j<\lceil n\alpha\rceil}\,\,\sum_{k\ge n}\bigi[j\alpha^{-1}\le k
+ <(j+v)\alpha^{-1}\bigr]\,.
+\enddisplay
+If $j\le n\alpha-1\le n\alpha-v$, there is no contribution, because
+$(j+v)\alpha^{-1}\le n$. Hence $j=\lfloor n\alpha\rfloor$ is the only
+case that matters, and the value in that case equals
+ $\bigl\lceil(\lfloor n\alpha\rfloor
++v)\alpha^{-1}\bigr\rceil-n\le\lceil v\alpha^{-1}\rceil$.
+
+\ansno3.19:
+ If and only if
+$b$ is an integer. (If $b$ is an integer, $\log_b x$ is a
+continuous, increasing function that takes integer values only at
+integer points. If $b$ is not an integer, the condition fails
+when $x=b$.)
+\source{[|knuth1|, exercise 1.2.4--34].}
+
+\ansno3.20:
+ We have $\sum_k kx\[\alpha\le kx\le\beta]
+=x\sum_k k\bigi[\lceil\alpha/x\rceil\le k\le\lfloor\beta/x\rfloor\bigr]$,
+which sums to
+$\half x\bigl(\lfloor\beta/x\rfloor\lfloor\beta/x+1\rfloor
+-\lceil\alpha/x\rceil\lceil\alpha/x-1\rceil\bigr)$.
+
+\ansno3.21:
+ If $10^n\le2^M<10^{n+1}$, there are exactly $n+1$ such powers of~$2$,
+because there's exactly one such $k$-digit power of~$2$ for each~$k$.
+Therefore the answer is $1+\lfloor M\log 2\rfloor$.\par
+Note: The number of powers of~$2$ with leading digit~$l$ is more difficult,
+%when $l>1$; it's $\sum_{0\le n<M\log2}\bigl(\lfloor n/\!\log2+\lg(l+1)\rfloor-
+%\lfloor n/\!\log2+\lg l\rfloor\bigr)$, minus the final term of that sum
+%if $\[\{M\log2\}<\log l]$.]
+when $l>1$; it's $\sum_{0\le n\le M}\bigl(\lfloor n\log2-\log l@\rfloor
+-\lfloor n\log2-\log(l+1)\rfloor\bigr)$.
+\source{1975 midterm.}
+
+\ansno3.22:
+ All terms are the same for $n$ and $n-1$ except the $k$th, where
+$n=2^{k-1}q$ and $q$~is odd; we have $S_n=S_{n-1}+1$ and
+$T_n=T_{n-1}+2^kq$. Hence $S_n=n$ and $T_n=n(n+1)$.
+
+\ansno3.23:
+ $X_n=m\iff\half m(m-1)<n\le \half m(m+1)\iff
+m^2-m+{1\over4}<2n<m^2+m+{1\over4}\iff m-\half<\sqrt{2n}<m+\half$.
+\source{[|knuth1|, exercise 1.2.4--41].}
+
+\ansno3.24:
+ Let $\beta=\alpha/(\alpha+1)$. Then the number of times the nonnegative
+integer $m$ occurs in $\spec(\beta)$ is exactly one more than the number of times
+it occurs in $\spec(\alpha)$. Why? Because $N(\beta,n)=N(\alpha,n)+n+1$.
+
+\ansno3.25:
+ Continuing the development in the text, if we could find a value
+of~$m$ such that $K_m\le m$,
+\g \noindent\llap{``}In trying to devise a proof by mathematical "induction", you may fail
+for two opposite reasons. You may fail because you try to prove too much:
+Your $P(n)$ is too heavy a burden. Yet you may also fail because you
+try to prove too little: Your $P(n)$ is too weak a support. In general, you
+"!philosophy"
+have to balance the statement of your theorem so that the support
+is just enough for the burden.''\par\hfill\dash---G. "P\'olya" [|polya|]\g % p119
+we could violate the stated inequality at $n+1$ when $n=2m+1$.
+(Also when $n=3m+1$ and $n=3m+2$.)
+But the existence of such an $m=n'+1$ requires that $2K_{\lfloor n'/2\rfloor}
+\le n'$ or $3K_{\lfloor n'/3\rfloor}\le n'$, i.e., that
+\begindisplay
+K_{\lfloor n'/2\rfloor}\le\lfloor n'/2\rfloor\qquad\hbox{or}\qquad
+K_{\lfloor n'/3\rfloor}\le\lfloor n'/3\rfloor\,.
+\enddisplay
+Aha. This goes down further and further, implying that $K_0\le0$;
+but $K_0=1$.\par
+What we really want to prove is that $K_n$ is strictly {\it greater\/}
+than $n$, for all $n>0$. In fact, it's easy to prove this by induction,
+although it's a stronger result than the one we couldn't prove!\par
+(This exercise teaches an important lesson. It's more an exercise about the
+nature of induction than about properties of the floor function.)
+
+\ansno3.26:
+ Induction, using the stronger hypothesis
+\begindisplay
+D_n^{(q)}\le (q-1)\biggl(\left(q\over q-1\right)^{n+1}-1\biggr)\,,
+\qquad\hbox{for $n\ge0$}.
+\enddisplay
+
+\ansno3.27:
+ If $D_n^{(3)}=2^mb-a$, where $a$ is $0$ or~$1$,
+then $D_{n+m}^{(3)}=3^mb-a$.
+
+\ansno3.28:
+ The key observation is that $a_n=m^2$ implies
+$a_{n+2k+1}=(m+k)^2+m-k$ and
+$a_{n+2k+2}=(m+k)^2+2m$, for $0\le k\le m$; hence
+$a_{n+2m+1}=(2m)^2$. The solution can be written in a nice form discovered
+by Carl "Witty":
+\begindisplay
+a_{n-1}=2^l+\biggl\lfloor\left(n-l\over2\right)^{\!2}\biggr\rfloor\,,
+\qquad\hbox{when $2^l+l\le n<2^{l+1}+l+1$.}
+\enddisplay
+\source{"Brown" [|t-c-brown|].}
+
+\ansno3.29:
+ $D\bigl(\alpha',\lfloor\alpha n\rfloor\bigr)$ is at most the maximum
+of the right-hand side of
+\begindisplay
+s\bigl(\alpha',\lfloor n\alpha\rfloor,\nu'\bigr)
+=-s(\alpha,n,\nu)+S-\epsilon-\{\hbox{$@0$ or $1$}\}-\nu'+\{\hbox{$@0$ or $1$}\}\,.
+\enddisplay
+
+\ansno3.30:
+ $X_n=\alpha^{2^n}+\alpha^{-2^n}$, by induction; and $X_n$ is
+an integer.
+\source{"Aho" and "Sloane" [|aho-sloane|].}
+
+\ansno3.31:
+ Here's an ``elegant,\qback'' ``impressive'' proof that gives no
+\g This logic is seriously floored.\g
+clue about how it was discovered:
+\begindisplay \openup2pt
+\lfloor x\rfloor+\lfloor y\rfloor+\lfloor x+y\rfloor&=
+\bigl\lfloor x+\lfloor y\rfloor\bigr\rfloor+\lfloor x+y\rfloor\cr
+&\le\textstyle\bigl\lfloor x+\half\lfloor2y\rfloor\bigr\rfloor+
+\bigl\lfloor x+\half\lfloor2y\rfloor+\half\bigr\rfloor\cr
+&=\bigl\lfloor2x+\lfloor2y\rfloor\bigr\rfloor=\lfloor2x\rfloor+\lfloor2y\rfloor\,.
+\enddisplay
+But there's also a simple, graphical proof based on the observation that
+we need to consider only the case $0\le x,y<1$. Then the functions look like
+this in the plane:
+\begindisplay
+\unitlength=1pt
+\vcenter{\hbox{\beginpicture(40,40)(0,0)
+\put(0,0){\line(0,1){40}}
+\put(0,0){\line(1,0){40}}
+\put(40,0){\line(0,1){40}}
+\put(0,40){\line(1,0){40}}
+\put(40,0){\line(-1,1){40}}
+\put(10,10){\makebox(0,0){$0$}}
+\put(30,30){\makebox(0,0){$1$}}
+\endpicture}}
+\;\le\;
+\vcenter{\hbox{\beginpicture(40,40)(0,0)
+\put(0,0){\line(0,1){40}}
+\put(0,0){\line(1,0){40}}
+\put(40,0){\line(0,1){40}}
+\put(0,40){\line(1,0){40}}
+\put(0,20){\line(1,0){40}}
+\put(20,0){\line(0,1){40}}
+\put(10,10){\makebox(0,0){$0$}}
+\put(10,30){\makebox(0,0){$1$}}
+\put(30,10){\makebox(0,0){$1$}}
+\put(30,30){\makebox(0,0){$2$}}
+\endpicture}}
+\;.
+\enddisplay
+A slightly stronger result is possible, namely
+\begindisplay
+\lceil x\rceil+\lfloor y\rfloor+\lfloor x+y\rfloor\le\lceil2x\rceil
+ +\lfloor2y\rfloor\,;
+\enddisplay
+but this is stronger only when $\{x\}=\half$. If we replace $(x,y)$ by
+$(-x,x+y)$ in this identity and apply the reflective law \equ(3.|f-c-reflection|),
+we get
+\begindisplay
+\lfloor y\rfloor+\lfloor x+y\rfloor+\lfloor2x\rfloor\le
+\lfloor x\rfloor+\lfloor2x+2y\rfloor\,.
+\enddisplay
+\source{"Greitzer" [|olympiads1|, problem 1972/3, solution 2].}
+
+\ansno3.32:
+ Let $f(x)$ be the sum in question. Since $f(x)=f(-x)$, we may assume
+that $x\ge0$. The terms are bounded by $2^k$ as $k\to-\infty$ and by
+$x^2\!/2^k$ as $k\to+\infty$, so the sum exists for all real~$x$.\par
+We have $f(2x)=2\sum_k2^{k-1}\Vert x/2^{k-1}\Vert^2=2f(x)$.
+Let $f(x)=l(x)+r(x)$ where $l(x)$ is the sum for $k\le0$ and $r(x)$ is the
+sum for $k>0$. Then $l(x+1)=l(x)$, and $l(x)\le1/2$ for all~$x$.
+When $0\le x<1$, we have $r(x)=x^2\!/2+x^2\!/4+\cdots=x^2$, and $r(x+1)=
+(x-1)^2\!/2+(x+1)^2\!/4+(x+1)^2\!/8+\cdots=x^2+1$. Hence $f(x+1)=f(x)+1$,
+when $0\le x<1$.\par
+We can now prove by induction that $f(x+n)=f(x)+n$ for all integers $n\ge0$,
+when $0\le x<1$. In particular, $f(n)=n$. Therefore in general, $f(x)=
+2^{-m}f(2^mx)=2^{-m}\lfloor2^mx\rfloor+2^{-m}f\bigl(\{2^mx\}\bigr)$. But
+$f\bigl(\{2^mx\}\bigr)=l\bigl(\{2^mx\}\bigr)+r\bigl(\{2^mx\}\bigr)\le
+\half+1$; so $\bigl\vert f(x)-x\bigr\vert\le\bigl\vert2^{-m}\lfloor2^mx\rfloor
+-x\bigr\vert+2^{-m}\cdt{3\over2}\le2^{-m}\cdt{5\over2}$ for all
+integers~$m$.\par
+The inescapable conclusion is that $f(x)=\vert x\vert$ for all real~$x$.
+\source{[|graham-knuth|].}
+
+\ansno3.33:
+ Let $r=n-\half$ be the radius of the circle. (a)~There are $2n-1$
+horizontal lines and $2n-1$ vertical lines between cells of the board, and the
+circle crosses each of these lines twice. Since $r^2$ is not an integer, the
+"Pythagorean theorem" tells us that the circle doesn't pass through the
+corner of any cell. Hence the circle passes through as many cells as there
+are crossing points, namely $8n-4=8r$. (The same formula gives
+the number of cells
+at the edge of the board.)
+(b)~$f(n,k)=4\lfloor\sqrt{r^{2\mathstrut}-k^2}\rfloor$.\par
+It follows from (a) and (b) that
+\begindisplay
+{\textstyle{1\over4}}\pi r^2-2r\le\sum_{0<k<r}\lfloor\sqrt{r^2-k^2}\rfloor\le
+{\textstyle{1\over4}}\pi r^2\,,\qquad\hbox{$r=n-\half$}.
+\enddisplay
+The task of obtaining more precise estimates of this sum is a famous
+problem in number theory, investigated by "Gauss" and many others;
+see "Dickson"~[|dickson|, volume~2, chapter~6].
+\source{1984 midterm.}
+
+\ansno3.34:
+ (a) Let $m=\lceil@ \lg n\rceil$. We can add $2^m-n$ terms
+to simplify the calculations at the boundary:
+\begindisplay \openup2pt \advance\belowdisplayskip-5pt
+f(n)+(2^m-n)m
+ =\sum_{k=1}^{2^m}\lceil@\lg k\rceil
+&=\sum_{j,k}j\[j=\lceil@\lg k\rceil]\[1\le k\le 2^m]\cr
+&=\sum_{j,k}j\[2^{j-1}<k\le2^j]\[1\le j\le m]\cr
+&=\sum_{j=1}^m j\,2^{j-1}
+=2^m(m-1)+1\,.\cr
+\enddisplay
+Consequently $f(n)=nm-2^m+1$.\par
+(b) We have $\lceil n/2\rceil=\lfloor(n+1)/2\rfloor$, and it
+follows that the solution to the general recurrence
+$g(n)=a(n)+g\bigl(\lceil n/2\rceil\bigr)
++g\bigl(\lfloor n/2\rfloor\bigr)$ must satisfy
+$\Delta g(n)=\Delta a(n)+\Delta g\bigl(\lfloor n/2\rfloor\bigr)$.
+In particular, when $a(n)=n-1$,
+$\Delta f(n)=1+\Delta f\bigl(\lfloor n/2\rfloor\bigr)$ is satisfied
+by the number of bits in the binary representation of $n$, namely
+$\lceil@\lg(n+1)\rceil$. Now convert from $\Delta$ to $\Sigma$.\par
+A more direct solution can be based on the identities $\lceil\lg 2j\rceil=
+\lceil \lg j\rceil+1$ and $\lceil\lg(2j-1)\rceil=\lceil\lg j\rceil+\[j>1]$,
+for $j\ge1$.
+\source{1970 midterm.}
+
+\ansno3.35:
+ $(n+1)^2n!\mskip2mue=A_n+(n+1)^2+(n+1)+B_n$, where
+\begindisplay
+A_n&={(n+1)^2n!\over0!}
+ +{(n+1)^2n!\over1!}+\cdots
+ +{(n+1)^2n!\over(n-1)!}
+\enddisplay
+is a multiple of $n$ and
+\begindisplay \openup3pt
+B_n&={(n+1)^2n!\over(n+2)!}
+ +{(n+1)^2n!\over(n+3)!}+\cdots\cr
+&={n+1\over n+2}\biggl(1+{1\over n+3}+{1\over(n+3)(n+4)}+\cdots\,\biggr)\cr
+&<{n+1\over n+2}\biggl(1+{1\over n+3}+{1\over(n+3)(n+3)}+\cdots\,\biggr)\cr
+&={(n+1)(n+3)\over(n+2)^2}
+\enddisplay
+is less than $1$. Hence the answer is $2\bmod n$.
+\source{1975 midterm.}
+
+\ansno3.36:
+ The sum is
+\begindisplay \openup3pt
+&\sum_{k,l,m}2^{-l}4^{-m}\bigi[m=\lfloor\lg l\rfloor\bigr]
+\bigi[l=\lfloor\lg k\rfloor\bigr]\[1<k<2^{2^n}]\cr
+&\qquad=\sum_{k,l,m}2^{-l}4^{-m}\[2^m\le l<2^{m+1}]\[2^l\le k<2^{l+1}]\[0\le m<n]\cr
+&\qquad=\sum_{l,m}4^{-m}\[2^m\le l<2^{m+1}]\[0\le m<n]\cr
+&\qquad=\sum_{m}2^{-m}\[0\le m<n]=2(1-2^{-n})\,.\cr
+\enddisplay
+\source{1976 midterm.}
+
+\ansno3.37:
+ First consider the case $m<n$, which breaks into subcases
+based on whether $m<\half n$; then show that both sides change in the
+same way when $m$~is increased by~$n$.
+\source{1986 midterm; [|knuth-polya|].}
+
+\ansno3.38:
+ At most one $x_k$ can be noninteger.
+\g This is really only a "level"~4 problem,
+in spite of the way it's stated.\g
+Discard all integer~$x_k$, and suppose that $n$~are left.
+When $\{x\}\ne0$, the average of $\{mx\}$ as $m\to\infty$ lies between
+$1\over4$ and $\half$; hence $\{mx_1\}+\cdots+\{mx_n\}-
+\{mx_1+\cdots+mx_n\}$ cannot have average value zero when $n>1$.\par
+But the argument just given relies on a difficult theorem
+ about uniform distribution.
+An elementary proof is possible, sketched here for $n=2$: Let $P_m$
+be the point $\bigl(\{mx\},\{my\}\bigr)$. Divide the unit square $0\le x,y<1$
+into triangular regions $A$ and~$B$ according as $x+y<1$ or $x+y\ge1$.
+We want to show that $P_m\in B$ for some~$m$, if $\{x\}$ and $\{y\}$ are
+nonzero. If $P_1\in B$, we're done. Otherwise there is a disk~$D$ of
+radius $\epsilon>0$ centered at~$P_1$ such that $D\subseteq A$. By
+Dirichlet's box principle, the sequence $P_1$, \dots,~$P_N$ must contain
+two points with $\vert P_k-P_j\vert<\epsilon$ and $k>j$, if $N$~is large
+enough.
+\begindisplay
+\unitlength=1pt
+\beginpicture(100,60)(-10,0)
+\put(0,0){\line(0,1){60}}
+\put(0,0){\line(1,0){60}}
+\put(60,0){\line(0,1){60}}
+\put(0,60){\line(1,0){60}}
+\put(60,0){\line(-1,1){60}}
+\put(10,40){\circle{10}}
+\put(10,40){\disk{1}}
+\put(0,0){\line(1,4){10}}
+\put(-10,40){\makebox(0,0){$P_1$}}
+\put(50,20){\circle{10}}
+\put(50,20){\disk{1}}
+\put(60,60){\line(-1,-4){10}}
+\put(85,20){\makebox(0,0){$(1,1)-P_1$}}
+\put(25,15){\makebox(0,0){$A$}}
+\put(35,45){\makebox(0,0){$B$}}
+\endpicture
+\enddisplay
+It follows that $P_{k-j-1}$ is within $\epsilon$ of $(1,1)-P_1$;
+hence $P_{k-j-1}\in B$.
+\source{1974 midterm.}
+
+\ansno3.39:
+ Replace $j$ by $b-j$ and add the term $j=0$ to the sum, so
+that exercise |c-replicative| can be used for the sum on~$j$. The
+result,
+\begindisplay
+\textstyle \lceil x/b^k\rceil-\lceil x/b^{k+1}\rceil+b-1\,,
+\enddisplay
+ telescopes
+when summed on~$k$.
+\source{1971 midterm.}
+
+\ansno3.40:
+ Let $\lfloor2\sqrt n\rfloor=4k+r$ where $-2\le r<2$, and let
+$m=\lfloor\sqrt n\rfloor$. Then the following
+relationships can be proved by induction:
+{\parindent=0pt
+\begindisplay
+%\ifodd\pageno\kern-7pc\fi\vbox{\offinterlineskip
+\vbox{\offinterlineskip
+\halign{&\bigstrut\hfil$#$\hfil&\ \vrule#\ \cr
+\rm segment&&r&&m&&x&&y&&\hbox{if and only if}\cr
+\omit&height2pt&\omit&&\omit&&\omit&&\omit&&\omit\cr
+\noalign{\hrule}
+\omit&height2pt&\omit&&\omit&&\omit&&\omit&&\omit\cr
+W_k&&-2&&2k{-}1&&m(m{+}1)-n-k&&k&&(2k{-}1)(2k{-}1)\le n\le(2k{-}1)(2k)\cr
+S_k&&-1&&2k{-}1&&-k&&m(m{+}1)-n+k&&(2k{-}1)(2k)< n<(2k)(2k)\cr
+E_k&&0&&2k&&n-m(m{+}1)+k&&-k&&(2k)(2k)\le n\le(2k)(2k{+}1)\cr
+N_k&&1&&2k&&k&&n-m(m{+}1)-k&&(2k)(2k{+}1)< n<(2k{+}1)(2k{+}1)\cr}}
+\enddisplay}% cancel the zero parindent
+Thus, when $k\ge1$, $W_k$ is a segment of length~$2k$ where the path travels
+west and $y(n)=k$; $S_k$~is a segment of length~$2k-2$ where the path
+travels south and $x(n)=-k$; etc. (a)~The desired formula is therefore
+\begindisplay
+y(n)=(-1)^m\Bigl(\bigl(n-m(m+1)\bigr)\cdt\bigi[\lfloor2\sqrt n\rfloor
+ \hbox{ is odd}\bigr]-\lceil\textstyle\half m\rceil\Bigr)\,.
+\enddisplay
+(b) On all segments, $k=\max\bigl(\vert x(n)\vert,\vert y(n)\vert\bigr)$.
+On segments $W_k$ and $S_k$ we have $x<y$ and $n+x+y=m(m+1)=(2k)^2-2k$;
+on segments $E_k$ and $N_k$ we have $x\ge y$ and $n-x-y=m(m+1)=(2k)^2+2k$.
+Hence the sign is $(-1)^{(x(n)<y(n))}$.
+\source{1980 midterm.}
+
+\ansno3.41:
+ Since $1/\phi+1/\phi^2=1$, the stated sequences do partition the
+positive integers. Since the condition $g(n)=f\bigl(f(n)\bigr)+1$ determines
+$f$ and $g$ uniquely, we need only show that
+$\bigl\lfloor\lfloor n\phi\rfloor\phi\bigr\rfloor+1=\lfloor n\phi^2\rfloor$
+for all $n>0$. This follows from exercise |irrat-div|, with $\alpha=\phi$
+and $n=1$.
+\source{"Klamkin" [|olympiads2|, problem 1978/3].}
+
+\ansno3.42:
+ No; an argument like the analysis of the two-spectrum
+case in the text and in exercise |nasc-spec-part| shows that a tripartition
+occurs if and only if $1/\alpha+1/\beta+1/\gamma=1$ and
+\begindisplay
+\left\{n+1\over\alpha\right\}+\left\{n+1\over\beta\right\}
++\left\{n+1\over\gamma\right\}=1\,,
+\enddisplay
+for all $n>0$. But the average value of $\bigl\{(n+1)/\alpha\bigr\}$ is $1/2$
+if $\alpha$ is irrational, by the theorem on uniform distribution.
+The parameters can't all be rational, and if $\gamma=m/n$ the average
+is $3/2-1/(2n)$. Hence $\gamma$ must be an integer, but this doesn't
+work either.
+(There's also a proof of impossibility that uses only simple principles,
+without the theorem on uniform distribution; see [|young-ron|].)
+\source{"Uspensky" [|uspensky|].}
+
+\ansno3.43:
+ One step of unfolding the recurrence for $K_n$ gives the minimum
+of the four numbers $1+a+a\cdt b\cdt K_{\lfloor(n-1-a)/(a\cdt b)\rfloor}$,
+where $a$ and~$b$ are each $2$ or~$3$. (This simplification involves
+an application of \equ(3.|rational-in/out|) to remove floors within floors,
+together with the identity $x+\min(y,z)=\min(x+y,x+z)$.
+We must omit terms with negative subscripts; i.e., with $n-1-a<0$.)\par
+Continuing along such lines now leads to the following interpretation:
+$K_n$ is the least number $>n$ in the multiset~$S$ of all numbers of the form
+\begindisplay
+1+a_1+a_1a_2+a_1a_2a_3+\cdots+a_1a_2a_3\ldots a_m\,,
+\enddisplay
+where $m\ge0$ and each $a_k$ is $2$ or $3$. Thus,
+\begindisplay
+S=\{1,3,4,7,9,10,13,15,19,21,22,27,28,31,31,\ldots\,\}\,;
+\enddisplay
+the number $31$ is in~$S$ ``twice'' because it has two representations
+$1+2+4+8+16=1+3+9+18$.
+(Incidentally, Michael "Fredman" [|fredman-thesis|] has shown that
+$\lim_{n\to\infty}K_n/n=1$, i.e., that $S$ has no enormous gaps.)
+
+\ansno3.44:
+ Let $d_n^{(q)}=D_{n-1}^{(q)}\mathbin{\rm mumble}(q-1)$, so that
+"!mumble"
+$D_n^{(q)}=(qD_{n-1}^{(q)}+d_n^{(q)})/\allowbreak{(q-1)}$ and $a_n^{(q)}=
+\lceil D_{n-1}^{(q)}/(q-1)\rceil $. Now $D_{k-1}^{(q)}\le(q-1)n\iff a_k^{(q)}\le n$,
+and the results follow.
+(This is the solution found by "Euler" [|euler-josephus|], who
+determined the $a$'s and $d$'s sequentially without realizing that
+a single sequence $D_n^{(q)}$ would suffice.)
+
+\ansno3.45:
+ Let $\alpha>1$ satisfy $\alpha+1/\alpha=2m$.
+\g Too easy.\g
+Then we find
+$2Y_n=\alpha^{2^n}+\alpha^{-2^n}$, and it follows that
+$Y_n=\bigl\lceil\alpha^{2^n}\!/2\bigr\rceil$.
+\source{"Aho" and "Sloane" [|aho-sloane|].}
+
+\ansno3.46:
+ The hint follows from \equ(3.|floor-in-sqrt|), since $2n(n+1)=
+\bigl\lfloor2(n+\half)^2\bigr\rfloor$. Let
+$n+\theta=\bigl(\sqrt 2^{\,l}+\sqrt 2^{\,l-1}\bigr)m$ and
+$n'+\theta'=\bigl(\sqrt 2^{\,l+1}+\sqrt 2^{\,l}\bigr)m$,
+ where $0\le \theta,\theta'<1$.
+Then $\theta'=2\theta\bmod1=2\theta-d$, where $d$~is $0$ or~$1$.
+We want to prove that $n'=\bigl\lfloor\sqrt 2(n+\half)\bigr\rfloor$;
+this equality holds if and only if
+\begindisplay
+0\le \theta'(2-\sqrt2\,)+\sqrt2(1-d)<2\,.
+\enddisplay
+To solve the recurrence, note that $\spec(1+1/\sqrt2\,)$ and
+$\spec(1+\sqrt2\,)$ partition the positive integers; hence any positive
+integer~$a$ can be written uniquely in the form
+$a=\bigl\lfloor\bigl(\sqrt 2^{\,l}+\sqrt 2^{\,l-1}\bigr)m\bigr\rfloor$,
+ where $l$ and~$m$
+are integers with $m$~odd and $l\ge0$. It follows that
+$L_n=\bigl\lfloor(\sqrt 2^{\,l+n}+\sqrt 2^{\,l+n-1})m\bigr\rfloor$.
+\source{"Graham" and "Pollak" [|graham-pollak|].}
+
+\ansno3.47:
+ (a) $c=-\half$. (b)~$c$ is an integer. (c)~$c=0$.
+(d)~$c$~is arbitrary. See the answer to exercise 1.2.4--40 in
+[|knuth1|] for more general results.
+
+\ansno3.48:
+ \def\:#1{^{{:}#1}}Let $x\:0=1$ and $x\:{(k+1)}=x\lfloor x\:k\rfloor$;
+also let $a_k=\{x\:k\}$ and $b_k=\lfloor x\:k\rfloor$, so that the stated
+identity reads $x^3=3x\:3+3a_1a_2+a_1^3-3b_1b_2+b_1^3$. Since $a_k+b_k=
+x\:k=xb_{k-1}$ for $k\ge0$, we have $(1-xz)(1+b_1z+b_2z^2+\cdots)=
+1-a_1z-a_2z^2-\cdots\,$; thus
+\begindisplay
+{1\over 1-xz}={1+b_1z+b_2z^2+\cdots\over1-a_1z-a_2z^2-\cdots}\,.
+\enddisplay
+Take the logarithm of both sides, to separate the $a$'s from the $b$'s. Then
+differentiate with respect to~$z$, obtaining
+\begindisplay
+{x\over1-xz}=
+{a_1+2a_2z+3a_3z^2+\cdots\over1-a_1z-a_2z^2-\cdots}+
+{b_1+2b_2z+3b_3z^2+\cdots\over1+b_1z+b_2z^2+\cdots}\,.
+\enddisplay
+The coefficient of $z^{n-1}$ on the left is $x^n$; on the right it is
+a formula that matches the given identity when $n=3$.
+\par Similar identities for the more general product $x_0x_1\ldots x_{n-1}$
+can also be derived~[|haaland-knuth|].
+\source{"H{\aa}land" and "Knuth" [|haaland-knuth|].}
+
+\ansno3.49:
+ (Solution by Heinrich "Rolletschek".) We can replace $(\alpha,\beta)$
+\g A more interesting (still unsolved) problem: Restrict both $\alpha$
+and $\beta$ to be $<1$, and ask when the given multiset determines the
+unordered pair~$\{\alpha,\beta\}$.\g
+by $(\{\beta\},\allowbreak{\alpha+\lfloor\beta\rfloor})$
+ without changing $\lfloor n\alpha
+\rfloor+\lfloor n\beta\rfloor$. Hence the condition $\alpha=\{\beta\}$ is
+necessary. It is also sufficient: Let $m=\lfloor\beta\rfloor$ be the least
+element of the given multiset, and let $S$ be the multiset obtained from the
+given one by subtracting $mn$ from the $n$th smallest element, for all~$n$.
+If $\alpha=
+\{\beta\}$, consecutive elements of~$S$ differ by either $0$ or~$2$, hence
+the multiset $\half S=\spec(\alpha)$ determines $\alpha$.
+\source{R.\thinspace L. "Graham" and D.\thinspace R. "Hofstadter".*}
+
+\ansno3.50:
+ According to unpublished notes of William~A. "Veech", it is sufficient
+to have $\alpha\beta$, $\beta$, and~$1$ linearly independent
+over the rationals.
+
+\ansno3.51:
+ H.\thinspace S. "Wilf" observes that the functional equation
+$f(x^2-1)=f(x)^2$ would determine $f(x)$ for all $x\ge\phi$ if we
+knew $f(x)$ on any interval $(\phi\dts\phi+\epsilon)$.
+
+\ansno3.52:
+ There are infinitely many ways to partition the positive
+integers into three or more generalized spectra
+with {\it irrational\/} $\alpha_k$; for example,
+\begindisplay
+\spec(2\alpha;0)\cup\spec(4\alpha;-\alpha)\cup
+\spec(4\alpha;-3\alpha)\cup\spec(\beta;0)
+\enddisplay
+works. But there's a precise sense in which all such partitions arise
+by ``expanding'' a basic one, $\spec(\alpha)\cup\spec(\beta)$;
+see [|graham-cover|]. The only known rational examples, e.g.,
+\begindisplay
+\textstyle\spec(7;-3)\cup\spec({7\over2};-1)\cup\spec({7\over4};0)\,,
+\enddisplay
+are based on parameters like those in the stated conjecture, which
+is due to A.\thinspace S. "Fraenkel" [|fraenkel-cover|].
+\source{"Fraenkel" [|fraenkel-cover|].}
+
+\ansno3.53:
+ Partial results are discussed in [|erdos-graham|, pages 30--31].
+The greedy algorithm probably does not terminate.
+\source{S.\thinspace K. "Stein".*.}

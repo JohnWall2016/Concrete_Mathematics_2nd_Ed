@@ -1,0 +1,971 @@
+
+\ansno8.1:
+ ${1\over24}+{1\over48}+{1\over48}+{1\over48}+{1\over48}+{1\over24}
+={1\over6}$. (In fact, we {\it always\/} get doubles with probability~$1\over6$
+when at least one of the dice is fair.)
+Any two faces whose sum is~$7$ have the same
+probability in distribution
+ $\Pr_1$, so $S=7$ has the same probability as doubles.\par
+\def\dieone{\die{\diedot22}}
+\def\dietwo{\die{\diedot11\diedot33}}
+\def\diethree{\die{\diedot11\diedot22\diedot33}}
+\def\diefour{\die{\diedot11\diedot33\diedot13\diedot31}}
+\def\diefive{\die{\diedot11\diedot22\diedot33\diedot13\diedot31}}
+\def\diesix{\die{\diedot11\diedot12\diedot13\diedot31\diedot32\diedot33}}
+\def\dieseven{\die{\diedot11\diedot12\diedot13\diedot31\diedot32\diedot33\diedot22}}
+\def\dieeight{\die{\diedot11\diedot12\diedot13\diedot31\diedot32\diedot33%
+ \diedot21\diedot23}}
+\def\die#1{{\unitlength=2.5pt\beginpicture(5,4)(-.5,1)
+ \put(0,0){\line(0,1)4}
+ \put(0,0){\line(1,0)4}
+ \put(0,4){\line(1,0)4}
+ \put(4,0){\line(0,1)4}#1\endpicture}}
+\def\diedot#1#2{\put(#1,#2){\disk1}}
+
+\ansno8.2:
+ There are $12$ ways to specify the top and bottom cards and
+$50!$ ways to arrange the others; so the probability is $12\cdt50!/52!=
+12/(51\cdt52)={1\over17\cdt13}={1\over221}$.
+
+\ansno8.3:
+ ${1\over10}(3+2+\cdots+9+2)=4.8$;
+${1\over9}(3^2+2^2+\cdots+9^2+2^2-10(4.8)^2)={388\over45}$, which is
+approximately $8.6$.
+The true mean and variance with a fair coin are $6$ and~$22$, so Stanford
+had an unusually heads-up class.
+The corresponding Princeton figures are $6.4$ and ${562\over45}\approx 12.5$.
+(This distribution has $\kappa_4=2974$, which is rather large. Hence
+the standard deviation of this variance estimate when $n=10$ is also
+rather large,
+$\sqrt{\mathstrut2974/10+2(22)^{2\mathstrut}\!/9}\approx20.1$ according to
+exercise~|var-hatv|. One cannot complain that the students cheated.)
+
+\ansno8.4:
+ This follows from \equ(8.|ind-sum1|) and \equ(8.|ind-sum2|), because
+$F(z)=G(z)H(z)$. (A similar formula holds for all the cumulants,
+even though $F(z)$ and $G(z)$ may have negative coefficients.)
+
+\ansno8.5:
+ Replace $\tt H$ by $p$ and $\tt T$ by $q=1-p$. If $S_A=S_B=\half$
+we have $p^2qN=\half$ and $pq^2N=\half q+\half$; the solution is
+$p=1/\phi^2$, $q=1/\phi$.
+
+\ansno8.6:
+ In this case $X\given y$ has the same distribution as $X$,
+for all~$y$, hence $E(X\given Y)=EX$ is constant and
+$V\bigl(E(X\given Y)\bigr)=0$. Also $V(X\given Y)$ is constant and
+equal to its expected value.
+
+\ansno8.7:
+ We have $1=(p_1+p_2+\cdots+p_6)^2\le6(p_1^2+p_2^2+\cdots+p_6^2)$
+by Chebyshev's monotonic inequality of Chapter~2.
+
+\ansno8.8:
+ Let $p=\Pr\prp(\omega\in A\cap B)$,
+$q=\Pr\prp(\omega\notin A)$, and $r=\Pr\prp(\omega\notin B)$. Then $p+q+r=1$, and
+the identity to be proved is $p=(p+r)(p+q)-qr$.
+
+\ansno8.9:
+ This is true (subject to the obvious proviso that $F$ and $G$
+are defined on the respective ranges of\/~$X$ and $Y$), because
+\begindisplay \openup6pt
+\Pr\pbigi(F(X)=f\ {\rm and}\ G(Y)=g\bigr)
+&=\sum\twoconditions{x\in F^{-1}(f)}{y\in G^{-1}(g)}\Pr\prp(X=x\ {\rm and}\ Y=y)\cr
+&=\sum\twoconditions{x\in F^{-1}(f)}{y\in G^{-1}(g)}\Pr\prp(X=x)\cdot\Pr\prp(Y=y)\cr
+&=\Pr\pbigi(F(X)=f\bigr)\cdot\Pr\pbigi(G(y)=g\bigr)\,.
+\enddisplay
+
+\ansno8.10:
+ Two. Let $x_1<x_2$ be medians; then $1\le\Pr\prp(X\le x_1)+
+\Pr\prp(X\ge x_2)\le 1$, hence equality holds. (Some discrete distributions
+have no median elements. For example, let $\Omega$ be the set of all
+fractions of the form $\pm1/n$, with $\Pr(+1/n)=\Pr(-1/n)={\pi^2\over12}n^{-2}$.)
+
+\ansno8.11:
+ For example, let $K=k$ with probability $4/(k+1)(k+2)(k+3)$,
+for all integers $k\ge0$. Then $EK=1$, but $E(K^2)=\infty$.
+(Similarly we can construct random variables with finite cumulants
+through $\kappa_m$ but with $\kappa_{m+1}=\infty$.)
+
+\ansno8.12:
+ (a) Let $p_k=\Pr\prp(X=k)$. If $0<x\le1$, we have $\Pr\prp(X\le r)=
+\sum_{k\le r}p_k\le\sum_{k\le r}x^{k-r}p_k\le\sum_k x^{k-r}p_k=x^{-r}P(x)$.
+The other inequality has a similar proof. (b)~Let $x=\alpha/(1-\alpha)$ to
+minimize the right-hand side.
+(A more precise estimate for the given sum
+is obtained in exercise 9.|binomial-tail|.)
+
+\ansno8.13:
+ (Solution by Boris "Pittel".) Let us set $Y=(X_1+\cdots+X_n)/n$ and
+$Z=(X_{n+1}+\cdots+X_{2n})/n$. Then
+\begindisplay
+&\Pr\biggl(\Bigl\vert{Y+Z\over2}-\alpha\Bigr\vert\le\bigl\vert Y
+ -\alpha\bigr\vert\biggr)\cr
+&\qquad\ge\;\Pr\biggl(\Bigl\vert{Y-\alpha\over2}\Bigr\vert+
+ \Bigl\vert{Z-\alpha\over2}\Bigr\vert\le\bigl\vert Y-\alpha\bigr\vert\biggr)\cr
+&\qquad=\;\Pr\bigl(@\vert Z-\alpha\vert\le\vert Y-\alpha\vert@\bigr)\;\ge\;
+\textstyle\half\,.\cr
+\enddisplay
+The last inequality is, in fact, `$>$' in any discrete probability
+distribution, because $\Pr\prp(Y=Z)>0$.
+\source{Thomas M. "Cover".*}
+
+\ansno8.14:
+ $\Mean(H)=p\Mean(F)+q\Mean(G)$;
+$\Var(H)=p\Var(F)+q\Var(G)+pq\bigl(\Mean(F)-\Mean(G)\bigr){}^2$.
+(A mixture is actually a special case of conditional probabilities:
+Let $Y$ be the coin, let $X\given@\tt H$ be generated by $F(z)$,
+and let $X\given@\tt T$ be generated by $G(z)$. Then
+$VX=EV(X\given Y)+VE(X\given Y)$, where $EV(X\given Y)=
+pV(X\given@{\tt H})+qV(X\given@{\tt T})$
+and $VE(X\given Y)$
+is the variance of $pz^{\Mean(F)}+qz^{\Mean(G)}$.)
+
+\ansno8.15:
+ By the chain rule, $H'(z)=G'(z)@F'\bigl(G(z)\bigr)$;
+$H''(z)=G''(z)@F'\bigl(G(z)\bigr)+G'(z)^2F''\bigl(G(z)\bigr)$. Hence
+\begindisplay
+\Mean(H)&=\Mean(F)\Mean(G)\,;\cr
+\Var(H)&=\Var(F)\Mean(G)^2+\Mean(F)\Var(G)\,.\cr
+\enddisplay
+(The random variable corresponding to probability distribution~$H$ can
+be understood as follows: Determine a nonnegative integer~$n$ by
+distribution~$F@$; then add the values of~$n$ independent random variables
+that have distribution~$G$. The identity for variance in this exercise
+is a special case of \equ(8.|v:ev+ve|), when $X$ has distribution~$H$
+and $Y$ has distribution~$F$.)
+\source{[|knuth1|, exercise 1.2.10--17].}
+
+\ansno8.16:
+ $e^{w(z-1)}\!/(1-w)$.
+
+\ansno8.17:
+ $\Pr\prp(Y_{n,p}\le m)=\Pr\prp(Y_{n,p}+n\le m+n)={}$probability
+that we need $\le m+n$ tosses to obtain $n$~heads${}={}$probability
+that $m+n$ tosses yield $\ge n$ heads${}=\Pr\prp(X_{m+n,p}\ge n)$. Thus
+\begindisplay
+\sum_{k\le m}{n+k-1\choose k}p^nq^k
+&=\sum_{k\ge n}{m+n\choose k}p^kq^{m+n-k}\cr
+&=\sum_{k\le m}{m+n\choose k}p^{m+n-k}q^k\,;\cr
+\enddisplay
+and this is \equ(5.|partial-binomial|) with $n=r$, $x=q$, $y=p$.
+\source{"Patil" [|patil|].}
+
+\ansno8.18:
+ (a) $G_X(z)=e^{\mu(z-1)}$. (b) The $m$th cumulant is~$\mu$,
+ for all~$m\ge1$.
+(The case $\mu=1$ is called $F_\infty$ in \equ(8.|football-infty|).)
+
+\ansno8.19:
+ (a) $G_{X_1+X_2}(z)=G_{X_1}(z)@G_{X_2}(z)=e^{(\mu_1+\mu_2)(z-1)}$.
+Hence the probability is $e^{-\mu_1-\mu_2}(\mu_1+\mu_2)^n\!/n!$; the sum
+of independent Poisson variables is Poisson.
+(b)~In general, if $K_mX$ denotes the $m$th cumulant of a random variable~$X$,
+we have $K_m(aX_1+bX_2)=a^m(K_mX_1)+b^m(K_mX_2)$, when $a,b\ge0$.
+Hence the answer is $2^m\mu_1+3^m\mu_2$.
+
+\ansno8.20:
+ The general pgf will be $G(z)=z^m\!/F(z)$, where
+\begindisplay\openup4pt
+F(z)&=z^m+(1-z)\sum_{k=1}^m{\widetilde A}_{(k)}\[A^{(k)}=A_{(k)}]@z^{m-k}\,,\cr
+F'(1)&=m-\sum_{k=1}^m{\widetilde A}_{(k)}\[A^{(k)}=A_{(k)}]\,,\cr
+F''(1)&=m(m-1)-2\sum_{k=1}^m(m-k){\widetilde A}_{(k)}\[A^{(k)}=A_{(k)}]\,.\cr
+\enddisplay
+
+\ansno8.21:
+ This is $\sum_{n\ge0}q_n$, where $q_n$ is the probability that the
+game between Alice and Bill is still incomplete after $n$~flips. Let
+$p_n$ be the probability that the game ends at the $n$th flip; then
+$p_n+q_n=q_{n-1}$. Hence the average time to play the game is
+$\sum_{n\ge1}np_n=(q_0-q_1)+2(q_1-q_2)+3(q_2-q_3)+\cdots=q_0+q_1+q_2+\cdots
+=N$, since $\lim_{n\to\infty}nq_n=0$.
+\par Another way to establish this answer is to replace $\tt H$ and
+$\tt T$ by $\half z$. Then the derivative of the first equation in
+\equ(8.|hht:htt|) tells us that $N(1)+N'(1)=N'(1)+S_A'(1)+S_B'(1)$.
+\par By the way, $N={16\over3}$.
+
+\ansno8.22:
+ By definition we have $V(X\given Y)=E(X^2\given Y)-\bigl(E(X\given Y)
+\bigr){}^2$ and
+$V\bigl(E(X\given Y)\bigr)=E\bigl((E(X\given Y))^2\bigr)
+ -\bigl(E\bigl(E(X\given Y)\bigr)\bigr){}^2$;
+hence $E\bigl(V(X\given Y)\bigr)+V\bigl(E(X\given Y)\bigr)=
+E\bigl(E(X^2\given Y)\bigr)
+ -\bigl(E\bigl(E(X\given Y)\bigr)\bigr){}^2$.
+But $E\bigl(E(X\given Y)\bigr)=\sum_y\Pr\prp(Y=y)E(x\given y)=
+\sum_{x,y}\Pr\prp(Y=y)\*\Pr\pbigi((X\given y)=x\bigr)=EX$ and
+$E\bigl(E(X^2\given Y)\bigr)=E(X^2)$, so the result is just $VX$.
+
+\ansno8.23:
+ Let $\Omega_0=\{\,\dieone,\,\diesix\,\}^2$ and
+$\Omega_1=\{\,\dietwo,\,\diethree,\,\diefour,\,\diefive\,\}^2$;
+and let $\Omega_2$ be the other 16 elements of~$\Omega$. Then
+$\Pr_{11}(\omega)-\Pr_{00}(\omega)={+20\over576}$, ${-7\over576}$, ${+2\over576}$
+according as $\omega\in\Omega_0$, $\Omega_1$, $\Omega_2$. The events~$A$
+must therefore be chosen with $k_j$ elements from $\Omega_j$, where
+$(k_0,k_1,k_2)$ is one of the following:
+$(0,0,0)$,
+$(0,2,7)$,
+$(0,4,14)$,
+$(1,4,4)$,
+$(1,6,11)$,
+$(2,6,1)$,
+$(2,8,8)$,
+$(2,10,15)$,
+$(3,10,5)$,
+$(3,12,12)$,
+$(4,12,2)$,
+$(4,14,9)$,
+$(4,16,16)$.
+For example, there are ${4\choose2}{16\choose6}{16\choose1}$ events of
+type~$(2,6,1)$. The total number of such events is
+$[z^0](1+z^{20})^4(1+z^{-7})^{16}(1+z^2)^{16}$, which turns out to be
+$1304872090$. If we restrict ourselves to events that depend on $S$ only,
+we get 40 solutions $S\in A$, where $A=\emptyset$,
+$\{{2\atop12},{4\atop10},{6\atop8}\}$,
+$\{{2\atop12},5,9\}$,
+$\{2,12,{4\atop10},{6\atop8},5,9\}$,
+$\{2,4,6,8,10,12\}$,
+$\{{3\atop11},7,{5\atop9},4,10\}$,
+and the complements of these sets.
+(Here the notation `$2\atop12$' means either $2$ or $12$ but not both.)
+
+\ansno8.24:
+ (a) Any one of the dice ends up in $J$'s possession with
+probability $p={1\over6}+\bigl({5\over6}\bigr){}^2p$; hence $p={6\over11}$.
+Let $q={5\over11}$. Then the pgf for $J$'s total holdings is $(q+pz)^{2n+1}$,
+with mean $(2n+1)p$ and variance $(2n+1)pq$, by \equ(8.|v-binom|).
+(b)~${5\choose3}p^3q^2+{5\choose4}p^4q+{5\choose5}p^5={94176\over161051}
+\approx .585$.
+\source{John Knuth (age 4) and DEK; 1975 final."!Knuth, John""!Knuth, Don"}
+
+\ansno8.25:
+ The pgf for the current stake after $n$
+rolls is $G_n(z)$, where
+\begindisplay \openup3pt
+G_0(z)&=z^A\,;\cr
+G_n(z)&=\textstyle\sum_{k=1}^6G_{n-1}(z^{2(k-1)/5})/6\,,
+\qquad\hbox{for $n>0$}.
+\enddisplay
+(The noninteger exponents cause no trouble.) It follows that
+\g \vskip-20pt
+This problem can perhaps be solved more easily without generating
+functions than with them.\g
+$\Mean(G_n)=\Mean(G_{n-1})$, and $\Var(G_n)+\Mean(G_n)^2=
+{22\over15}(\Var(G_{n-1})+\Mean(G_{n-1})^2)$. So the mean is
+always~$A$, but the variance grows
+to $\bigl(\bigl({22\over15}\bigr){}^n-1\bigr)A^2$.
+
+\ansno8.26:
+ The pgf\/ $F_{l,n}(z)$ satisfies $F'_{l,n}(z)=F_{l,n-l}(z)/l$;
+hence $\Mean(F_{l,n})=F'_{l,n}(1)=\[n\ge l]/l$ and $F''_{l,n}(1)
+=\[n\ge2l]/l^2$; the variance is easily computed. (In fact, we have
+\begindisplay
+F_{l,n}(z)=\sum_{0\le k\le n/l}{1\over k!}\Bigl({z-1\over l}\Bigr)^{\!k}\,,
+\enddisplay
+which approaches a "Poisson distribution" with mean $1/l$ as $n\to\infty$.)
+\source{[|knuth1|, exercise 1.3.3--18].}
+
+\ansno8.27:
+ $(n^2\Sigma_3-3n\Sigma_2\Sigma_1
++2\Sigma_1^3)/n(n-1)(n-2)$ has the desired mean, where $\Sigma_k=
+X_1^k+\cdots+X_n^k$. This follows from the identities
+\begindisplay
+E\Sigma_3&=n\mu_3\,;\cr
+E(\Sigma_2\Sigma_1)&=n\mu_3+n(n-1)\mu_2\mu_1\,;\cr
+E(\Sigma_1^3)&=n\mu_3+3n(n-1)\mu_2\mu_1+n(n-1)(n-2)\mu_1^3\,.\cr
+\enddisplay
+Incidentally, the third cumulant is $\kappa_3=E\bigl((X-EX)^3\bigr)$,
+but the fourth cumulant does not have such a simple expression;
+we have $\kappa_4=E\bigl((X-EX)^4\bigr)-3(VX)^2$.
+\source{"Fisher" [|ra-fisher|].}
+
+\ansno8.28:
+ (The exercise implicitly calls for $p=q=\half$, but the general
+answer is given here for completeness.) Replace $\tt H$ by $pz$ and $\tt T$
+by $qz$, getting $S_A(z)=p^2qz^3\!/(1-pz)(1-qz)(1-pqz^2)$ and
+$S_B(z)=pq^2z^3\!/(1-qz)(1-pqz^2)$. The pgf for the conditional probability
+that Alice wins at the $n$th flip, given that she wins the game, is
+\begindisplay
+{S_A(z)\over S_A(1)}=z^3\cdot
+{q\over 1-pz}\cdot{p\over 1-qz}\cdot{1-pq\over 1-pqz^2}\,.
+\enddisplay
+This is a product of pseudo-pgf's, whose mean is $3+p/q+q/p+2pq/(1-pq)$.
+The formulas for Bill are the same but without the factor $q/(1-pz)$, so
+Bill's mean is $3+q/p+2pq/(1-pq)$. When $p=q=\half$, the answer in
+case~(a) is $17\over3$; in case~(b) it is $14\over3$. Bill wins only
+half as often, but when he does win he tends to win sooner. The overall
+average number of flips is ${2\over3}\cdt{17\over3}+{1\over3}\cdt{14\over3}
+={16\over3}$, agreeing with exercise~|n-meaning|. The solitaire game for
+each pattern has a waiting time of~$8$.
+
+\ansno8.29:
+ Set ${\tt H}={\tt T}=\half$ in
+\begindisplay
+1+N(@{\tt H+T}@)&=N+S_A+S_B+S_C\cr
+N\,{\tt HHTH}&=S_A({\tt HTH}+1)+S_B({\tt HTH+TH})+S_C({\tt HTH+TH})\cr
+N\,{\tt HTHH}&=S_A({\tt THH+H})+S_B({\tt THH}+1)+S_C({\tt THH})\cr
+N\,{\tt THHH}&=S_A({\tt HH})+S_B({\tt H})+S_C\cr
+\enddisplay
+to get the winning probabilities. In general we will have
+$S_A+S_B+S_C=1$ and
+\begindisplay
+S_A(A{:}A)+S_B(B{:}A)+S_C(C{:}A)
+&=S_A(A{:}B)+S_B(B{:}B)+S_C(C{:}B)\cr
+&=S_A(A{:}B)+S_B(B{:}C)+S_C(C{:}C)\,.
+\enddisplay
+In particular, the equations $9S_A+3S_B+3S_C=5S_A+9S_B+S_C=2S_A+4S_B+8S_C$
+imply that $S_A={16\over52}$, $S_B={17\over52}$, $S_C={19\over52}$.
+\source{"Guibas" and "Odlyzko" [|guibas-odlyzko|].}
+
+\ansno8.30:
+ The variance of $P(h_1,\ldots,h_n;k)\given k$ is the variance of
+the shifted binomial distribution
+$\bigl((m-1+z)/m\bigr){}^{k-1}z$, which is $(k-1)({1\over m})(1-{1\over m})$
+by \equ(8.|v-binom|). Hence the average of the variance is $\Mean(S)(m-1)/m^2$.
+The variance of the average is the variance of $(k-1)/m$, namely
+$\Var(S)/m^2$. According to \equ(8.|v:ev+ve|), the sum of these two
+quantities should be $VP$, and it is. Indeed, we have just replayed
+the derivation of \equ(8.|v-success|) in slight disguise. (See exercise~%
+|pgf-composition|.)
+
+\ansno8.31:
+ (a) A brute force solution would set up five equations in five unknowns:
+\begindisplay
+&\textstyle
+A=\half zB+\half zE\,;\quad B=\half zC\,;\quad C=1+\half zB+\half zD\,;\cr
+&\textstyle
+D=\half zC +\half zE\,;\quad E=\half zD\,.
+\enddisplay
+ But positions $C$ and~$D$ are equidistant from
+the goal, as are $B$ and~$E$, so we can lump them together. If $X=B+E$
+and $Y=C+D$, there are now three equations:
+\begindisplay
+\textstyle A=\half zX\,;\quad X=\half zY\,;\quad Y=1+\half zX+\half zY\,.
+\enddisplay
+Hence $A=z^2\!/(4-2z-z^2)$; we have $\Mean(A)=6$ and $\Var(A)=22$. (Rings
+a bell? In fact,
+this problem is equivalent to flipping a fair coin until getting heads
+twice in a row: Heads means ``advance toward the apple'' and tails
+means ``go back.'')
+(b)~Chebyshev's inequality says that $\Pr\prp(S\ge100)=
+\Pr\pbigi((S-6)^2\ge94^2\bigr)\le 22/94^2\approx.0025$.
+(c)~The second tail inequality says that $\Pr\prp(S\ge100)\le1/x^{98}(4-2x-x^2)$
+for all $x\ge1$, and we get the upper bound $0.00000005$ when $x=(\sqrt{49001}
+-99)/100$. (The actual probability is approximately
+$0.0000000009$, according to exercise |fib-heads|.)
+
+\ansno8.32:
+ By symmetry, we can reduce each month's situation to one
+of four possibilities:
+\g \noindent\llap{``}"Toto", I have a feeling we're not in Kansas anymore.''\par
+\hfill\dash---Dorothy"!Gale""!Baum"\g
+\begindisplay \openup-2pt
+&D,\ &\hbox{the states are diagonally opposite;}\cr
+&A,\ &\hbox{the states are adjacent and not Kansas;}\cr
+&K,\ &\hbox{the states are Kansas and one other;}\cr
+&S,\ &\hbox{the states are the same.}
+\enddisplay
+Considering the Markovian transitions, we get four equations
+\begindisplay \openup2pt
+D&=\textstyle 1+z({2\over9}D+{2\over12}K)\cr
+A&=\textstyle z({4\over9}A+{4\over12}K)\cr
+K&=\textstyle z({4\over9}D+{4\over9}A+{4\over12}K)\cr
+S&=\textstyle z({3\over9}D+{1\over9}A+{2\over12}K)\cr
+\enddisplay
+whose sum is $D+K+A+S=1+z(D+A+K)$. The solution is
+\begindisplay
+S={81z-45z^2-4z^3\over243-243z+24z^2+8z^3}\,,
+\enddisplay
+but the simplest way to find the mean and variance may be to
+write $z=1+w$ and expand in powers of $w$, ignoring multiples of~$w^2$:
+\begindisplay
+D&=\textstyle{27\over16}+{1593\over512}w+\cdots\,;\cr
+A&=\textstyle{9\over8}+{2115\over256}w+\cdots\,;\cr
+K&=\textstyle{15\over8}+{2661\over256}w+\cdots\,.\cr
+\enddisplay
+Now $S'(1)={27\over16}+{9\over8}+{15\over8}={75\over16}$, and
+$\half S''(1)={1593\over512}+{2115\over256}+{2661\over256}={11145\over512}$.
+The mean is $75^{\mathstrut}\over16$ and the variance is $105\over4$. (Is there
+a simpler way?)
+\source{1977 final exam.}
+
+\ansno8.33:
+ First answer: "Clearly" yes, because the hash values $h_1$, \dots,~%
+$h_n$ are independent. Second answer: Certainly no, even though the
+hash values $h_1$, \dots,~$h_n$ are independent. We have
+$\Pr\prp(X_j=0)=\sum_{k=1}^ns_k\bigl(\[j\ne k](m-1)/m\bigr)=(1-s_j)(m-1)/m$,
+but $\Pr\prp(X_1=X_2=0)=\sum_{k=1}^ns_k\[k>2](m-1)^2\!/m^2=(1-s_1-s_2)(m-1)^2\!/m^2
+\ne \Pr\prp(X_1=0)@\Pr\prp(X_2=0)$.
+
+\ansno8.34:
+ Let $[z^n]\,S_m(z)$ be the probability that Gina has advanced
+$<m$ steps after taking $n$~turns. Then $S_m(1)$ is her average score on
+a par-$m$ hole; $[z^m]\,S_m(z)$ is the probability that she loses such a hole
+against a steady player;
+and $1-[z^{m-1}]\,S_m(z)$ is the probability that she wins it.
+We have the recurrence
+\begindisplay
+S_0(z)&=0\,;\cr
+S_m(z)&=\bigl(1+pzS_{m-2}(z)+qzS_{m-1}(z)\bigr)/(1-rz)\,,\qquad\hbox{for $m>0$}.
+\enddisplay
+To solve part (a), it suffices to compute the coefficients for $m,n\le4$;
+it is convenient to replace $z$ by $100w$ so that the computations involve
+nothing but integers. We obtain the following tableau of coefficients:
+\begindisplay \def\preamble{&\hfill$##$\quad} \openup-1pt
+S_0&0&0&0&0&0\cr
+S_1&1&4&16&64&256\cr
+S_2&1&95&744&4432&23552\cr
+S_3&1&100&9065&104044&819808\cr
+S_4&1&100&9975&868535&12964304\cr
+\enddisplay
+Therefore Gina wins with probability $1-.868535=.131465$; she loses
+with probability $.12964304$. (b)~To find the mean number of strokes, we
+compute
+\begindisplay
+\textstyle S_1(1)={25\over24}\,;\enspace
+S_2(1)={4675\over2304}\,;\enspace
+S_3(1)={667825\over221184}\,;\enspace
+S_4(1)={85134475\over21233664}\,.
+\enddisplay
+(Incidentally, $S_5(1)\approx4.9995$; she wins with respect to both holes
+and strokes on a par-$5$ hole, but loses either way when par is~$3$.)
+\source{"Hardy" [|hardy-golf|] has an incorrect analysis leading to the opposite
+conclusion.}
+
+\ansno8.35:
+ The condition will be true for all $n$ if and only if it is
+true for~$n=1$, by the Chinese remainder theorem. One necessary and
+sufficient condition is the polynomial identity
+\begindisplay
+&\bigl(p_2{+}p_4{+}p_6+(p_1{+}p_3{+}p_5)w\bigr)
+\bigl(p_3{+}p_6+(p_1{+}p_4)z+(p_2{+}p_5)z^2\bigr)\cr
+&\qquad=(p_1wz+p_2z^2+p_3w+p_4z+p_5wz^2+p_6)\,,
+\enddisplay
+but that just more-or-less restates the problem. A simpler characterization is
+\begindisplay
+(p_2+p_4+p_6)(p_3+p_6)=p_6\,,\qquad
+(p_1+p_3+p_5)(p_2+p_5)=p_5\,,
+\enddisplay
+which checks only two of the coefficients in the former product. The general
+solution has three degrees of freedom: Let $a_0+a_1=b_0+b_1+b_2=1$, and
+put $p_1=a_1b_1$, \ $p_2=a_0b_2$, \ $p_3=a_1b_0$, \ $p_4=a_0b_1$, \ $p_5=a_1b_2$,
+\ $p_6=a_0b_0$.
+\source{1981 final exam.}
+
+\ansno8.36:
+ (a) \dieone\quad\dietwo\quad\dietwo\quad\diethree\quad\diethree\quad
+\diefour\thinspace. (b)~If the $k$th die has faces with $s_1$, \dots,~$s_6$
+spots, let $p_k(z)=z^{s_1}+\cdots+z^{s_6}$. We want to find such polynomials
+with $p_1(z)\ldots p_n(z)=(z+z^2+z^3+z^4+z^5+z^6)^n$. The irreducible
+factors of this polynomial with rational coefficients
+are $z^n{(z+1)^n}\*{(z^2+z+1)^n}{(z^2-z+1)^n}$; hence $p_k(z)$ must
+be of the form $z^{a_k}{(z+1)^{b_k}}\*{(z^2+z+1)^{c_k}}{(z^2-z+1)^{d_k}}$.
+We must have $a_k\ge1$, since $p_k(0)=0$; and in fact $a_k=1$, since
+$a_1+\cdots+a_n=n$. Furthermore the condition $p_k(1)=6$ implies that
+$b_k=c_k=1$. It is now easy to see that $0\le d_k\le2$, since $d_k>2$ gives
+negative coefficients. When $d=0$ and $d=2$,
+we get the two dice in part~(a); therefore the only solutions have $k$~pairs
+of dice as in~(a), plus $n-2k$~ordinary dice, for some $k\le\half n$.
+\source{"Gardner" [|gardner-dice|] credits George "Sicherman".}
+
+\ansno8.37:
+ The number of coin-toss sequences of length~$n$ is $F_{n-1}$,
+for all $n>0$, because of the relation between domino tilings
+and coin flips. Therefore the probability that exactly $n$ tosses are needed
+is $F_{n-1}/2^n$, when the coin is fair. Also $q_n=F_{n+1}/2^{n-1}$,
+since $\sum_{k\ge n}F_kz^k=(F_nz^n+F_{n-1}z^{n+1})/(1-z-z^2)$.
+(A~systematic solution via generating functions is, of course, also possible.)
+
+\ansno8.38:
+ When $k$ faces have been seen, the task of rolling a new
+one is equivalent to flipping coins with success probability
+$p_k=(m-k)/m$. Hence the pgf is $\prod_{k=0}^{l-1}p_kz/(1-q_kz)=
+\prod_{k=0}^{l-1}(m-k)z/(m-kz)$.
+The mean is $\sum_{k=0}^{l-1}p_k^{-1}=
+m(H_m-H_{m-l})$; the variance is $m^2\bigl(H_m^{(2)}-H_{m-l}^{(2)}\bigr)
+-m(H_m-H_{m-l})$; and equation \equ(7.|stirl2-gf|) provides a closed form
+for the requested probability, namely $m^{-n}m!{n-1\brace l-1}
+/(m-l)!$. (The problem discussed in this exercise is
+traditionally called ``"coupon collecting".\qback'')
+\source{[|knuth2|, exercise 3.3.2--10].}
+
+\ansno8.39:
+ $E(X)=P(-1)$; \ $V(X)=P(-2)-P(-1)^2$; \ $E(\ln X)=-P'(0)$.
+\source{[|mariage-stables|, exercise 4.3(a)].}
+
+\ansno8.40:
+ (a) We have $\kappa_m=n\bigl(0!{m\brace1}p-1!{m\brace2}p^2+2!{m\brace3}p^3
+-\cdots\,\bigr)$, by \equ(7.|exp-power-gf|). Incidentally, the third cumulant is
+$npq(q-p)$ and the fourth is $npq(1-6pq)$. The identity
+$q+pe^t=(p+qe^{-t})e^t$ shows that $f_m(p)=(-1)^mf_m(q)+\[m=1]$;
+hence we can write $f_m(p)=g_m(pq)(q-p)^{[m\,\,\rm odd]}$, where $g_m$
+is a polynomial of degree $\lfloor m/2\rfloor$, whenever $m>1$.
+(b)~Let $p=\half$ and
+$F(t)=\ln(\half+\half e^t)$. Then $\sum_{m\ge1}\kappa_m t^{m-1}\!/(m-1)!
+=F'(t)=1-1/(e^t+1)$, and we can use exercise 6.|z/ez+1|.
+
+\ansno8.41:
+ If $G(z)$ is the pgf for a random variable $X$ that assumes only
+positive integer values, then $\int_0^1 G(z)\,dz/z=\sum_{k\ge1}\Pr\prp(X=k)/k
+=E(X^{-1})$. If\/ $X$ is the distribution of the number of flips to obtain
+$n+1$ heads, we have $G(z)=\bigl(pz/(1-qz)\bigr)^{\!n+1}$ by
+\equ(8.|bernoulli-trials|), and the integral is
+\begindisplay
+\int_0^1\biggl({pz\over1-qz}\biggr)^{\!n+1}{dz\over z}=
+\int_0^1{w^n\,dw\over 1+(q/p)w}
+\enddisplay
+if we substitute $w=pz/(1-qz)$. When $p=q$ the integrand can be written
+$(-1)^n\bigl((1+w)^{-1}-1+w-w^2+\cdots+(-1)^n w^{n-1}\bigr)$, so the
+integral is $(-1)^n\bigl(\ln2-1+\half-{1\over3}+\cdots+(-1)^n\!/n\bigr)$.
+We have $H_{2n}-H_n=\ln2-{1\over4}n^{-1}+{1\over16}n^{-2}+O(n^{-4})$
+by \equ(9.|o-harmonic|), and it follows that $E(X_{n+1}^{-1})=
+\half n^{-1}-{1\over4}n^{-2}+O(n^{-4})$.
+\source{"Feller" [|feller|, exercise IX.33].}
+
+\ansno8.42:
+ Let $F_n(z)$ and $G_n(z)$ be pgf's for the number
+of employed evenings, if the man is initially unemployed or employed,
+respectively. Let $q_h=1-p_h$ and $q_f=1-p_f$. Then $F_0(z)=G_0(z)=1$, and
+\begindisplay
+F_n(z)&=p_hzG_{n-1}(z)+q_hF_{n-1}(z)\,;\cr
+G_n(z)&=p_f@F_{n-1}(z)+q_f@zG_{n-1}(z)\,.
+\enddisplay
+The solution is given by the super generating function
+\begindisplay
+G(w,z)=\sum_{n\ge0}
+G_n(z)@w^n=A(w)/\bigl(1-zB(w)\bigr)\,,
+\enddisplay
+where $B(w)=w\bigl(q_f-(q_f-p_h)w\bigr)/
+(1-q_hw)$ and $A(w)=\bigl(1-B(w)\bigr)/(1-w)$. Now
+$\sum_{n\ge0}G'_n(1)@w^n=\alpha w/(1-w)^2+\beta/(1-w)
+-\beta/\bigl(1-(q_f-p_h)w\bigr)$ where
+\begindisplay
+\alpha={p_h\over p_h+p_f}\,,\qquad
+\beta={p_f(q_f-p_h)\over(p_h+p_f)^2}\,;
+\enddisplay
+hence $G_n'(1)=\alpha n+\beta\bigl(1-(q_f-p_h)^n\bigr)$. (Similarly
+$G_n''(1)=\alpha^2 n^2+O(n)$, so the variance is $O(n)$.)
+
+\ansno8.43:
+ $G_n(z)=\sum_{k\ge0}{n\brack k}z^k\!/n!=z\_^n\!/n!$, by
+\equ(6.|expand-rising-to-ord|). This is a product of binomial pgf's,
+$\prod_{k=1}^n\bigl((k-1+z)/k\bigr)$, where the $k$th has mean $1/k$
+and variance $(k-1)/k^2$; hence $\Mean(G_n)=H_n$ and $\Var(G_n)=
+H_n-H_n^{(2)}$.
+\source{[|knuth1|, sections 1.2.10 and 1.3.3].}
+
+\ansno8.44:
+ (a) The champion must be undefeated in $n$ rounds, so the answer
+is~$p^n$. (b,c)~Players $x_1$, \dots,~$x_{2^k}$ must be ``seeded'' (by
+chance) in distinct subtournaments and they must win all $2^k(n-k)$
+of their matches. The $2^n$ leaves of the tournament tree can be
+filled in $2^n!$ ways; to seed it we have $2^k!(2^{n-k})^{2^k}$ ways
+to place the top $2^k$ players, and $(2^n-2^k)!$ ways to place the
+others. Hence the probability is $(2p)^{2^k(n-k)}\big/{2^n\choose2^k}$.
+When $k=1$ this simplifies to $(2p^2)^{n-1}\!/(2^n-1)$.
+(d)~Each tournament outcome corresponds to a permutation of the players:
+Let $y_1$ be the champ; let $y_2$ be the other finalist; let
+$y_3$ and $y_4$ be the players who lost to $y_1$ and $y_2$ in the
+semifinals; let $(y_5,\ldots,y_8)$ be those who lost respectively
+to $(y_1,\ldots,y_4)$ in the quarterfinals; etc. (Another proof shows
+that the first round has $2^n!/2^{n-1}!$ essentially different outcomes;
+the second round has $2^{n-1}!/2^{n-2}!$; and so on.) (e)~Let $S_k$
+be the set of $2^{k-1}$ potential opponents of $x_2$ in the $k$th round.
+The conditional probability that $x_2$ wins, given that $x_1$ belongs to~$S_k$, is
+\begindisplay
+\Pr(\hbox{$x_1$ plays $x_2$})\cdt p^{n-1}(1-p)\,&+\,
+\Pr(\hbox{$x_1$ doesn't play $x_2$})\cdt p^n\cr
+=p^{k-1}p^{n-1}(1-p)\,&+\,(1-p^{k-1})p^n\,.
+\enddisplay
+The chance that $x_1\in S_k$ is $2^{k-1}\!/(2^n-1)$; summing on $k$ gives
+the answer:
+\begindisplay\tightplus
+\sum_{k=1}^n{2^{k-1}\over2^n-1}\bigl(p^{k-1}p^{n-1}(1{-}p)+(1{-}p^{k-1})p^n\bigr)
+=p^n-{(2p)^n-1\over2^n-1}\,p^{n-1}\,.
+\enddisplay
+(f) Each of the $2^n!$ tournament outcomes has a certain probability of
+occurring, and the probability that $x_j$ wins is the sum of these probabilities
+over all ${(2^n-1)!}$ tournament outcomes in which $x_j$ is champion.
+Consider interchanging $x_j$ with $x_{j+1}$ in all those outcomes;
+this change doesn't affect the probability if $x_j$ and $x_{j+1}$ never meet,
+but it multiplies the probability by $(1-p)/p<1$ if they do meet.
+\source{1984 final exam.}
+
+\ansno8.45:
+ (a) $A(z)=1/(3-2z)$; $B(z)=zA(z)^2$; $C(z)=z^2A(z)^3$. The pgf
+for sherry when it's bottled is $z^3A(z)^3$, which is $z^3$ times
+a negative binomial distribution with parameters $n=3$, $p={1\over3}$.
+(b)~$\Mean(A)=2$, $\Var(A)=6$; $\Mean(B)=5$, $\Var(B)=2\Var(A)=12$;
+$\Mean(C)=8$, $\Var(C)=18$. The sherry is nine years old, on the average.
+The fraction that's 25~years old is ${-3\choose22}(-2)^{22}3^{-25}=
+{24\choose22}2^{22}3^{-25}=23\cdt({2\over3})^{24}\approx.00137$.
+(c)~Let the coefficient of $w^n$ be the pgf for the beginning of year~$n$.
+Then
+\begindisplay \openup3pt
+A&=\textstyle\bigl(1+{1\over3}w/(1-w)\bigr)/(1-{2\over3}zw)\,;\cr
+B&=\textstyle\bigl(1+{1\over3}zwA\bigr)/(1-{2\over3}zw)\,;\cr
+C&=\textstyle\bigl(1+{1\over3}zwB\bigr)/(1-{2\over3}zw)\,.\cr
+\enddisplay
+Differentiate with respect to~$z$ and set $z=1$; this makes
+\begindisplay
+C'={8\over1-w}-{1/2\over(1-{2\over3}w)^3}
+-{3/2\over(1-{2\over3}w)^2}
+-{6\over1-{2\over3}w}\,.
+\enddisplay
+The average age of bottled sherry $n$ years after the process started is
+$1$~greater than the coefficient of~$w^{n-1}$, namely
+$9-({2\over3})^n(3n^2+21n+72)/8$. (This already exceeds~$8$ when $n=11$.)
+
+\ansno8.46:
+ (a) $P(w,z)=1+\half\bigl(wP(w,z)+zP(w,z)\bigr)=\bigl(1-\half(w+z)\bigr)
+{}^{-1}$, hence $p_{mn}=2^{-m-n}{m+n\choose n}$. (b)~$P_k(w,z)=
+\half(w^k+z^k)P(w,z)$; hence
+\begindisplay
+p_{k,m,n}=2^{k-1-m-n}\biggl({m+n-k\choose m}+
+{m+n-k\choose n}\biggr)\,.
+\enddisplay
+ (c)~$\sum_k kp_{k,n,n}=\sum_{k=0}^n
+k2^{k-2n}{2n-k\choose n}=\sum_{k=0}^n(n-k)2^{-n-k}{n+k\choose n}$;
+this can be summed using \equ(5.|half/2|):
+\begindisplay
+&\sum_{k=0}^n2^{-n-k}\biggl((2n+1){n+k\choose n}-(n+1){n+1+k\choose n+1}\biggr)\cr
+&\qquad=(2n+1)-(n+1)2^{-n}\biggl(2^{n+1}-2^{-n-1}{2n+2\choose n+1}\biggr)\cr
+&\qquad={2n+1\over 2^{2n}}{2n\choose n}-1\,.
+\enddisplay
+(The methods of Chapter 9 show that this is $2\sqrt{n/\pi}-1+O(n^{-1/2})$.)
+\source{"Feller" [|feller|] credits Hugo "Steinhaus".}
+
+\ansno8.47:
+ After $n$ irradiations there are $n+2$ equally likely receptors.
+Let the random variable $X_n$ denote the number of diphages present;
+then $X_{n+1}=X_n+Y_n$, where $Y_n=-1$ if the $(n+1)$st particle hits
+a diphage receptor (conditional probability $2X_n/(n+2)$) and $Y_n=+2$ otherwise.
+Hence
+\begindisplay
+EX_{n+1}=EX_n+EY_n=EX_n-2EX_n/(n{+}2)+2\bigl(1-2EX_n/(n{+}2)\bigr)\,.
+\enddisplay
+The recurrence $(n+2)EX_{n+1}=(n-4)EX_n+2n+4$ can be solved if we multiply
+both sides by the summation factor $(n+1)\_5$; or we can guess the
+answer and prove it by induction: $EX_n=(2n+4)/7$ for all $n>4$.
+(Incidentally, there are always two diphages and one triphage after five
+steps, regardless of the configuration after four.)
+\source{1974 final, suggested by ``fringe analysis'' of 2-3 trees.}
+
+\ansno8.48:
+ (a) The distance between frisbees (measured so as to make it an
+even number) is either $0$, $2$, or~$4$ units, initially~$4$.
+The corresponding generating functions $A$, $B$, $C$ (where, say,
+$[z^n]\,C$ is the probability of distance~$4$ after $n$ throws)
+satisfy
+\begindisplay
+\textstyle A={1\over4}zB\,,\quad B=\half zB+{1\over4}zC\,,\quad
+C=1+{1\over4}zB+{3\over4}zC\,.
+\enddisplay
+It follows that $A=z^2\!/(16-20z+5z^2)=z^2\!/F(z)$, and we have $\Mean(A)=2-
+\Mean(F)=12$, $\Var(A)=-\Var(F)=100$. (A more difficult but more amusing
+solution factors $A$ as follows:
+\begindisplay
+A={p_1z\over 1-q_1z}\cdot{p_2z\over 1-q_2z}=
+{p_2\over p_2-p_1}{p_1z\over1-q_1z}\,+\,
+{p_1\over p_1-p_2}{p_2z\over1-q_2z}\,,
+\enddisplay
+where $p_1=\phi^2\!/4=(3+\sqrt5\,)/8$,
+$p_2=\phihat^2\!/4=(3-\sqrt5\,)/8$,
+and $p_1+q_1=p_2+q_2=1$. Thus, the game is equivalent to having two
+biased coins whose heads probabilities are $p_1$ and $p_2$; flip
+the coins one at a time until they have both come up heads, and the
+total number of flips will have the same distribution as the number of
+frisbee throws. The mean
+and variance of the waiting times for these two coins are
+respectively $6\mp2\sqrt5$ and $50\mp22\sqrt5$, hence the total
+mean and variance are $12$ and $100$ as before.)
+\par(b) Expanding the generating function in partial fractions
+makes it possible to sum the probabilities. (Note that $\sqrt 5/(4\phi)+
+\phi^2\!/4=1$, so the answer can be stated in terms of powers of $\phi$.)
+ The game will last more
+than $n$~steps with probability $5^{(n-1)/2}4^{-n}(\phi^{n+2}-\phi^{-n-2})$;
+when $n$ is even this is $5^{n/2}4^{-n}F_{n+2}$.
+So the answer is $5^{50}4^{-100}F_{102}\approx.00006$.
+\source{1979 final exam.}
+
+\ansno8.49:
+ (a) If $n>0$, $P_N(0,n)=\half\[N=0]+{1\over4}P_{N-1}(0,n)
++{1\over4}P_{N-1}(1,n{-}1)$; $P_N(m,0)$ is similar; $P_N(0,0)=\[N=0]$.
+Hence
+\begindisplay \openup2pt
+g_{m,n}&=\textstyle{1\over4}zg_{m-1,n+1}+\half zg_{m,n}+{1\over4}zg_{m+1,n-1}\,;\cr
+g_{0,n}&=\textstyle\half+{1\over4}zg_{0,n}+{1\over4}g_{1,n-1}\,;\quad\rm etc.\cr
+\enddisplay
+(b) $g'_{m,n}=1+{1\over4}g'_{m-1,n+1}+\half g'_{m,n}+{1\over4}g'_{m+1,n-1}$;
+$g'_{0,n}=\half+{1\over4}g'_{0,n}+{1\over4}g'_{1,n-1}$; etc. By induction
+on~$m$, we have $g'_{m,n}=(2m+1)g'_{0,m+n}-2m^2$ for all $m,n\ge0$. And
+since $g'_{m,0}=g'_{0,m}$, we must have $g'_{m,n}=m+n+2mn$. (c)~The recurrence
+is satisfied when $mn>0$, because
+\begindisplay \openup4pt
+\sin(2m+1)\theta&={1\over\cos^2\theta}\biggl({\sin(2m-1)\theta\over4}\cr
+&\hskip7em +{\sin(2m+1)\theta\over2}+{\sin(2m+3)\theta\over4}\biggr)\,;
+\enddisplay
+this is a consequence of the identity $\sin(x-y)+\sin(x+y)=2\sin x\cos y$.
+So all that remains is to check the boundary conditions.
+\source{"Blom" [|blom|]; 1984 final exam.}
+
+\ansno8.50:
+ (a) Using the hint, we get
+\begindisplay
+&3(1-z)^2\sum_k{1/2\choose k}\biggl({8\over9}z\biggr)^{\!k}(1-z)^{2-k}\cr
+&\qquad=3(1-z)^2\sum_k{1/2\choose k}\biggl({8\over9}\biggr)^{\!k}
+ \sum_j{k+j-3\choose j}z^{j+k}\,;
+\enddisplay
+now look at the coefficient of $z^{3+l}$.
+(b)~$H(z)={2\over3}+{5\over27}z+\half\sum_{l\ge0}c_{3+l}z^{2+l}$.
+(c)~Let $r=\sqrt{(1-z)(9-z)}$. One can show that $(z-3+r)(z-3-r)=4z$,
+and hence that $\bigl(r/(1-z)+2\bigr){}^2=(13-5z+4r)/(1-z)=
+\bigl(9-H(z)\bigr)/\bigl(1-H(z)\bigr)$. (d)~Evaluating the first
+derivative at $z=1$ shows that $\Mean(H)=1$. The second derivative
+diverges at $z=1$, so the variance is infinite.
+\source{1986 final exam.}
+
+\ansno8.51:
+ (a) Let $H_n(z)$ be the pgf for your holdings after $n$ rounds of play,
+with $H_0(z)=z$. The distribution for $n$ rounds is
+\begindisplay
+H_{n+1}(z)=H_n\bigl(H(z)\bigr)\,,
+\enddisplay
+so the result is true by induction (using the amazing identity of
+the preceding problem). (b)~$g_n=H_n(0)-H_{n-1}(0)=4/n(n+1)(n+2)
+=4(n-1)\_{-3}$. The mean is $2$, and the variance is infinite.
+(c)~The expected number of tickets you buy on the $n$th round
+is $\Mean(H_n)=1$, by exercise |pgf-composition|. So the total expected
+number of tickets is infinite. (Thus, you almost surely
+lose eventually, and you expect to
+lose after the second game, yet you also expect to buy an infinite
+number of tickets.) (d)~Now the pgf after $n$ games is $H_n(z)^2$,
+and the method of part~(b) yields a mean of $16-{4\over3}\pi^2\approx 2.8$.
+(The sum $\sum_{k\ge1}1/k^2=\pi^2\!/6$ shows up here.)
+\source{1986 final exam.}
+
+\ansno8.52:
+ If $\omega$ and $\omega'$ are events with
+$\Pr(\omega)>\Pr(\omega')$, then a sequence of $n$~independent experiments
+will encounter $\omega$ more often than $\omega'$, with high probability,
+because $\omega$ will occur very nearly $n\Pr(\omega)$ times. Consequently,
+as $n\to\infty$, the probability approaches~$1$ that the median or mode
+of the values of~$X$ in a sequence of independent trials
+ will be a median or mode of the random variable~$X$.
+
+\ansno8.53:
+ We can disprove the statement, even in the special case that
+each variable is $0$ or~$1$.
+Let $p_0=\Pr\prp(X=Y=Z=0)$, $p_1=\Pr\prp(X=Y=\overline Z=0)$,
+\dots, $p_7=\Pr\prp(\overline X=\overline Y=\overline Z=0)$,
+where $\overline X=1-X$. Then $p_0+p_1+\cdots+p_7=1$, and
+the variables are independent in pairs if and only if we have
+\begindisplay
+(p_4+p_5+p_6+p_7)(p_2+p_3+p_6+p_7)=p_6+p_7\,,\cr
+(p_4+p_5+p_6+p_7)(p_1+p_3+p_5+p_7)=p_5+p_7\,,\cr
+(p_2+p_3+p_6+p_7)(p_1+p_3+p_5+p_7)=p_3+p_7\,.\cr
+\enddisplay
+But $\Pr\prp(X+Y=Z=0)\ne\Pr\prp(X+Y=0)\Pr\prp(Z=0)\iff
+p_0\ne(p_0+p_1)(p_0+p_2+p_4+p_6)$. One solution is
+\begindisplay
+p_0=p_3=p_5=p_6=1/4\,;\qquad p_1=p_2=p_4=p_7=0\,.
+\enddisplay
+This is equivalent to flipping two fair coins and letting
+$X=($the first coin is heads), $Y=($the second coin is heads),
+$Z=($the coins differ). Another example, with all probabilities nonzero, is
+\begindisplay
+&p_0=4/64\,,\quad p_1=p_2=p_4=5/64\,,\cr
+&p_3=p_5=p_6=10/64\,,\quad p_7=15/64\,.
+\enddisplay
+For this reason we say that $n$ variables $X_1$, \dots, $X_n$ are independent if
+\begindisplay
+\Pr\prp(X_1=x_1\ {\rm and\ \cdots\ and}\ X_n=x_n)=
+\Pr\prp(X_1=x_1)\ldots\Pr\prp(X_n=x_n)\,;
+\enddisplay
+pairwise independence isn't enough to guarantee this.
+\source{"Feller" [|feller|] credits S.\thinspace N. "Bernstein".}
+
+\ansno8.54:
+ (See exercise |estimate-kappa3| for notation.) We have
+\begindisplay \openup3pt
+E(\Sigma_2^2)&=n\mu_4+n(n{-}1)\mu_2^2\,;\cr
+E(\Sigma_2\Sigma_1^2)
+ &=n\mu_4+2n(n{-}1)\mu_3\mu_1+n(n{-}1)\mu_2^2+n(n{-}1)(n{-}2)\mu_2\mu_1^2\,;\cr
+E(\Sigma_1^4)&=n\mu_4+4n(n{-}1)\mu_3\mu_1+3n(n{-}1)\mu_2^2\cr
+&\hskip5em+6n(n{-}1)(n{-}2)\mu_2\mu_1^2+n(n{-}1)(n{-}2)(n{-}3)\mu_1^4\,;\cr
+\enddisplay
+it follows that $V(\widehat VX)=\kappa_4/n+2\kappa_2^2/(n-1)$.
+
+\ansno8.55:
+ There are $A={1\over17}\cdt52!$ permutations with $X=Y$, and
+$B={16\over17}\cdt52!$ permutations with $X\ne Y$. After the stated
+procedure, each permutation with $X=Y$ occurs with probability
+${1\over17}\big/\bigl((1-{16\over17}p)A\bigr)$, because we return
+to step~S1 with probability ${16\over17}p$. Similarly,
+each permutation with $X\ne Y$ occurs with probability
+${16\over17}(1-p)\big/\bigl((1-{16\over17}p)B\bigr)$. Choosing $p={1\over4}$
+makes $\Pr\prp(X=x\,{\rm and}\,Y=y)=
+{1\over169}$ for all $x$ and~$y$. (We could therefore make two flips of
+a fair coin and go back to~S1 if both come up heads.)
+
+\ansno8.56:
+ If $m$ is even, the frisbees always stay an odd distance apart
+and the game lasts forever. If $m=2l+1$, the relevant generating
+functions are
+\begindisplay \let\displaystyle=\textstyle
+G_m&={1\over4}z A_1\,;\cr
+A_1&=\half zA_1+{1\over4}zA_2\,,\cr
+A_k&={1\over4}zA_{k-1}+\half zA_k+{1\over4}zA_{k+1}\,,
+ \qquad\hbox{for $1<k<l$},\cr
+A_l&={1\over4}zA_{l-1}+{3\over4}zA_l+1\,.
+\enddisplay
+(The coefficient $[z^n]\,A_k$ is the probability that the distance between
+frisbees is $2k$ after $n$ throws.) Taking a clue from the similar
+equations in exercise~|snowwalker|, we set $z=1/{\cos^2\theta}$
+and $A_1=X\sin2\theta$, where $X$ is to be determined.
+It follows by induction (not using the equation for $A_l$)
+that $A_k=X\sin2k\theta$. Therefore we want to choose $X$ such that
+\begindisplay
+\Bigl(1-{3\over4\cos^2\theta}\Bigr)\,X\,\sin2l\theta=
+ 1+{1\over4\cos^2\theta}\,X\,\sin(2l-2)\theta\,.
+\enddisplay
+It turns out that $X=2\cos^2\theta/\sin\theta\cos(2l+1)\theta$,
+hence
+\begindisplay
+G_m={\cos\theta\over\cos m\theta}\,.
+\enddisplay
+The denominator vanishes when $\theta$ is an odd multiple of $\pi/(2m)$;
+thus $1-q_kz$ is a root of the denominator for $1\le k\le l$, and the
+stated product representation must hold. \g Trigonometry wins again.
+Is there a connection with pitching pennies along the angles
+of the $m$-gon?\g
+To find the mean and variance we can write
+\begindisplay \let\displaystyle=\textstyle \openup3pt
+G_m&=(1-\half\theta^2+{1\over24}\theta^4-\cdots\,)/
+  (1-\half m^2\theta^2+{1\over24}m^4\theta^4-\cdots\,)\cr
+&=1+\half(m^2-1)\theta^2+{1\over24}(5m^4-6m^2+1)\theta^4+\cdots\cr
+&=1+\half(m^2-1)(\tan\theta)^2+{1\over24}(5m^4-14m^2+9)(\tan\theta)^4+\cdots\cr
+&=1+G_m'(1)(\tan\theta)^2+\half G_m''(1)(\tan\theta)^4+\cdots\,,\cr
+\enddisplay
+because $\tan^2\theta=z-1$ and $\tan\theta=\theta+{1\over3}\theta^3+\cdots\,$.
+So we have $\Mean(G_m)=\half(m^2-1)$ and $\Var(G_m)={1\over6}m^2(m^2-1)$.
+(Note that this implies the identities
+\begindisplay\openup5pt
+{m^2-1\over2}&=\sum_{k=1}^{(m-1)/2}{1\over p_k}=\sum_{k=1}^{(m-1)/2}
+ \Bigl(1\Big/\sin{(2k-1)\pi\over2m}\Bigr)^{\!2}\,;\cr
+{m^2(m^2-1)\over6}%&=\sum_{k=1}^{(m-1)/2}{q_k\over p_k^2}\cr
+&=\sum_{k=1}^{(m-1)/2}
+ \Bigl(\cot{(2k-1)\pi\over2m}\Big/\sin{(2k-1)\pi\over2m}\Bigr)^{\!2}\,.\cr
+\enddisplay
+The third cumulant of this distribution is ${1\over30}m^2(m^2-1)(4m^2-1)$;
+but the pattern of nice cumulant factorizations stops there.
+There's a much simpler way to derive the mean: We have $G_m+A_1+\cdots+A_l
+=z(A_1+\cdots+A_l)+1$, hence when $z=1$ we have $G_m'=A_1+\cdots+A_l$.
+Since $G_m=1$ when $z=1$, an easy induction shows that $A_k=4k$.)
+
+\ansno8.57:
+ We have $A{:}A\ge2^{l-1}$ and $B{:}B<2^{l-1}+2^{l-3}$ and
+$B{:}A\ge2^{l-2}$, hence $B{:}B-B{:}A\ge A{:}A-A{:}B$ is possible only
+if $A{:}B>2^{l-3}$. This means that ${\overline\tau}_2=\tau_3$,
+$\tau_1=\tau_4$, $\tau_2=\tau_5$, \dots, $\tau_{l-3}=\tau_l$. But then
+$A{:}A\approx2^{l-1}+2^{l-4}+\cdots\,$,
+$A{:}B\approx2^{l-3}+2^{l-6}+\cdots\,$,
+$B{:}A\approx2^{l-2}+2^{l-5}+\cdots\,$, and
+$B{:}B\approx2^{l-1}+2^{l-4}+\cdots\,$;
+hence $B{:}B-B{:}A$ is less than $A{:}A-A{:}B$ after all. (Sharper
+results have been obtained by "Guibas" and "Odlyzko"~[|guibas-odlyzko|],
+who show that Bill's chances are always maximized with one of the
+two patterns ${\tt H}@ \tau_1\ldots \tau_{l-1}$ or
+${\tt T}@ \tau_1\ldots \tau_{l-1}$. Bill's winning strategy is,
+in fact, unique; see the following exercise.)
+\source{Lyle "Ramshaw".*}
+
+\ansno8.58:
+ (Solution by J. "Csirik".) If $A$ is ${\tt H}^l$ or ${\tt T}^l$,
+one of the two sequences matches~$A$ and cannot be used. Otherwise let
+$\hat A=\tau_1\ldots\tau_{l-1}$, $H={\tt H}\hat A$, and $T={\tt T}\hat A$.
+It is not difficult to verify that $H{:}A=T{:}A=\hat A{:}\hat A$, $H{:}H
++T{:}T=2^{l-1}+2(\hat A{:}\hat A)+1$, and $A{:}H+A{:}T=1+2(A{:}A)-2^l$.
+Therefore the equation
+\begindisplay
+{H{:}H-H{:}A\over A{:}A-A{:}H}=
+{T{:}T-T{:}A\over A{:}A-A{:}T}
+\enddisplay
+implies that both fractions equal
+\begindisplay
+{H{:}H-H{:}A+T{:}T-T{:}A\over A{:}A-A{:}H+A{:}A-A{:}T}
+={2^{l-1}+1\over 2^l-1}\,.
+\enddisplay
+Then we can rearrange the original fractions to show that
+\begindisplay
+{H{:}H-H{:}A\over T{:}T-T{:}A}={A{:}A-A{:}H\over A{:}A-A{:}T}={p\over q}\,,
+\enddisplay
+where $p\rp q$. And $(p+1)\divides\gcd(2^{l-1}+1,2^l-1)=\gcd(3,2^l-1)$; so we
+may assume that $l$ is even and that $p=1$, $q=2$. It follows that
+$A{:}A-A{:}H=({2^l-1})/3$ and $A{:}A-A{:}T=(2^{l+1}-2)/3$, hence
+$A{:}H-A{:}T=({2^l-1})/3\ge2^{l-2}$. We have $A{:}H\ge2^{l-2}$ if and only if
+$A=({\tt TH})^{l/2}$. But then $H{:}H-H{:}A=A{:}A-A{:}H$, so $2^{l-1}+1
+=2^l-1$ and $l=2$.\par
+(Csirik [|csirik|] goes on to show that, when $l\ge4$, Alice can do no
+better than to play ${\tt HT}^{l-3}{\tt H}^2$. But even with this strategy,
+Bill wins with probability nearly $2\over3$.)
+\source{"Guibas" and "Odlyzko" [|guibas-odlyzko|].}
+
+\ansno8.59:
+ According to \equ(8.|alice-odds|), we want $B{:}B-B{:}A>A{:}A-A{:}B$.
+One solution is $A=\tt TTHH$, $B=\tt HHH$.
+
+\ansno8.60:
+ (a) Two cases arise depending on whether $h_k\ne h_n$ or $h_k=h_n$:
+\begindisplay \openup4pt
+G(w,z)&={m-1\over m}\Bigl({m-2+w+z\over m}\Bigr)^{\!k-1}w\,
+ \Bigl({m-1+z\over m}\Bigr)^{\!n-k-1}z\cr
+&\qquad+{1\over m}\Bigl({m-1+wz\over m}\Bigr)^{\!k-1}wz\,
+ \Bigl({m-1+z\over m}\Bigr)^{\!n-k-1}z\,.
+\enddisplay
+(b) We can either argue algebraically, taking partial derivatives of $G(w,z)$
+with respect to $w$ and~$z$ and setting $w=z=1$; or we can argue
+combinatorially: Whatever the values of $h_1$, \dots,~$h_{n-1}$, the
+expected value of $P(h_1,\ldots,h_{n-1},h_n;n)$ is the same (averaged
+over $h_n$), because the hash sequence $(h_1,\ldots,h_{n-1})$ determines
+a sequence of list sizes $(n_1,n_2,\ldots,n_m)$ such that the stated
+expected value is $\bigl((n_1{+}1)+(n_2{+}1)+\cdots+(n_m{+}1)\bigr)/m=
+(n-1+m)/m$. Therefore the random variable $EP(h_1,\ldots,h_n;n)$ is
+independent of $(h_1,\ldots,h_{n-1})$, hence independent of
+$P(h_1,\ldots,h_n;k)$.
+
+\ansno8.61:
+ If $1\le k<l\le n$, the previous exercise shows that the coefficient
+of $s_ks_l$ in the variance of the average is zero. Therefore we need
+only consider the coefficient of $s_k^2$, which is
+\begindisplay
+\sum_{1\le h_1,\ldots,h_n\le m}\hskip-.7em{P(h_1,\ldots,h_n;k)^2\over m^n}
+ \;-\;\biggl(@\sum_{1\le h_1,\ldots,h_n\le m}\hskip-.7em
+  {P(h_1,\ldots,h_n;k)\over m^n}\biggr)^{\!2}\,,
+\enddisplay
+the variance of $\bigl((m-1+z)/m\bigr){}^{k-1}z$; and this is $(k-1)(m-1)/m^2$
+as in exercise |more-variances|.
+
+\ansno8.62:
+ The pgf\/ $D_n(z)$ satisfies the recurrence
+\begindisplay
+D_0(z)&=z\,;\cr
+D_n(z)&=z^2D_{n-1}(z)\,+\,2(1-z^3)D_{n-1}'(z)/(n+1)\,,\qquad\hbox{for $n>0$}.
+\enddisplay
+We can now derive the recurrence
+\begindisplay
+D''_n(1)=(n-11)D''_{n-1}(1)/(n+1)+(8n-2)/7\,,
+\enddisplay
+which has the solution ${2\over637}(n+2)(26n+15)$ for all
+$n\ge11$ (regardless of initial conditions). Hence the variance
+comes to ${108\over637}(n+2)$ for $n\ge11$.
+
+\ansno8.63:
+ (Another question asks if a given sequence of purported
+cumulants comes from any
+distribution whatever; for example, $\kappa_2$ must be nonnegative,
+and $\kappa_4+3\kappa_2^2=E\bigl((X-\mu)^4\bigr)$ must be
+at least $\bigl(E\bigl((X-\mu)^2\bigr)\bigr){}^2=\kappa_2^2$, etc.
+A necessary and sufficient condition for this other problem was found by
+"Hamburger" [|akhiezer|],\thinspace[|hamburger|].)

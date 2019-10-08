@@ -1,0 +1,293 @@
+
+\ansno1.1:
+ The proof is fine except when $n=2$. If all sets of two horses
+have horses of the same color, the statement is true for any number of horses.
+\source{"P\'olya" [|polya|, p.~120].}
+
+\ansno1.2:
+ If $X_n$ is the number of moves, we have $X_0=0$ and
+$X_n=X_{n-1}+1+X_{n-1}+1+X_{n-1}$ when $n>0$. It follows (for example
+by adding~$1$ to both sides) that $X_n=3^n-1$.
+\ (After $\half X_n$ moves, it turns out that the entire tower will
+be on the middle peg, halfway home!)
+\source{"Scorer", "Grundy", and "Smith" [|scorer|].}
+
+\ansno1.3:
+ There are $3^n$ possible arrangements, since each disk can be
+on any of the pegs. We must hit them all, since the shortest solution
+takes $3^n-1$ moves. \ (This construction is equivalent to a
+``ternary "Gray code",\qback'' which runs through all numbers
+from $(0\ldots0)_3$ to $(2\ldots2)_3$,
+changing only one digit at a time.)
+
+\ansno1.4:
+ No. If the largest disk doesn't have to move, $2^{n-1}-1$ moves
+will suffice (by induction); otherwise $(2^{n-1}-1)+1+(2^{n-1}-1)$ will
+suffice (again by induction).
+
+\ansno1.5:
+ No; different circles can intersect in at most two points, so the
+\g The number of intersection points turns out to give the whole story;
+convexity was a red herring.\g%
+fourth circle can increase the number of regions to at most~14.
+However, it is possible to do the job with ovals:
+\begindisplay
+\unitlength=4pt
+\beginpicture(15,15)(0,0)
+\put(10,8.5){\oval(10,13)}
+\put(7,7.5){\oval(10,13)}
+\put(6.5,5){\oval(13,10)}
+\put(7.5,8){\oval(13,10)}
+\endpicture
+\enddisplay
+"Venn" [|venn|] claimed that there is no way to do the five-set case with
+ellipses, but a five-set construction with ellipses was found by
+"Gr\"unbaum" [|gruenbaum|].
+\source{"Venn" [|venn|].}
+
+\ansno1.6:
+ If the $n$th line intersects the previous lines in $k>0$ distinct
+\g This answer assumes that $n>0$.\g
+points, we get $k-1$ new bounded regions (assuming that none of the previous
+lines were mutually parallel) and two new infinite regions. Hence
+the maximum number of bounded regions is
+$(n{-}2)+(n{-}3)+@\cdots=S_{n-2}=(n{-}1)(n{-}2)/2=L_n-2n$.
+\source{"Steiner" [|steiner|]; "Roberts"~[|roberts|].}
+
+\ansno1.7:
+ The basis is unproved; and in fact, $H(1)\ne2$.
+
+\ansno1.8:
+ $Q_2=(1+\beta)/\alpha$; $Q_3=(1+\alpha+\beta)/\alpha\beta$;
+$Q_4=(1+\alpha)/\beta$; $Q_5=\alpha$; $Q_6=\beta$. So the sequence is
+periodic!
+\source{"Gauss" [|gauss-penta|].}
+
+\ansno1.9:
+ (a)~We get $P(n-1)$ from the inequality
+\begindisplay
+x_1\ldots x_{n-1}\left(x_1+\cdots+x_{n-1}\over n -1\right)\le
+ \left(x_1+\cdots+x_{n-1}\over n-1\right)^n\,.
+\enddisplay
+(b)~$x_1\ldots x_n x_{n+1}\ldots x_{2n}\le\bigl(((x_1+\cdots+x_n)/n)
+ ((x_{n+1}+\cdots+x_{2n})/n)\bigr)^n$ by $P(n)$; the product inside is
+ $\le\bigl((x_1+\cdots+x_{2n})/2n\bigr){}^2$ by $P(2)$.
+(c)~For example, $P(5)$ follows from $P(6)$ from $P(3)$ from $P(4)$ from $P(2)$.
+\source{"Cauchy" [|cauchy-cours|, note~2, theorem~17].}
+
+\ansno1.10:
+ First show that $R_n=R_{n-1}+1+Q_{n-1}+1+R_{n-1}$, when $n>0$.
+Incidentally, the methods of Chapter~7 will tell us that
+$Q_n=\bigl((1+\sqrt3\,)^{n+1}-(1-\sqrt3\,)^{n+1}\bigr)\big/\bigl(2\sqrt3@\bigr)-1$.
+\source{"Atkinson" [|atkinson|].}
+
+\ansno1.11:
+ (a)~We cannot do better than to move a double $(n-1)$-tower,
+then move (and invert the order of) the two largest disks, then move the
+double $(n-1)$-tower again; hence $A_n=2A_{n-1}+2$ and $A_n=2T_n=2^{n+1}-2$.
+This solution interchanges the two largest disks but returns the other
+$2n-2$ to their original order.\par
+(b) Let $B_n$ be the minimum number of moves. Then $B_1=3$, and it can be
+shown that no strategy does better than $B_n=A_{n-1}+2+A_{n-1}+2+B_{n-1}$
+when $n>1$. Hence $B_n=2^{n+2}-5$, for all $n>0$.
+Curiously this is just~$2A_n-1$, and we also have
+$B_n=A_{n-1}+1+A_{n-1}+1+A_{n-1}+1+A_{n-1}$.
+\source{Inspired by "Wood" [|wood|].}
+
+\ansno1.12:
+ If all $m_k>0$, then $A(m_1,\ldots,m_n)=2A(m_1,\ldots,m_{n-1})+m_n$.
+This is an equation of the ``generalized Josephus'' type, with solution
+$(m_1\ldots m_n)_2=2^{n-1}m_1+\cdots+2m_{n-1}+m_n$.\par % to preserve paging
+Incidentally, the
+corresponding generalization of exercise |double-hanoi|b
+appears to satisfy the recurrence
+\begindisplay
+B(m_1,\ldots,m_n)=\cases{A(m_1,\ldots,m_n),&if $m_n=1$;\cr
+\noalign{\vskip2pt}
+  2m_n-1,&if $n=1$;\cr
+\noalign{\vskip2pt}
+  2A(m_1,\ldots,m_{n-1})+2m_n\hskip-1em\cr
+   \quad{}+B(m_1,\ldots,m_{n-1}),&if $n>1$ and $m_n>1$.\cr}
+\enddisplay
+
+\ansno1.13:
+ Given $n$ straight lines that define
+$L_n$ regions, we can replace them by extremely narrow "zig-zag"s with
+segments sufficiently long that there are nine intersections
+between each pair of zig-zags.
+This shows that $ZZ_n=ZZ_{n-1}+9n-8$, for all $n>0$; consequently
+$ZZ_n=9S_n-8n+1={9\over2}n^2-{7\over2}n+1$.
+
+\ansno1.14:
+ The number of new 3-dimensional
+regions defined by each new cut is the number of 2-dimensional regions
+defined in the new plane by its intersections with the previous planes.
+Hence $P_n=P_{n-1}+L_{n-1}$, and it turns out that $P_5=26$. (Six cuts
+in a cubical piece of cheese can make 27 cubelets, or up to $P_6=42$
+cuts of weirder shapes.)\par
+Incidentally, the solution to this recurrence fits into a nice pattern
+if we express it in terms of binomial coefficients (see Chapter~5):
+\begindisplay \openup 3pt
+X_n&={n\choose 0}+{n\choose 1}\,;\cr
+L_n&={n\choose 0}+{n\choose 1}+{n\choose 2}\,;\cr
+P_n&={n\choose 0}+{n\choose 1}+{n\choose 2}+{n\choose 3}\,.\cr
+\enddisplay
+Here $X_n$ is the
+maximum number of 1-dimensional regions definable
+by $n$ points on a line.
+\g\null\vskip-3\baselineskip I bet I know what happens in four dimensions!\g%
+\source{"Steiner" [|steiner|]; "P\'olya"~[|polya|, chapter~3];
+Brother "Alfred" "!Brousseau" [|bro-alfred|].}
+
+\ansno1.15:
+ The function $I$ satisfies the same recurrence as~$J$
+when $n>1$, but $I(1)$ is undefined.
+Since $I(2)=2$ and $I(3)=1$, there's no value of $I(1)=\alpha$
+that will allow us to use our general method; the ``end game'' of
+unfolding depends on
+the two leading bits in $n$'s binary representation.\par
+If $n=2^m+2^{m-1}+k$, where $0\le k<2^{m+1}+2^m-(2^m+2^{m-1})=2^m+2^{m-1}$,
+the solution is $I(n)=2k+1$ for all $n>2$. Another way to express this,
+in terms of the representation $n=2^m+l$, is to say that
+\begindisplay
+I(n)=\cases{J(n)+2^{m-1},&if $0\le l<2^{m-1}$;\cr
+\noalign{\vskip2pt}
+ J(n)-2^m,&if $2^{m-1}\le l<2^m$.\cr}
+\enddisplay
+%Thus the two survivors are separated in the original circle by a power of~$2$.
+
+\ansno1.16:
+ Let $g(n)=a(n)\alpha+b(n)\beta_0+c(n)\beta_1+d(n)\gamma$.
+We know from \equ(1.|d-to-c|) that $a(n)\alpha+b(n)\beta_0+c(n)\beta_1=
+  (\alpha\, \beta_{b_{m-1}}\, \beta_{b_{m-2}}
+\ldots \beta_{b_1}\, \beta_{b_0})_3$ when
+$n=(1\, b_{m-1} \ldots b_1\, b_0)_2$; this defines $a(n)$, $b(n)$, and~$c(n)$.
+Setting $g(n)=n$ in the recurrence implies that $a(n)+c(n)-d(n)=n$;
+hence we know everything.
+[Setting $g(n)=1$ gives the additional identity $a(n)-2b(n)-2c(n)=1$, which
+can be used to define $b(n)$ in terms of the simpler functions $a(n)$
+and $a(n)+c(n)$.]
+
+\ansno1.17:
+ In general we have $W_m\le 2W_{m-k}+T_k$, for $0\le k\le m$. (This
+relation corresponds to transferring the top $m-k$, then using only
+three pegs to move the bottom~$k$, then finishing with the top $m-k$.)
+The stated relation turns out to be based on the unique value of~$k$ that
+minimizes the right-hand side of this general inequality, when $m=n(n+1)/2$.
+(However, we cannot conclude that equality holds; many other
+strategies for transferring the tower are conceivable.)
+If we set $Y_n=(W_{n(n+1)/2}-1)/2^n$, we find that $Y_n\le Y_{n-1}+1$;
+hence $W_{n(n+1)/2}\le2^n(n-1)+1$.
+\source{"Dudeney" [|dudeney|, puzzle 1].}
+
+\ansno1.18:
+ It suffices to show that both of the lines from $(n^{2j},0)$
+intersect both of the lines from $(n^{2k},0)$, and that all these intersection
+points are distinct.\par
+\def\OR{\mathbin{\rm or}}
+A line from $(x_j,0)$ through $(x_j-a_j,1)$ intersects a line
+from $(x_k,0)$ through $(x_k-a_k,1)$ at the point $(x_j-ta_j,t)$ where
+$t=(x_k-x_j)/(a_k-a_j)$. Let $x_j=n^{2j}$ and
+$a_j=n^j+(0\OR n^{-n})$. Then the ratio $t=(n^{2k}-n^{2j})/\allowbreak
+{\bigl(n^k-n^j+(-n^{-n}\OR 0\OR n^{-n})\bigr)}$ lies strictly between
+$n^j+n^k-1$ and $n^j+n^k+1$; hence the $y$~coordinate of the intersection
+point uniquely identifies $j$ and~$k$. Also the four intersections that
+have the same $j$ and~$k$ are distinct.
+
+\ansno1.19:
+ Not when $n>11$. A bent line whose half-lines run at angles
+$\theta$ and $\theta+30^\circ$ from its apex can intersect four times
+with another whose half-lines run at angles $\phi$ and $\phi+30^\circ$
+only if $\vert\theta-\phi\vert>30^\circ$. We can't choose more than~11
+angles this far apart from each other. (Is it possible to choose~11?)
+
+\ansno1.20:
+ Let $h(n)=a(n)\alpha+b(n)\beta_0+c(n)\beta_1+d(n)\gamma_0+e(n)\gamma_1$.
+We know from \equ(1.|d-to-c|) that $a(n)\alpha+b(n)\beta_0+c(n)\beta_1=
+  (\alpha\, \beta_{b_{m-1}}\, \beta_{b_{m-2}}
+\ldots \beta_{b_1}\, \beta_{b_0})_4$ when
+$n=(1\, b_{m-1} \ldots b_1\, b_0)_2$; this defines $a(n)$, $b(n)$, and~$c(n)$.
+Setting $h(n)=n$ in the recurrence implies that $a(n)+c(n)-2d(n)-2e(n)=n$;
+setting $h(n)=n^2$ implies that $a(n)+c(n)+4e(n)=n^2$. Hence
+$d(n)=\bigl(3a(n)+3c(n)-n^2-2n\bigr)/4$; $e(n)=\bigl(n^2-a(n)-c(n)\bigr)/4$.
+
+\ansno1.21:
+ We can let $m$ be the least (or any) common multiple of
+$2n$, $2n-1$, \dots, $n+1$. [A non-rigorous argument suggests that
+a ``random'' value of $m$ will succeed with probability
+\begindisplay\advance\abovedisplayskip-.5\baselineskip%
+             \advance\belowdisplayskip-.5\baselineskip
+{n\over2n}{n-1\over2n-1}\ldots{1\over n+1}=1\bigg/{2n\choose n}
+\sim{\sqrt{\pi n}\over 4^n}\,,
+\enddisplay
+so we might expect to find such an $m$ less than $4^n$.]
+\source{"Ball" [|rouse-ball|] credits B.\thinspace A. "Swinden".}
+
+\ansno1.22:
+ Take a regular polygon with $2^n$ sides and label the sides with
+\g I once rode a de~Bruijn cycle (when visiting at his home in
+Nuenen, The Netherlands).\g
+the elements of a ``"de Bruijn" "cycle"'' of length $2^n$. (This is a cyclic
+sequence of $0$'s and $1$'s in which all $n$-tuples of adjacent elements
+are different; see [|knuth1|, exercise 2.3.4.2--23] and [|knuth2|,
+exercise 3.2.2--17].) Attach a very thin convex extension to each side
+that's labeled~$1$. The $n$ sets are copies of the resulting polygon,
+rotated by the length of $k$ sides for $k=0$, $1$, \dots,~$n-1$.
+\source{Based on an idea of Peter "Shor".*}
+
+\ansno1.23:
+ Yes. (We need principles of elementary number theory from
+Chapter~4.) Let $L(n)=\lcm(1,2,\ldots,n)$. We can assume that
+$n>2$; hence by "Bertrand's postulate" there is a prime $p$ between
+$n/2$ and $n$. We can also assume that $j>n/2$, since $q'=L(n)+1-q$
+leaves $j'=n+1-j$ if and only if $q$~leaves~$j$.
+Choose $q$ so that $q\=1$ \tmod{L(n)/p} and $q\=j+1-n$ \tmod p. The
+people are now removed in order $1$, $2$, \dots,~$n-p$, $j+1$, $j+2$,
+\dots,~$n$, $n-p+1$, \dots,~$j-1$.
+\source{Bjorn "Poonen".*}
+
+\ansno1.24:
+ The only known examples are:
+$X_n=1/X_{n-1}$, which has period~2; "Gauss"'s
+recurrence of period~5 in exercise~|lyness|;
+H.~"Todd"'s even more remarkable recurrence $X_n=(1+X_{n-1}+X_{n-2})/X_{n-3}$,
+which has period~8 (see~[|lyness2|]); and recurrences derived from these
+when we replace $X_n$ by a constant times $X_{mn}$.
+We can assume that the first nonzero coefficient in the denominator is unity,
+and that the first nonzero coefficient in the numerator (if any) has
+nonnegative real part. Computer algebra shows easily that there are
+no further solutions of period $\le5$ when $k=2$.
+% NB for period 5, it was much much faster to solve X[3]=X[-2] than X[5]=X[0]!
+ A partial theory
+has been developed by Lyness~[|lyness2|, |lyness3|] and by
+ "Kurshan" and "Gopinath"~[|kurshan|].\par
+An interesting
+example of another type, with period~9 when the starting values are
+real, is the recurrence $X_n=\vert X_{n-1}\vert-X_{n-2}$ discovered by
+Morton "Brown"~[|mort-brown|].
+Nonlinear recurrences having any desired period $\ge5$ can be
+based on continuants [|conway-graham|].
+
+\ansno1.25:
+ If $T^{(k)}(n)$ denotes the minimum number of moves needed to transfer
+$n$ disks with $k$ auxiliary pegs (hence $T^{(1)}(n)=T_n$
+and $T^{(2)}(n)=W_n$), we have $T^{(k)}({n+1\choose k})\le
+2T^{(k)}({n\choose k})+T^{(k-1)}({n\choose k-1})$. No examples
+$(n,k)$ are known where this inequality fails to be an equality.
+When $k$ is small compared with $n$, the formula $2^{n+1-k}{n-1\choose k-1}$
+gives a convenient (but non-optimum) upper bound on $T^{(k)}({n\choose k})$.
+\source{"Frame", "Stewart", and "Dunkel"~[|amm-hanoi|].}
+
+\ansno1.26:
+ The execution-order permutation can be computed in $O(n\log n)$
+steps for all $m$ and~$n$ [|knuth3|, exercises 5.1.1--2 and 5.1.1--5].
+Bjorn "Poonen" has proved that non-Josephus sets with exactly four ``bad
+guys'' exist whenever $n\=0$ \tmod3 and $n\ge9$; in fact, the number
+of such sets is at least $\epsilon{n\choose4}$ for some $\epsilon>0$.
+He also found by extensive computations that the only other $n<24$ with
+non-Josephus sets is $n=20$, which has 236 such sets with $k=14$
+and two with $k=13$.
+(One of the latter is $\{1,2,3,4,5,6,7,8,11,14,15,16,17\}$;
+the other is its reflection with respect to $21$.) There is a unique
+non-Josephus set with $n=15$ and $k=9$, namely
+$\{3,4,5,6,8,10,11,12,13\}$.

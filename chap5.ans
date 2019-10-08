@@ -1,0 +1,1443 @@
+
+\ansno5.1:
+ $(11)_r^4=(14641)_r$, in any number system of radix $r\ge7$,
+\g What's $11^4$ in radix~$11$?\g
+because of the binomial theorem.
+\source{"Forcadel" [|forcadel|].}
+
+\ansno5.2:
+ The ratio ${n\choose k+1}\big/
+{n\choose k}=(n-k)/(k+1)$ is $\le1$ when $k\ge\lfloor n/2\rfloor$
+and $\ge1$ when $k<\lceil n/2\rceil$, so the maximum occurs when
+$k=\lfloor n/2\rfloor$ and $k=\lceil n/2\rceil$.
+
+\ansno5.3:
+ Expand into factorials. Both products are equal to $f(n)
+/f(n-k)@f(k)$,
+where $f(n)=(n+1)!\,n!\,(n-1)!$.
+\source{"Long" and "Hoggatt" [|long-hoggatt|].}
+
+\ansno5.4:
+ ${-1\choose k}=(-1)^k{k+1-1\choose k}=(-1)^k{k\choose k}
+=(-1)^k\[k\ge0]$.
+
+\ansno5.5:
+ If $0<k<p$, there's a $p$ in the numerator of $p\choose k$
+with nothing to cancel it in the denominator. Since ${p\choose k}
+={p-1\choose k}+{p-1\choose k-1}$, we must have ${p-1\choose k}\=
+(-1)^k$ \tmod p, for $0\le k< p$.
+\source{1983 in-class final.}
+
+\ansno5.6:
+ The crucial step (after second down) should be
+\begindisplay
+&{1\over n+1} \sum_k {n+k \choose k} {n+1 \choose k+1} (-1)^k\cr
+&\qquad= {1\over n+1} \sum_{k\ge0}{n+k \choose n} {n+1 \choose k+1} (-1)^k\cr
+&\qquad= {1\over n+1}\sum_k{n+k \choose n} {n+1 \choose k+1} (-1)^k\cr
+&\qquad\qquad -{1\over n+1}{n-1\choose n}{n+1\choose0}(-1)^{-1}\,.
+\enddisplay
+The original derivation forgot to include this extra term, which is $\[n=0]$.
+
+\ansno5.7:
+ Yes, because $r\_{-k}=(-1)^k\!/(-r-1)\_k$. We also have
+\begindisplay
+\textstyle r\_^k(r+\half)\_^k=(2r)\_^{2k}\!/2^{2k}\,.
+\enddisplay
+
+\ansno5.8:
+ $f(k)=(k/n-1)^n$ is a polynomial of degree $n$ whose leading
+coefficient is $n^{-n}$. By~\equ(5.|nth-diff|), the sum is $n!/n^n$. When $n$~is large,
+Stirling's approximation says that this is approximately $\sqrt{2\pi n}/e^n$.
+(This is quite different from ${(1-1/e)}$, which is what we get
+if we use the approximation $(1-k/n)^n\sim e^{-k}$, valid for
+fixed~$k$ as $n\to\infty$.)
+
+\ansno5.9:
+ $\Escr_t(z)^t=\sum_{k\ge0}t(tk+t)^{k-1}z^k\!/k!
+=\sum_{k\ge0}(k+1)^{k-1}(tz)^k\!/k!=\Escr_1(tz)$, by \equ(5.|t-series-power|).
+
+\ansno5.10:
+ $\sum_{k\ge0}2z^k\!/(k+2)=F(2,1;3;z)$, since $t_{k+1}/t_k=(k+2)z/(k+3)$.
+
+\ansno5.11:
+ The first is Besselian and the second is Gaussian:
+\g But not Imbesselian.\kern-1pt\g
+\begindisplay
+z^{-1}\sin z&=\textstyle
+ \sum_{k\ge0}(-1)^kz^{2k}\!/(2k+1)!=F(1;1,{3\over2};-z^2\!/4)\,;\cr
+z^{-1}\mathop{\rm arcsin}z&=\textstyle
+ \sum_{k\ge0}z^{2k}(\half)\_^k\!/(2k+1)k!=F(\half,\half;{3\over2};z^2)\,.\cr
+\enddisplay
+
+\ansno5.12:
+ (a) Yes, if $n\ne0$, since the term ratio is $n$.
+(b)~Yes, when $n$ is an integer; the term ratio is $(k+1)^n\!/k^n$. Notice
+that we get this term from \equ(5.|hypk-def|) by setting $m=n+1$,
+$a_1=\cdots=a_m=1$, $b_1=\cdots=b_n=0$, $z=1$, and multiplying by $0^n$.
+"!hypergeometric term"
+\g Each value of a hypergeometric term $t(k)$ can be written
+$0^{e(k)}v(k)$, where $e(k)$ is an integer and $v(k)\ne0$. Suppose the
+term ratio $t(k+1)/t(k)$ is $p(k)/q(k)$, and that $p$ and $q$ have been
+completely factored over the complex numbers. Then, for each~$k$,
+$e(k+1)$ is $e(k)$ plus the number of zero factors of $p(k)$ minus the
+number of zero factors of $q(k)$, and $v(k+1)$ is $v(k)$ times the product
+of the nonzero factors of $p(k)$ divided by the product of the nonzero
+factors of~$q(k)$.\g
+(c)~Yes, the term ratio is $(k+1)(k+3)/(k+2)$. (d)~No, the term ratio is
+$1+1/(k+1)H_k$; and $H_k\sim \ln k$ isn't a rational function.
+(e)~Yes, the reciprocal of any hypergeometric term is a hypergeometric term.
+The fact that $t(k)=\infty$ when $k<0$ or $k>n$ does not exclude $t(k)$
+from hypergeometric termhood.
+(f)~Of course.
+(g)~Not when, say, $t(k)=2^k$ and $T(k)=1$.
+(h)~Yes; the term ratio $t(n-1-k)/t(n-1-(k+1))$ is a rational function (the
+reciprocal of the term ratio for $t$, with $k$ replaced by $n-1-k$), for
+arbitrary~$n$.
+(i)~Yes; the term ratio can be written
+\begindisplay
+{a\,t(k{+}1)/t(k)+b\,t(k{+}2)/t(k)+c\,t(k{+}3)/t(k)\over
+a+b\,t(k{+}1)/t(k)+c\,t(k{+}2)/t(k)}\,,
+\enddisplay
+and $t(k+m)/t(k)=\bigl(t(k+m)/t(k+m-1)\bigr)\ldots\bigl(t(k+1)/t(k)\bigr)$
+is a rational function of~$k$.
+(j)~No. Whenever two rational functions $p_1(k)/q_1(k)$ and $p_2(k)/q_2(k)$ are
+equal for infinitely many~$k$, they are equal for all~$k$, because
+$p_1(k)q_2(k)=q_1(k)p_2(k)$ is a polynomial identity. Therefore the term
+ratio $\lceil(k+1)/2\rceil/\lceil k/2\rceil$ would have to equal~$1$ if
+it were a rational function.
+(k)~No. The term ratio would have to be $(k+1)/k$, since it is $(k+1)/k$ for
+all $k>0$; but then $t(-1)$ can be
+zero only if $t(0)$ is a multiple of $0^2$, while $t(1)$ can be~$1$ only
+if $t(0)=0^1$.
+
+\ansno5.13:
+ $R_n=n!^{n+1}\!/P_n^2=Q_n/P_n=Q_n^2\!/n!^{n+1}$.
+\source{1975 midterm.}
+
+\ansno5.14:
+ The first factor in \equ(5.|bc-prod4|) is ${l-k\choose l-k-m}$
+when $k\le l$, so it's $(-1)^{l-k-m}\*{-m-1\choose l-k-m}$. The
+sum for $k\le l$ is the sum over all~$k$, since $m\ge0$. (The condition
+$n\ge0$ isn't really needed, although $k$ must assume
+negative values if $n<0$.)\par To go from \equ(5.|bc-prod4|) to \equ(5.|bc-prod5|),
+first replace $s$ by $-1-n-q$.
+\source{[|knuth1|, exercise 1.2.6--20].}
+
+\ansno5.15:
+ If $n$ is odd, the sum is zero, since we can replace $k$
+by~$n-k$. If $n=2m$, the sum is $(-1)^m(3m)!/m!^3$, by \equ(5.|bc-dixon|)
+with $a=b=c=m$.
+\source{"Dixon" [|dixon|].}
+
+\ansno5.16:
+ This is just $(2a)!\,(2b)!\,(2c)!/(a+b)!\,(b+c)!\,(c+a)!$ times
+\equ(5.|bc-dixon|), if we write the summands in terms of factorials.
+
+\ansno5.17:
+ The formulas ${2n-1/2@\choose n}={4n\choose 2n}/2^{2n}$ and
+${2n-1/2@\choose 2n}={4n\choose 2n}/2^{4n}$ yield
+${2n-1/2@\choose n}=2^{2n}{2n-1/2@\choose 2n}$.
+
+\ansno5.18:
+ ${3r\choose 3k}{3k\choose k,k,k}/3^{3k}$.
+
+\ansno5.19:
+ $\Bscr_{1-t}(-z)^{-1}=\sum_{k\ge0}{k-tk-1\choose k}\bigl(-1/(k-tk-1)\bigr)
+(-z)^k$, by \equ(5.|t-series-power|), and this is
+$\sum_{k\ge0}{tk\choose k}\bigl(1/(tk-k+1)\bigr)z^k=\Bscr_t(z)$.
+
+\ansno5.20:
+ It equals $F(-a_1,\ldots,-a_m;-b_1,\ldots,-b_n;(-1)^{m+n}z)$;
+see exercise~2.|rising-and-falling|.
+
+\ansno5.21:
+ $\lim_{n\to\infty}(n+m)\_m/n^m=1$.
+\source{"Euler" [|euler-factorial|].}
+
+\ansno5.22:
+ Multiplying and dividing instances of \equ(5.|f-def-lim|) gives
+\begindisplay \openup3pt
+{(-1/2)!\over x!\,(x-1/2)!}
+ &=\lim_{n\to\infty}{n+x\choose n}{n+x-1/2\,\choose n}n^{-2x}\bigg/
+{n-1/2\,\choose n}\cr
+ &=\lim_{n\to\infty}{2n+2x\choose 2n}n^{-2x}\,,
+\enddisplay
+by \equ(5.|half-fact|) and \equ(5.|n-1/2-bc|). Also
+\begindisplay
+1/(2x)!=\lim_{n\to\infty}{2n+2x\choose 2n}(2n)^{-2x}\,.
+\enddisplay
+Hence, etc. The "Gamma function" equivalent, incidentally, is
+\begindisplay
+\textstyle \Gamma(x)\,\Gamma(x+\half)=\Gamma(2x)\,\Gamma(\half)/2^{2x-1}\,.
+\enddisplay
+
+\ansno5.23:
+ $(-1)^n n\?\,$, see \equ(5.|subfactorial-sum|).
+
+\ansno5.24:
+ This sum is ${n\choose m}\hyp{m-n,-m}{1/2}1={2n\choose2m}$,
+by \equ(5.|half-bc|) and \equ(5.|Fa-nc|).
+
+\ansno5.25:
+ This is equivalent to the easily proved identity
+\begindisplay
+(a-b){a\_^k\over(b+1)\_^k\hypstrut}
+=a\,{(a+1)\_^k\over(b+1)\_^k\hypstrut}-b\,{a\_^k\over b\_^k\hypstrut}
+\enddisplay
+as well as to the operator formula $a-b=(\vartheta+a)-(\vartheta+b)$.\par
+Similarly, we have
+\begindisplay \openup6pt\advance\abovedisplayskip-9pt
+&(a_1-a_2)\hyp{a_1,a_2,a_3,\,\ldots,\,a_m}{b_1,\,\ldots,\,b_n}z\cr
+&\ \!=a_1\hyp{a_1{+}1,a_2,a_3,\ldots,a_m}{b_1,\,\ldots,\,b_n}z
+-a_2\hyp{a_1,a_2{+}1,a_3,\ldots,a_m}{b_1,\,\ldots,\,b_n}z\,,
+\enddisplay
+because $a_1-a_2=(a_1+k)-(a_2+k)$. If $a_1-b_1$ is a nonnegative integer~$d$,
+this second identity allows us to express
+$F(a_1,\ldots,a_m;b_1,\ldots,b_n;z)$ as a linear combination of
+$F(a_2+j,a_3,\ldots,a_m;b_2,\ldots,b_n;z)$ for $0\le j\le d$, thereby eliminating
+an upper parameter and a lower parameter. Thus, for example,
+we get closed forms for $F(a,b;a-1;z)$, $F(a,b;a-2;z)$, etc.\par
+"Gauss" [|gauss-hyp|, \S7]
+derived analogous relations
+between $F(a,b;c;z)$ and any two ``"contiguous"''
+hypergeometrics in which a parameter has been changed by $\pm1$.
+"Rainville" [|rainville|] generalized this to cases with more parameters.
+\source{"Gauss" [|gauss-hyp|, \S7].}
+
+\ansno5.26:
+ If the term ratio in the original hypergeometric series is
+$t_{k+1}/t_k=r(k)$, the term ratio in the new one is $t_{k+2}/t_{k+1}=r(k+1)$.
+Hence
+\begindisplay
+\hyp{a_1,\, \ldots,\, a_m}{b_1,\, \ldots,\, b_n}z=1+
+{a_1\ldots a_m\,z\over b_1\ldots b_n}\hyp{a_1+1,\ldots,a_m+1,1}
+ {b_1+1,\ldots,b_n+1,2}z\,.
+\enddisplay
+
+\ansno5.27:
+ This is the sum of the even terms of $F(2a_1,\ldots,2a_m;
+2b_1,\ldots,2b_m;z)$. We have $(2a)\_^{2k+2}\!/(2a)\_^{2k}=4(k+a)(k+a+\half)$,
+etc.
+
+\ansno5.28:
+\g Equating coefficients of $z^n$ gives the "Pfaff"-"Saalsch\"utz"
+formula \equ(5.|hyp-saalschutz|).\g
+ $\hyp{a,\,b}cz=(1-z)^{-a}\hyp{a,\,c-b}c{{-z\over1-z}}
+=(1-z)^{-a}\hyp{c-b,\,a}c{{-z\over1-z}}=({1-z})^{c-a-b}\hyp{c-a,\,c-b}cz$.
+("Euler" proved the identity by showing that both sides satisfy the
+same differential equation. The reflection law is often attributed
+to Euler, but it does not seem to appear in his published papers.)
+\source{"Euler" [|euler-hyp|].}
+
+\ansno5.29:
+ The coefficients of $z^n$ are equal, by Vandermonde's convolution.
+("Kummer"'s original proof was different: He considered $\lim_{m\to\infty}
+F(m,b-a;b;z/m)$ in the reflection law \equ(5.|hyp-refl|).)
+\source{"Kummer" [|kummer|, eq.~26.4].}
+
+\ansno5.30:
+ Differentiate again to get $z(1-z)F''(z)+(2-3z)F'(z)-F(z)=0$.
+Therefore $F(z)=F(1,1;2;z)$ by \equ(5.|gauss-diff-eq|).
+
+\ansno5.31:
+ The condition $f(k)=T(k+1)-T(k)$ implies that $f(k+1)/f(k)=
+\bigl(T(k+2)/T(k+1)-1\bigr)\big/\bigl(1-T(k)/T(k+1)\bigr)$ is a rational
+function of~$k$.
+\source{"Gosper" [|gosper|].}
+
+\ansno5.32:
+ When summing a polynomial in $k$, Gosper's method reduces to the
+``method of undetermined coefficients.\qback'' We have $q(k)=r(k)=1$,
+and we try
+to solve $p(k)=s(k+1)-s(k)$. The method suggests letting $s(k)$
+be a polynomial whose degree is $d=\deg(p)+1$.
+
+\ansno5.33:
+ The solution to $k=(k-1)@s(k+1)-(k+1)@s(k)$ is $s(k)=-k+\half$;
+hence the answer is $(1-2k)/2k(k-1)+C$.
+
+\ansno5.34:
+ The limiting relation holds because all terms for $k>c$ vanish,
+and $\epsilon-c$ cancels with $-c$ in the limit of the other terms. Therefore
+the second partial sum is $\lim_{\epsilon\to0}F(-m,-n;\epsilon-m;1)=
+\lim_{\epsilon\to0}(\epsilon+n-m)\_^m\!/(\epsilon-m)\_^m=(-1)^m{n-1\choose m}$.
+\source{"Bailey" [|bailey|, \S10.4].}
+
+\ansno5.35:
+ (a) $2^{-n}3^n\[n\ge0]$.
+(b) $(1-\half)^{-k-1}\[k\ge0]=2^{k+1}\[k\ge0]$.
+
+\ansno5.36:
+ The sum of the digits of $m+n$ is the sum of the digits of~$m$
+plus the sum of the digits of~$n$, minus $p-1$ times the number of carries,
+because each carry decreases the digit sum by $p-1$. [See~[|kw-carry|] for
+extensions of this result to "generalized binomial coefficients".]
+\source{"Kummer" [|kummer-carry|, p.~116].}
+
+\ansno5.37:
+ Dividing the first identity by $n!$ yields ${x+y\choose n}=
+\sum_k{x\choose k}{y\choose n-k}$, Vandermonde's convolution. The second
+identity follows, for example, from the formula $x\_^k=(-1)^k(-x)\_k$
+if we negate both $x$ and~$y$.
+\source{"Vandermonde" [|vandermonde|].}
+
+\ansno5.38:
+ Choose $c$ as large as possible such that ${c\choose3}\le n$.
+Then $0\le n-{c\choose 3}<{c+1\choose3}-{c\choose3}={c\choose 2}$;
+replace $n$ by $n-{c\choose 3}$ and continue in the same fashion.
+Conversely, any such representation is obtained in this way. (We can
+do the same thing with
+\begindisplay
+n={a_1\choose 1}+{a_2\choose 2}+\cdots+{a_m\choose m},\qquad
+\hbox{$0\le a_1<a_2<\cdots<a_m$}
+\enddisplay
+for any fixed $m$.)
+\source{[|knuth1|, exercise 1.2.6--16].}
+
+\ansno5.39:
+ $x^my^n=\sum_{k=1}^m{m+n-1-k\choose n-1}a^nb^{m-k}x^k
++\sum_{k=1}^n{m+n-1-k\choose m-1}a^{n-k}b^my^k$
+for all $mn>0$, by induction on $m+n$.
+
+\ansno5.40:
+ $(-1)^{m+1}\sum_{k=1}^n\sum_{j=1}^m{r\choose j}{m-rk-s-1\choose m-j}=
+(-1)^m\sum_{k=1}^n\bigl({m-rk-s-1\choose m}-\break
+{m-r(k-1)-s-1\,\choose m}\bigr)^{\mathstrut}
+=(-1)^m\bigl({m-rn-s-1\choose m}-{m-s-1\choose m}\bigr)=
+{rn+s\choose m}-{s\choose m}$.
+\source{"R\o dseth" [|roedseth|].}
+
+\ansno5.41:
+ $\sum_{k\ge0}n!/(n-k)!\,(n+k+1)!
+ =\bigl(n!/(2n+1)!\bigr)\sum_{k>n}
+{2n+1\choose k}$, which is $2^{2n}n!/(2n+1)!$.
+
+\ansno5.42:
+ We treat $n$ as an indeterminate real variable. Gosper's method
+with $q(k)=k+1$ and $r(k)=k-1-n$ has the solution $s(k)=1/(n+2)$;
+hence the desired indefinite sum is $(-1)^{x-1}{n+1\over n+2}/{n+1\choose x}$.
+And
+\begindisplay
+\sum_{k=0}^n(-1)^k\Big/{n\choose k}=(-1)^{x-1}\,{n+1\over n+2}\bigg/
+\!{n{+}1\choose x}\biggr\vert_0^{n+1}\!\!=2\,{n+1\over n+2}\,\[\hbox{$n$ even}]\,.
+\enddisplay
+This exercise, incidentally, implies the formula
+\begindisplay
+{1\over\displaystyle n{n-1\choose k}^{\mathstrut}}=
+{1\over\displaystyle(n+1){n\choose k+1}^{\mathstrut}}+
+{1\over\displaystyle(n+1){n\choose k}^{\mathstrut}}\,,
+\enddisplay
+"!dual binomial coefficients"
+a ``dual'' to the basic recurrence \equ(5.|bc-addition|).
+
+\ansno5.43:
+ After the hinted first step we can apply \equ(5.|bc-tc|) and
+sum on~$k$. Then \equ(5.|bc-tc|) applies again and Vandermonde's
+convolution finishes the job. (A combinatorial proof of this identity
+has been given by "Andrews" [|andrews-saalschutz|]. There's a quick
+way to go from this identity to a proof of
+\equ(5.|bc-dixon|), explained in [|knuth1|, exercise 1.2.6--62].)
+\source{"Pfaff" [|pfaff|]; [|knuth1|,~exercise 1.2.6--31].}
+
+\ansno5.44:
+ Cancellation of factorials shows that
+\begindisplay
+{m\choose j}{n\choose k}{m+n\choose m}={m+n-j-k\choose m-j}{j+k\choose j}
+ {m+n\choose j+k}\,,
+\enddisplay
+so the second sum is $1/{m+n\choose m}$ times the first.
+And the first is just the special case $l=0$, $n=b$, $r=a$, $s=m+n-b$ of
+\equ(5.|bc-quad|), so it is ${a+b\choose a}{m+n-a-b\choose n-a}$.
+
+\ansno5.45:
+ According to \equ(5.|bc-sum-both|), $\sum_{k\le n}{k-1/2@\choose k}=
+{n+1/2@\choose n}$. If this form of the answer isn't ``closed'' enough, we can
+apply \equ(5.|half-bc|) and get $(2n+1){2n\choose n}4^{-n}$.
+
+\ansno5.46:
+ By \equ(5.|cat+-|), this convolution is the negative of the
+coefficient of $z^{2n}$
+in $\Bscr_{-1}(z)@\Bscr_{-1}(-z)$. Now $(2\Bscr_{-1}(z)-1)(2\Bscr_{-1}(-z)-1)
+=\sqrt{@1-16z^{2\mathstrut}}$;
+hence $\Bscr_{-1}(z)@\Bscr_{-1}(-z)={1\over4}\sqrt{@1-16z^{2\mathstrut}}
++\half \Bscr_{-1}(z)+\half \Bscr_{-1}(-z)-{1\over4}$.
+By the binomial theorem,
+\begindisplay
+(1-16z^2)^{1/2}=\sum_n{1/2\choose n}(-16)^nz^{2n}=-\sum_n{2n\choose n}
+ {4^nz^{2n}\over 2n-1}\,,
+\enddisplay
+so the answer is ${2n\choose n}4^{n-1}\!/(2n-1)+{4n-1\choose 2n}/(4n-1)$.
+
+\ansno5.47:
+ It's the coefficient of $z^n$ in $\bigl(\Bscr_r(z)^s\!/Q_r(z)\bigr)
+\g\setbox0=\vbox{\halign{\span\grafctr\cr
+The boxed\cr sentence\cr on the\cr other side\cr of this page\cr
+is true.\cr}}"!self-reference"
+\hbox{\vrule\vtop{\hrule\kern8pt\hbox{\kern0pt\box0\kern0pt}\kern8pt\hrule}%
+ \vrule}\g
+\bigl(\Bscr_r(z)^{-s}\!/Q_r(z)\bigr)=Q_r(z)^{-2}$, where $Q_r(z)=
+1-r+r@\Bscr_r(z)^{-1}$, by \equ(5.|t-series-mod-power|).
+
+\ansno5.48:
+ $F(2n+2,1;n+2;\half)=2^{2n+1}\!/{2n+1\choose n+1}$, a special
+case of \equ(5.|hyp-gauss-half|).
+\source{Ranjan "Roy".*}
+
+\ansno5.49:
+ Saalsch\"utz's identity \equ(5.|hyp-saalschutz|) yields
+\begindisplay
+{x+n\choose n}{y\over y+n}\,\hyp{-x,\,-n,\,-n-y}{-x-n,\,1-n-y}1=
+{(y-x)\_^n\over(y+1)\_^n}\,.
+\enddisplay
+\source{"Roy" [|roy|, eq.~3.13].}
+
+\ansno5.50:
+ The left-hand side is
+\begindisplay \openup3pt
+&\sum_{k\ge0}{a\_^k\,b\_^k\over c\_^k}{(-z)^k\over k!\vphantom{c\_^k}}
+ \sum_{m\ge0}{k+a+m-1\choose m}z^m\cr
+&\qquad=\sum_{n\ge0}z^n\sum_{k\ge0}
+ {a\_^k\,b\_^k\over c\_^k\,k!}(-1)^k{n+a-1\choose n-k}
+\enddisplay
+and the coefficient of $z^n$ is
+\begindisplay
+{n+a-1\choose n}\hyp{a,b,-n}{c,a}1{a\_^n\over n!}={(c-b)\_^n\over c\_^n}
+\enddisplay
+by Vandermonde's convolution \equ(5.|Fabc|).
+
+\ansno5.51:
+ (a) Reflection gives $F(a,-n;2a;2)=(-1)^nF(a,-n;2a;2)$.
+(Incidentally, this formula implies the remarkable identity
+$\Delta^{2m+1\,}f(0)=0$, when $f(n)=2^nx\_n/(2x)\_n$.)
+\par\goodbreak(b) The term-by-term limit is
+$\sum_{0\le k\le m}{m\choose k}{2m+1\over 2m+1-k}(-2)^k$
+plus an additional term for $k=2m-1$. The additional term is
+\begindisplay \openup3pt
+&{(-m)\ldots(-1)\,(1)\ldots(m)\,(-2m+1)\ldots(-1)\,2^{2m+1}
+ \over(-2m)\ldots(-1)\,(2m-1)!}\cr
+&\qquad=(-1)^{m+1}{m!\,m!\,2^{2m+1}\over(2m)!}={-2\over{-1/2@\choose m}}\,;
+\enddisplay
+hence, by \equ(5.|miracle-half/2|), this limit is $-1\big/{-1/2@\choose m}$,
+the negative of what we had.
+
+\ansno5.52:
+ The terms of both series are zero for $k>N$. This identity
+corresponds to replacing $k$ by $N-k$. Notice that
+\begindisplay \openup2pt
+a\_^N&=a\_^{N-k}\,(a+N-k)\_^k\cr
+&=a\_^{N-k}\,(a+N-1)\_k=a\_^{N-k}\,(1-a-N)\_^k(-1)^k\,.
+\enddisplay
+
+\ansno5.53:
+ When $b=-\half$, the left side of \equ(5.|hyp4z-4z2|) is $1-2z$
+\g\setbox0=\vbox{\halign{\span\grafctr\cr
+The boxed\cr sentence\cr on the\cr other side\cr of this page\cr
+is false.\cr}}
+\hbox{\vrule\vtop{\hrule\kern8pt\hbox{\kern0pt\box0\kern0pt}\kern8pt\hrule}%
+ \vrule}\g
+and the right side is $(1-4z+4z^2)^{1/2}$, independent of~$a$. The right side
+is the "formal power series" "!convergence"
+\begindisplay
+1+{1/2\choose1}4z(z-1)+{1/2\choose2}16z^2(z-1)^2+\cdots\,,
+\enddisplay
+which can be expanded and rearranged to give $1-2z+0z^2+0z^3+\cdots\,$;
+but the rearrangement involves "divergent series" in its intermediate steps
+when $z=1$, so it is not legitimate.
+\source{"Gauss" [|gauss-hyp|]; Richard "Askey".*}
+
+\ansno5.54:
+ If $m+n$ is odd, say $2N-1$, we want to show that
+\begindisplay
+\lim_{\epsilon\to0}\hyp{N-m-\half,\,-N+\epsilon}{-m+\epsilon}1=0\,.
+\enddisplay
+Equation \equ(5.|Fabc|) applies, since $-m+\epsilon>-m-\half+\epsilon$,
+and the denominator factor $\Gamma(c-b)=\Gamma(N-m)$ is infinite since
+$N\le m$; the other factors are finite. Otherwise $m+n$ is even;
+setting $n=m-2N$ we have
+\begindisplay
+\lim_{\epsilon\to0}\hyp{-N,\,N-m-\half+\epsilon}{-m+\epsilon}1=
+{(N-1/2)\_N\over m@\_N\hypstrut}
+\enddisplay
+by \equ(5.|Fa-nc|). The remaining job is to show that
+\begindisplay
+{m\choose m-2N}{(N-1/2)!\over(-1/2)!}{(m-N)!\over m!}={m-N\choose m-2N}2^{-2N}\,,
+\enddisplay
+and this is the case $x=N$ of exercise |factorial-dup|.
+
+\ansno5.55:
+ Let $Q(k)=(k+A_1)\ldots(k+A_M)Z$ and $R(k)=(k+B_1)\ldots(k+B_N)$.
+Then $t(k+1)/t(k)=P(k)@Q(k-1)/P(k-1)@R(k)$,
+ where $P(k)=Q(k)-R(k)$ is a nonzero polynomial.
+
+\ansno5.56:
+ The solution to $-(k+1)(k+2)=s(k+1)+s(k)$ is $s(k)=-\half k^2-k-{1\over4}$;
+hence $\sum{-3\choose k}\,\delta k={1\over8}(-1)^{k-1}(2k^2+4k+1)+C$.
+Also
+\begindisplay \openup3pt
+&(-1)^{k-1}\left\lfloor k+1\over2\right\rfloor
+\left\lfloor k+2\over2\right\rfloor\cr
+&\qquad={(-1)^{k-1}\over4}\left(k+1
+ -{1{+}(-1)^k\over2}\right)\left(k+2-{1{-}(-1)^k\over2}\right)\cr
+&\qquad={(-1)^{k-1}\over8}(2k^2+4k+1)+{1\over8}\,.
+\enddisplay
+
+\ansno5.57:
+ We have $t(k+1)/t(k)=(k-n)(k+1+\theta)(-z)/(k+1)(k+\theta)$.
+Therefore we let $p(k)=k+\theta$, $q(k)=(k-n)(-z)$, $r(k)=k$.
+The secret function $s(k)$ must be a constant $\alpha_0$, and we
+have
+\begindisplay
+k+\theta=\bigl(-z(k-n)-k)\,\alpha_0\,;
+\enddisplay
+hence $\alpha_0=-1/(1+z)$ and $\theta=-nz/(1+z)$. The sum is
+\begindisplay
+\sum{n\choose k}z^k\biggl(k-{nz\over1+z}\biggr)\,\delta k=
+-\,{n\over1+z}{n-1\choose k-1}z^k+C\,.
+\enddisplay
+(The special case $z=1$ was mentioned in \equ(5.|bc-partial-k|).)
+
+\ansno5.58:
+ If $m>0$ we can replace $k\choose m$ by ${k\over m}{k-1\choose m-1}$
+and derive the formula $T_{m,n}={n\over m}T_{m-1,n-1}-{1\over m}{n-1\choose m}$.
+The summation factor ${n\choose m}{}^{\!-1}$ is therefore appropriate:
+\begindisplay
+{T_{m,n}\over{n\choose m}}=
+{T_{m-1,n-1}\over{n-1\choose m-1}}-{1\over m}+{1\over n}\,.
+\enddisplay
+We can unfold this to get
+\begindisplay
+{T_{m,n}\over{n\choose m}}=
+T_{0,n-m}-H_m+H_n-H_{n-m}\,.
+\enddisplay
+Finally $T_{0,n-m}=H_{n-m}$, so $T_{m,n}={n\choose m}(H_n-H_m)$.
+(It's also possible to derive this result by using generating functions;
+see Example~2 in Section 7.5.)
+\source{"Frazer" and "McKellar" [|samplesort|].}
+
+\ansno5.59:
+ $\sum_{j\ge0,\,k\ge1}{n\choose j}\bigi[j=\lfloor\log_m k\rfloor\bigr]
+=\sum_{j\ge0,\,k\ge1}{n\choose j}\[m^j\le k<m^{j+1}]$, which is
+$\sum_{j\ge0}{n\choose j}\*(m^{j+1}
+-m^j)=(m-1)\sum_{j\ge0}{n\choose j}m^j=(m-1)(m+1)^n$.
+\source{Stanford Computer Science Compre\-hensive Exam, Winter 1987.}
+
+\ansno5.60:
+ ${2n\choose n}\approx 4^n\!/\!\sqrt{\pi n}$ is the case $m=n$ of
+\begindisplay
+{m+n\choose n}\approx\sqrt{{1\over2\pi}\Bigl({1\over m}+{1\over n}\Bigr)}
+ \Bigl(1+{m\over n}\Bigr)^{\!n}
+ \Bigl(1+{n\over m}\Bigr)^{\!m}\,.
+\enddisplay
+\source{[|knuth1|, exercise 1.2.6--41].}
+
+\ansno5.61:
+ Let $\lfloor n/p\rfloor=q$ and $n\bmod p=r$. The polynomial
+identity $(x+1)^p\=x^p+1$ \tmod p implies that
+\begindisplay
+(x+1)^{pq+r}\=(x+1)^r(x^p+1)^q\ \pmod p\,.
+\enddisplay
+The coefficient of $x^m$ on the left is ${n\choose m}$. On the right
+it's $\sum_k{r\choose m-pk}{q\choose k}$, which is just ${r\choose m\,\bmod\,p}
+{q\choose\lfloor m/p\rfloor}$ because $0\le r<p$.
+\source{"Lucas" [|lucas-bc-mod|].}
+
+\ansno5.62:
+ ${np\choose mp}=\sum_{k_1+\cdots+k_n=mp}{p\choose k_1}\ldots
+{p\choose k_n}\={n\choose m}$ \tmod{p^2}, because
+all terms of the sum are multiples of $p^2$ except for the $n\choose m$ terms
+in which exactly $m$ of the $k$'s are equal to~$p$.
+("Stanley" [|stanley|, exercise 1.6(d)] shows that the congruence actually holds
+modulo~$p^3$ when $p>3$.)
+\source{1971 midterm.}
+
+\ansno5.63:
+ This is $S_n=\sum_{k=0}^n(-4)^k{n+k\choose n-k}=
+\sum_{k=0}^n(-4)^{n-k}{2n-k\choose k}$. The denominator of
+\equ(5.|bc-gen-fib|) is zero when $z=-1/4$, so we can't simply
+plug into that formula. The recurrence $S_n=-2S_{n-1}-S_{n-2}$ leads
+to the solution $S_n=(-1)^n(2n+1)$.
+\source{1974 midterm.}
+
+\ansno5.64:
+ $\sum_{k\ge0}\bigl({n\choose2k}+{n\choose2k+1}\bigr)\big/(k+1)
+=\sum_{k\ge0}{n+1\choose2k+1}/(k+1)$, which is
+\begindisplay
+{2\over n+2}\sum_{k\ge0}{n+2\choose 2k+2}={2^{n+2}-2\over n+2}\,.
+\enddisplay
+\source{1980 midterm.}
+
+\ansno5.65:
+ Multiply both sides by $n^{n-1}$ and replace $k$ by $n-1-k$
+to get
+\begindisplay \openup3pt
+\sum_k{n-1\choose k}n^k(n-k)!
+&=(n-1)!\sum_{k=0}^{n-1}\bigl(n^{k+1}\!/k!-n^k\!/(k-1)!\bigr)\cr
+&=(n-1)!\,n^n\!/(n-1)!\,.
+\enddisplay
+(The partial
+sums can, in fact, be found by "Gosper's algorithm".) Alternatively,
+${n\choose k}kn^{n-1-k}k!$ can be interpreted as the number of mappings
+of $\{1,\ldots,n\}$ into itself with $f(1)$, \dots,~$f(k)$ distinct
+but $f(k+1)\in\{f(1),\ldots,f(k)\}$; summing on~$k$ must give~$n^n$.
+\source{1983 midterm.}
+
+\ansno5.66:
+ This is a walk-the-garden-path problem where there's only
+one ``obvious'' way to proceed at every step. First replace $k-j$ by $l$,
+then replace $\lfloor\sqrt l\,\rfloor$~by $k$, getting
+\begindisplay
+\sum_{j,k\ge0}{-1\choose j-k}{j\choose m}{2k+1\over 2^j}\,.
+\enddisplay
+The infinite series converges because the terms for fixed~$j$ are
+dominated by a polynomial in~$j$ divided by~$2^j$. Now sum over~$k$, getting
+\begindisplay
+\sum_{j\ge0}{j\choose m}{j+1\over2^j}\,.
+\enddisplay
+Absorb the $j+1$ and apply \equ(5.|neg-binomial2|) to get the answer, $4(m+1)$.
+\source{1984 midterm.}
+
+\ansno5.67:
+ $3{2n+2@\choose n+5}$ by \equ(5.|bc-prod5|), because
+\begindisplay
+{{k\choose2}\choose2}=3{k+1\choose4}\,.
+\enddisplay
+\source{1976 midterm.}
+
+\ansno5.68:
+ Using the fact that
+\begindisplay
+\sum_{k\le n/2}{n\choose k}=2^{n-1}+
+{1\over2}{n\choose n/2}\[\hbox{$n$ is even}]\,,
+\enddisplay
+ we get
+$n\bigl(2^{n-1}-{n-1\choose\lfloor n/2\rfloor}\bigr)$.
+\source{1985 midterm.}
+
+\ansno5.69:
+ Since ${k+1\choose2}+{l-1\choose2}\le{k\choose2}+{l\choose2}\iff
+\g\setbox0=\vbox{\halign{\span\grafctr\cr
+The boxed\cr sentence\cr on the\cr other side\cr of this page\cr
+is not a\cr sentence.\cr}}
+\hbox{\vrule\vtop{\hrule\kern8pt\hbox{\kern0pt\box0\kern0pt}\kern8pt\hrule}%
+ \vrule}\g
+k<l$, the minimum occurs when the $k$'s are as equal as possible. Hence,
+by the equipartition formula of Chapter~3, the minimum is
+\begindisplay \openup3pt
+&(n\bmod m){\lceil n/m\rceil\choose2}+\bigl(n-(n\bmod m)\bigr)
+ {\lfloor n/m\rfloor\choose2}\cr
+&\qquad=n{\lfloor n/m\rfloor\choose2}
+ +(n\bmod m)\left\lfloor n\over m\right\rfloor\,.
+\enddisplay
+A similar result holds for any lower index in place of $2$.
+\source{Lyle "Ramshaw", guest lecture in 1986.}
+
+\ansno5.70:
+ This is $F(-n,\half;1;2)$; but it's also $(-2)^{-n}{2n\choose n}
+F(-n,-n;\half-n;\half)$ if we replace $k$ by $n-k$. Now
+$F(-n,-n;\half-n;\half)=F(-{n\over2},-{n\over2};\half-n;1)$ by
+Gauss's identity \equ(5.|hyp-gauss-half|). (Alternatively,
+$F(-n,-n;\half-n;\half)=2^{-n}F(-n,\half;\half-n;-1)$ by the
+reflection law \equ(5.|hyp-refl|), and Kummer's formula \equ(5.|hyp-kummer|)
+relates this to \equ(5.|alt-convolution|).) The answer is $0$~when $n$ is
+odd, $2^{-n}{n\choose n/2}$
+when $n$~is even. (See [|greene-knuth|, \S1.2] for another derivation. This
+sum arises in the study of a simple search algorithm [|jonassen-knuth|].)
+\source{"Andrews" [|andrews-siam|, theorem 5.4].}
+
+\ansno5.71:
+ (a) Observe that
+\begindisplay
+S(z)=\sum_{k\ge0}a_k{z^{m+k}\over(1-z)^{m+2k+1}}
+={z^m\over(1-z)^{m+1}}A\bigl(z/(1-z)^2\bigr)\,.
+\enddisplay
+(b)~Here $A(z)=\sum_{k\ge0}{2k\choose k}(-z)^k\!/(k+1)
+=\bigl(\sqrt{1^{\mathstrut}+4z}-1\bigr)/2z$,
+ so we have $A\bigl(z/(1-z)^2\bigr)=1-z$.
+Thus $S_n=[z^n]\,\bigl(z/(1-z)\bigr){}^m={n-1\choose n-m}$.
+\source{"Wilf" [|wilfology|, exercise 4.16].}
+
+\ansno5.72:
+ The stated quantity is $m(m-n)\ldots\bigl(m-(k-1)n\bigr)
+n^{k-\nu(k)}\!/k!$. Any prime divisor $p$ of $n$ divides the numerator at least
+$k-\nu(k)$ times and divides the denominator at most $k-\nu(k)$ times,
+since this is the number of times $2$~divides~$k!$.
+A prime~$p$ that does not divide~$n$ must divide the product
+ $m(m-n)\ldots\bigl(m-(k-1)n\bigr)$
+at least as often as it divides $k!$, because
+ ${m(m-n)\ldots\bigl(m-(p^r-1)n\bigr)}$
+is a multiple of~$p^r$ for all $r\ge1$ and all~$m$.
+\source{"Hermite" [|hermite-cours|].}
+
+\ansno5.73:
+ Plugging in $X_n=n!$ yields $\alpha=\beta=1$;
+plugging in $X_n=n\?$ yields $\alpha=1$, $\beta=0$. Therefore the
+general solution is $X_n=\alpha n\?+\beta(n!-n\?)$.
+
+\ansno5.74:
+ ${n+1\choose k}-{n-1\choose k-1}$, for $1\le k\le n$.
+\source{1979 midterm.}
+
+\ansno5.75:
+ The recurrence $S_k(n+1)=S_k(n)+S_{(k-1)\,\bmod\,3}(n)$ makes it
+possible to verify inductively that two of the $S$'s are equal and that
+$S_{(-n)\,\bmod\,3}(n)$ differs from them by~$(-1)^n$.
+These three values split their sum $S_0(n)+S_1(n)+S_2(n)=2^n$ as equally
+as possible, so there must be $2^n\bmod3$ occurrences of $\lceil2^n\!/3\rceil$
+and $3-(2^n\bmod3)$ occurrences of $\lfloor2^n\!/3\rfloor$.
+\source{1971 midterm.}
+
+\ansno5.76:
+ $Q_{n,k}=(n+1){n\choose k}-{n\choose k+1}$.
+\source{[|knuth1|, exercise 1.2.6--59 (corrected)].}
+
+\ansno5.77:
+ The terms are zero unless $k_1\le \cdots\le k_m$, when the product
+\g\setbox0=\vbox{\halign{\span\grafctr\cr
+The boxed\cr sentence\cr on the\cr other side\cr of this page\cr
+is not boxed.\cr}}
+\hbox{\vrule\vtop{\hrule\kern8pt\hbox{\kern0pt\box0\kern0pt}\kern8pt\hrule}%
+ \vrule}\g
+is the multinomial coefficient
+\begindisplay
+{k_m\choose k_1,\,k_2-k_1,\,\ldots,\,k_m-k_{m-1}}\,.
+\enddisplay
+Therefore the sum over $k_1$, \dots, $k_{m-1}$ is $m^{k_m}$, and the
+final sum over $k_m$ yields
+$(m^{n+1}-1)/(m-1)$.
+\source{1986 midterm.}
+
+\ansno5.78:
+ Extend the sum to $k=2m^2+m-1$; the new terms are
+${1\choose4}+{\2\choose6}+\cdots+{m-1\choose2m}=0$.
+Since $m\rp(2m+1)$, the pairs $\bigl(k\bmod m,k\bmod(2m+1)\bigr)$ are
+distinct. Furthermore, the numbers $(2j+1)\bmod(2m+1)$
+as $j$ varies from $0$ to $2m$ are the numbers
+$0$,~$1$, \dots,~$2m$ in some order. Hence the sum is
+\begindisplay
+\sum\twoconditions{0\le k<m}{0\le j<2m+1}{k\choose\,j\,}
+=\sum_{0\le k<m}2^k=2^m-1\,.
+\enddisplay
+\source{[|some-sum|].}
+
+\ansno5.79:
+ (a) The sum is $2^{2n-1}$, so the gcd must be a power of~$2$.
+If $n=2^kq$ where $q$~is odd, $2n\choose1$ is divisible by $2^{k+1}$
+and not by~$2^{k+2}$. Each $2n\choose 2j+1$ is divisible by $2^{k+1}$
+(see exercise~|bc-div-p|), so this must be the gcd.
+(b)~If $p^r\le n+1<p^{r+1}$, we get the most radix~$p$ carries by adding
+$k$ to $n-k$ when $k=p^r-1$. The number of carries in this case
+is $r-\epsilon_p(n+1)$, and $r=\epsilon_p\bigl(L(n+1)\bigr)$.
+\source{"Mendelsohn" [|mendelsohn|]; "Montgomery" [|montgomery|].}
+
+\ansno5.80:
+ First prove by induction that $k!\ge(k/e)^k$.
+
+\ansno5.81:
+ Let $f_{l,m,n}(x)$ be the left-hand side. It is sufficient
+to show that we have
+ $f_{l,m,n}(1)>0$ and that $f^{\,\prime}_{l,m,n}(x)<0$ for $0\le x\le1$.
+The value of $f_{l,m,n}(1)$ is $(-1)^{n-m-1}{l+m+\theta\choose l+n}$
+by \equ(5.|bc-prod2|), and this is positive because the binomial coefficient
+has exactly $n-m-1$ negative factors. The inequality is true when $l=0$, for
+the same reason. If $l>0$, we have $f^{\,\prime}_{l,m,n}(x)
+=-l\,f_{l-1,m,n+1}(x)$, which is negative by induction.
+\source{1986 final exam; [|knuth-bci|].}
+
+\ansno5.82:
+ Let $\epsilon_p(a)$ be the exponent by which the prime~$p$ divides~$a$,
+and let $m=n-k$. The identity to be proved reduces to
+\begindisplay
+&\min\bigl(\epsilon_p(m){-}\epsilon_p(m{+}k),
+ \epsilon_p(m{+}k{+}1){-}\epsilon_p(k{+}1),
+ \epsilon_p(k){-}\epsilon_p(m{+}1)\bigr)\cr
+&\ =
+\min\bigl(\epsilon_p(k){-}\epsilon_p(m{+}k),
+ \epsilon_p(m){-}\epsilon_p(k{+}1),
+ \epsilon_p(m{+}k{+}1){-}\epsilon_p(m{+}1)\bigr)\,.
+\enddisplay
+For brevity let's write this as $\min(x_1,y_1,z_1)=\min(x_2,y_2,z_2)$.
+Notice that $x_1+y_1+z_1=x_2+y_2+z_2$. The general relation
+\begindisplay
+\epsilon_p(a)<\epsilon_p(b)\quad\implies\quad
+ \epsilon_p(a)=\epsilon_p\bigl(\vert a\pm b\vert\bigr)
+\enddisplay
+allows us to conclude that $x_1\ne x_2\implies\min(x_1,x_2)=0$; the
+same holds also for $(y_1,y_2)$ and $(z_1,z_2)$. It's now a simple matter
+to complete the proof.
+\source{"Hillman" and "Hoggatt" [|hillman-hoggatt|].}
+
+\ansno5.83:
+ (Solution by P. "Paule".) Let $r$ be a nonnegative integer.
+The given sum is the coefficient of $x^ly^m$ in
+\begindisplay
+&\sum_{j,k}(-1)^{j+k}{(1+x)^{j+k}\over x^k}{r\choose j}{n\choose k}
+(1+y)^{s+n-j-k}y^j\cr
+&\qquad=\biggl(1-{(1+x)y\over 1+y}\biggr)^{\!r}
+        \biggl(1-{1+x\over(1+y)x}\biggr)^{\!n}
+        (1+y)^{s+n}\cr
+\noalign{\vskip2pt}
+&\qquad=(-1)^n(1-xy)^{n+r}(1+y)^{s-r}/x^n\,,\cr
+\enddisplay
+so it is clearly $(-1)^l{n+r\choose n+l}{s-r\choose m-n-l}$.
+(See also exercise |reprove-bc-quad|.)
+
+\ansno5.84:
+ Following the hint, we get
+\begindisplay
+z\Bscr_t(z)^{r-1}\Bscr_t'(z)=\sum_{k\ge0}{tk+r\choose k}{kz^k\over tk+r}\,,
+\enddisplay
+and a similar formula for $\Escr_t(z)$. Thus the formulas
+$\bigl(zt\Bscr_t^{-1}(z)@\Bscr_t'(z)+1\bigr)@\Bscr_t(z)^r$ and
+$\bigl(zt\Escr_t^{-1}(z)@\Escr_t'(z)+1\bigr)@\Escr_t(z)^r$ give the respective
+right-hand sides of \equ(5.|t-series-mod-power|). We must therefore prove that
+\begindisplay \openup2pt \advance\abovedisplayskip-2pt%
+\advance\belowdisplayskip-2pt
+\bigl(zt\Bscr_t^{-1}(z)@\Bscr_t'(z)+1\bigr)@\Bscr_t(z)^r
+ &={1\over1-t+t\Bscr_t(z)^{-1}}\,,\cr
+\bigl(zt\Escr_t^{-1}(z)@\Escr_t'(z)+1\bigr)@\Escr_t(z)^r
+ &={1\over1-zt\Escr(z)^t}\,,\cr
+\enddisplay
+and these follow from \equ(5.|t-series-rec|).
+
+\ansno5.85:
+ If $f(x)=a_nx^n+\cdots+a_1x+a_0$ is any polynomial of degree $\le n$,
+we can prove inductively that
+\begindisplay\tightplus
+\sum_{0\le\epsilon_1,\ldots,\epsilon_n\le1}\!\!(-1)^{\epsilon_1+\cdots+\epsilon_n}
+f(\epsilon_1x_1+\cdots+\epsilon_nx_n)=(-1)^nn!\,a_nx_1\ldots x_n\,.
+\enddisplay
+The stated identity is the special case where $a_n=1/n!$ and $x_k=k^3$.
+\source{"Hsu" [|hsu-identity|].}
+
+\ansno5.86:
+ (a) First expand with $n(n-1)$ index variables $l_{ij}$ for all
+$i\ne j$. Setting $k_{ij}=l_{ij}-l_{ji}$ for $1\le i<j<n$ and using the
+constraints $\sum_{i\ne j}(l_{ij}-l_{ji})=0$ for all $i<n$ allows us
+to carry out the sums on $l_{jn}$ for $1\le j<n$ and then on $l_{ji}$ for
+$1\le i<j<n$ by Vandermonde's convolution.
+(b)~$f(z)-1$ is a polynomial of degree $<n$ that has $n$ roots, so it
+must be zero.
+(c)~Consider the constant terms in
+\begindisplay
+\prod\twoconditions{1\le i,j\le n}{i\ne j}\left(1-{z_i\over z_j}\right)^{a_i}
+=\sum_{k=1}^n
+ \prod\twoconditions{1\le i,j\le n}{i\ne j}\left(1-{z_i\over z_j}\right)^
+  {a_i-[i=k]}.
+\enddisplay
+\source{"Good" [|good|].}
+
+\ansno5.87:
+ The first term is $\sum_k{n-k\choose k}z^{mk}$, by
+\equ(5.|t-series-mod-power|). The summands in the second term are
+\begindisplay
+&{1\over m}\sum_{k\ge0}{\,(n+1)/m+(1{+}1/m)k\,\choose k}(\zeta z)^{k+n+1}\cr
+&\qquad={1\over m}\sum_{k>n}{(1{+}1/m)k-n-1\choose k-n-1}(\zeta z)^k\,.
+\enddisplay
+Since $\sum_{0\le j<m}(\zeta^{2j+1})^k=m(-1)^l\[k=ml]$, these terms
+sum to
+\begindisplay
+&\sum_{k>n/m}{(1{+}1/m)mk-n-1\choose mk-n-1}(-z^m)^k\cr
+&\qquad=\sum_{k>n/m}{(m{+}1)k-n-1\choose k}(-z^m)^k
+       =\!\!\sum_{k>n/m}{n-mk\choose k}z^{mk}\,.
+\enddisplay
+Incidentally, the functions $\Bscr_m(z^m)$ and
+$\zeta^{2j+1}z\,\Bscr_{1+1/m}(\zeta^{2j+1} z)^{1/m}$ are the $m+1$ complex
+roots of the equation $w^{m+1}-w^m=z^m$.
+
+\ansno5.88:
+ Use the facts that $\int_0^\infty(e^{-t}-e^{-nt})\,dt/t=\ln n$
+and $(1-e^{-t})/t\le1$. (We have ${x\choose k}=O(k^{-x-1})$ as
+$k\to\infty$, by \equ(5.|f-def-lim|); so this bound implies that
+Stirling's series $\sum_k s_k{x\choose k}$ converges
+when $x>-1$. "Hermite" [|hermite|] showed that the sum is $\ln\Gamma(1+x)$.)
+\source{"Hermite" [|hermite|].}
+
+\ansno5.89:
+ Adding this to \equ(5.|partial-binomial|) gives $y^{-r}(x+y)^{m+r}$
+on both sides, by the binomial theorem. Differentiation gives
+\begindisplay
+&\sum_{k>m}{m+r\choose k}{m-k\choose n}x^ky^{m-k-n}\cr
+&\qquad= \sum_{k>m}{-r\choose k}{m-k\choose n}(-x)^k(x+y)^{m-k-n}\,,
+\enddisplay
+and we can replace $k$ by $k+m+1$ and apply \equ(5.|bc-switch|) to get
+\begindisplay
+&\sum_{k\ge0}{m+r\choose m+1+k}{-n-1\choose k}(-x)^{m+1+k}y^{-1-k-n}\cr
+&\qquad=\sum_{k\ge0}{-r\choose m+1+k}{-n-1\choose k}x^{m+1+k}(x+y)^{-1-k-n}\,.
+\enddisplay
+In hypergeometric form, this reduces to
+\begindisplay
+\hyp{1-r,\,n+1}{m+2}{{-x\over y}}=\left(1+{x\over y}\right)^{\!\!-n-1}
+\hyp{m+1+r,\,n+1}{m+2}{{x\over x+y}}\,,
+\enddisplay
+which is the special case $(a,b,c,z)=(n+1,m+1+r,m+2,-x/y)$ of
+the reflection law \equ(5.|hyp-refl|).
+(Thus \equ(5.|hyp-gen-vdm|) is related to reflection and to
+the formula in exercise~|hyp-backwards|.)
+
+\ansno5.90:
+ If $r$ is a nonnegative integer, the sum is finite, and the
+\g\setbox0=\vbox{\halign{\span\grafctr\cr
+The boxed\cr sentence\cr on the\cr other side\cr of this page\cr
+is self-\cr referential.\cr}}
+\vskip-30pt
+\hbox{\vrule\vtop{\hrule\kern8pt\hbox{\kern0pt\box0\kern0pt}\kern8pt\hrule}%
+ \vrule}\g
+derivation in the text is valid as long as none of the terms of the
+sum for $0\le k\le r$ has zero in the denominator. Otherwise the
+sum is infinite, and the $k$th term ${k-r-1\choose k}\big/{k-s-1\choose k}$
+is approximately $k^{s-r}(-s-1)!/(-r-1)!$ by \equ(5.|f-def-lim|).
+So we need $r>s+1$ if the infinite series is going to converge.
+(If $r$ and~$s$ are complex, the condition
+is $\Re r>\Re s+1$, because $\vert k^z\vert
+=k^{\Re z}$.) The sum is
+\begindisplay
+\hyp{-r,\,1}{-s}1={\Gamma(r-s-1)\Gamma(-s)\over\Gamma(r-s)\Gamma(-s-1)}
+={s+1\over s+1-r}
+\enddisplay
+by \equ(5.|Fabc|); this is the same formula we found when $r$ and $s$ were
+integers.
+
+\ansno5.91:
+ (It's best to have computer help for this.)
+Incidentally, when $c=(a+1)/2$, this reduces to an identity that's
+equivalent to "Gauss's identity"
+\equ(5.|hyp4z-4z2|), in view of Pfaff's reflection law.
+For if $w=-z/(1-z)$ we have $4w(1-w)=-4z/(1-z)^2$, and
+\begindisplay \openup3pt \postdisplaypenalty=-500
+\hyp{\half a,\,\half a+\half-b}{1+a-b}{4w(1-w)}
+&=\hyp{a,\,a+1-2b}{1+a-b}{{-z\over1-z}}\cr
+&=(1-z)^a\hyp{a,\,b}{1+a-b}z\,.
+\enddisplay
+\source{"Whipple" [|whipple|].}
+
+\ansno5.92:
+ The identities can be proved, as Clausen proved them more than
+150 years ago, by showing that both sides satisfy the same differential
+equation. One way to write the resulting equations between coefficients
+of $z^n$ is in terms of binomial coefficients:
+\begindisplay \openup6pt
+&\sum_k{\displaystyle{r\choose k}{s\choose k}{r\choose n-k}{s\choose n-k}\over
+\displaystyle{r+s-1/2\choose k}{r+s-1/2\choose n-k}}
+ ={\displaystyle {2r\choose n}{r+s\choose n}{2s\choose n}\over
+ \displaystyle {2r+2s\choose n}{r+s-1/2\choose n}}\,;\cr
+\noalign{\smallskip}
+&\sum_k{\displaystyle{-1/4+r\choose k}{-1/4+s\choose k}
+ {-1/4-r\choose n-k}{-1/4-s\choose n-k}
+ \over\displaystyle{-1+r+s\choose k}{-1-r-s\choose n-k}}\cr
+&\hskip5em={\displaystyle{-1/2\choose n}{-1/2+r-s\choose n}{-1/2-r+s\choose n}
+ \over\displaystyle{-1+r+s\choose n}{-1-r-s\choose n}}\,.
+\enddisplay
+Another way is in terms of hypergeometrics:
+\g\setbox0=\vbox{\halign{\span\grafctr\cr
+The boxed\cr sentence\cr on the\cr other side\cr of this page\cr
+is not self-\cr referential.\cr}}
+\hbox{\vrule\vtop{\hrule\kern8pt\hbox{\kern0pt\box0\kern0pt}\kern8pt\hrule}%
+ \vrule}\g
+\setmathsize{\hyp{a,b,\half-a-b-n,-n}{\half+a+b,1-a-n,1-b-n}1=
+{(2a)\_^n\,(a+b)\_^n\,(2b)\_^n\over (2a+2b)\_^n\,a\_^n\,b\_^n}\,;}
+\begindisplay \openup3pt
+&\hyp{a,b,\half-a-b-n,-n}{\half+a+b,1-a-n,1-b-n}1=
+{(2a)\_^n\,(a+b)\_^n\,(2b)\_^n\over (2a+2b)\_^n\,a\_^n\,b\_^n}\,;\cr
+\noalign{\smallskip}
+&\hyp{{1\over4}+a,{1\over4}+b,a+b-n,-n}{1+a+b,{3\over4}+a-n,{3\over4}+b-n}1\cr
+&\mathsize{\hfill={(1/2)\_^n\,(1/2+a-b)\_^n\,(1/2-a+b)\_^n\over
+  (1+a+b)\_^n\,(1/4-a)\_^n\,(1/4-b)\_^n}\,.}\cr
+\enddisplay
+\source{"Clausen" [|clausen1|],\thinspace[|clausen2|].}
+
+\ansno5.93:
+ $\alpha^{-1}\prod_{j=1}^k\bigl(f(j)+\alpha\bigr)/f(j)$.
+\source{"Gosper" [|gosper|].}
+
+\ansno5.94:
+ Gosper's algorithm finds the answer $-{a-1\choose k-1}{-a-1\choose
+n-k}a/n+C$. Consequently, when $m\ge0$ is an integer, we have
+\begindisplay
+\sum{a\choose k}{m-a\choose n-k}\,\delta k=
+\sum_j{m\choose j}{-a\over n-j}{a-1\choose k-1}{-a-1\choose n-j-k}+C\,.
+\enddisplay
+
+\ansno5.95:
+ The leading coefficients of $p$ and $r$ should be unity, and $p$
+should have no factors in common with $q$ or $r$. It is easy to fulfill
+these additional conditions by shuffling factors around.\par
+Now suppose $p(k+1)q(k)/p(k)r(k+1)=P(k+1)Q(k)/P(k)R(k+1)$, where
+the polynomials $(p,q,r)$
+and $(P,Q,R)$ both satisfy the new criteria. Let $p_0(k)=p(k)/g(k)$ and
+$P_0(k)=P(k)/g(k)$, where $g(k)=\gcd\bigl(p(k),P(k)\bigr)$ is the product
+of all common factors of $p$ and~$P$. Then
+\begindisplay
+p_0(k+1)@q(k)@P_0(k)@R(k+1)=p_0(k)@r(k+1)@P_0(k+1)@Q(k)\,.
+\enddisplay
+Suppose $p_0(k)\ne1$. Then there is a complex number $\alpha$ such that
+$p_0(\alpha)=0$; this implies $q(\alpha)\ne0$, $r(\alpha)\ne0$, and
+$P_0(\alpha)\ne0$. Hence we must have $p_0(\alpha+1)@R(\alpha+1)=0$ and
+$p_0(\alpha-1)@Q(\alpha-1)=0$. Let $N$ be a positive integer such that
+$p_0(\alpha+N)\ne0$ and $p_0(\alpha-N)\ne0$. Repeating the argument
+$N$ times, we find
+$R(\alpha+1)\ldots R(\alpha+N)=0=Q(\alpha-1)\ldots Q(\alpha-N)$,
+contradicting \equ(5.|qr-condition|). Therefore $p_0(k)=1$. Similarly
+$P_0(k)=1$, so $p(k)=P(k)$.
+Now $q(\alpha)=0$ implies $r(\alpha+1)\ne0$, by \equ(5.|qr-condition|),
+hence $q(k)\divides Q(k)$. Similarly $Q(k)\divides q(k)$, so $q(k)=Q(k)$
+since they have the same leading coefficient. That leaves $r(k)=R(k)$.
+\source{"Petkov\v{s}ek" [|petk|, Corollary 3.1].}
+
+\ansno5.96:
+ \def\that{{\hat t}}\def\phat{{\hat p}}%
+\def\tbar{{\bar t}}\def\pbar{{\bar p}}%
+ If $r(k)$ is a nonzero rational function and $T(k)$ is a hypergeometric
+term, then $r(k)T(k)$ is a hypergeometric term, which is called {\it
+"similar"\/} to $T(k)$. (We allow $r(k)$ to be $\infty$ and $T(k)$ to
+be $0$, or vice versa, for finitely many values of~$k$.)
+In particular, $T(k+1)$ is always similar to~$T(k)$.
+If $T_1(k)$ and $T_2(k)$ are similar hypergeometric terms, then $T_1(k)+T_2(k)$
+is a hypergeometric term. If $T_1(k)$, \dots,~$T_m(k)$ are mutually
+dissimilar, and $m>1$, then $T_1(k)+\cdots+T_m(k)$ cannot be zero for all
+but finitely many~$k$.
+For if it could, consider a counterexample for which
+\g\setbox0=\vbox{\halign{\span\grafctr\cr
+Burma-\cr Shave\cr}}
+\hbox{\vrule\vtop{\hrule\kern8pt\hbox{\kern0pt\box0\kern0pt}\kern8pt\hrule}%
+ \vrule}\g
+$m$ is minimum, and let $r_j(k)=T_j(k+1)/T_j(k)$. Since $T_1(k)+\cdots+T_m(k)=
+0$, we have $r_m(k)T_1(k)+\cdots+r_m(k)T_m(k)=0$ and $r_1(k)T_1(k)+\cdots+
+r_m(k)T_m(k)=T_1(k+1)+\cdots+T_m(k+1)=0$;
+ hence $\bigl(r_m(k)-r_1(k)\bigr)T_1(k)
++\cdots+\bigl(r_m(k)-r_{m-1}(k)\bigr)T_{m-1}(k)=0$.
+We cannot have $r_m(k)-r_j(k)=0$, for any $j<m$,
+since $T_j$ and $T_m$ are dissimilar. But $m$ was minimum, so this cannot
+be a counterexample; it follows that $m=2$. But then $T_1(k)$ and $T_2(k)$
+must be similar, since they are both zero for all but finitely many $k$.
+\par
+Now let $t(k)$ be any hypergeometric term with $t(k+1)/t(k)=r(k)$, and suppose
+that $t(k)=\bigl(T_1(k+1)+\cdots+T_m(k+1)\bigr)-\bigl(T_1(k)+\cdots+
+T_m(k)\bigr)$, where $m$ is minimal. Then $T_1$, \dots,~$T_m$ must be
+mutually dissimilar. Let $r_j(k)$ be the rational function such that
+\begindisplay
+r(k)\bigl(T_j(k+1)-T_j(k)\bigr)-\bigl(T_j(k+2)-T_j(k+1)\bigr)=r_j(k)T_j(k)\,.
+\enddisplay
+Suppose $m>1$.
+Since $0=r(k)t(k)-t(k+1)=r_1(k)T_1(k)+\cdots+r_m(k)T_m(k)$, we must
+have $r_j(k)=0$ for all but at most one value of~$j$.
+If $r_j(k)=0$, the function $\tbar(k)=T_j(k+1)-T_j(k)$ satisfies
+$\tbar(k+1)/\tbar(k)=t(k+1)/t(k)$. So Gosper's algorithm will find a solution.
+\source{"Petkov\v{s}ek" [|petk|, Corollary 5.1].}
+
+\ansno5.97:
+ Suppose first that $z$ is not equal to $-d-1/d$ for any integer
+$d>0$. Then in Gosper's algorithm we have $p(k)=1$, $q(k)=(k+1)^2$,
+$r(k)=k^2+kz+1$. Since $\deg(Q)<\deg(R)$ and $\deg(p)-\deg(R)+1=-1$, the
+only possibility is $z=d+2$ where $d$ is a nonnegative integer. Trying
+$s(k)=\alpha_dk^d+\cdots+\alpha_0$ fails when $d=0$ but succeeds whenever
+$d>0$. (The linear equations obtained by equating coefficients of $k^d$,
+$k^{d-1}$, \dots,~$k^1$ in \equ(5.|pqrs-rec|) express $\alpha_{d-1}$,
+\dots,~$\alpha_0$ as positive multiples of~$\alpha_d$, and the remaining
+equation $1=\alpha_d+\cdots+\alpha_1$ then defines~$\alpha_d$.) For example,
+when $z=3$ the indefinite sum is $(k+2)k!^2\big/\prod_{j=1}^{k-1}(j^2+3j+1)
++C$.\par
+If $z=-d-1/d$, on the other hand, the stated terms $t(k)$ are infinite
+for $k\ge d$. There are two reasonable ways to proceed: We can cancel the
+zero in the denominator by redefining
+\begindisplay\advance\abovedisplayskip-1pt\advance\belowdisplayskip-1pt
+t(k)={k!^2\over\prod_{j=d+1}^k\bigl(j^2-j(d+1/d)+1\bigr)}=
+{(d-1/d)!\,k!^2\over(k-1/d)!\,(k-d)!}\,,
+\enddisplay
+thereby making $t(k)=0$ for $0\le k<d$ and positive for $k\ge d$.
+Then Gosper's algorithm gives $p(k)=k\_d$,
+$q(k)=k+1$, $r(k)=k-1/d$, and we can solve \equ(5.|pqrs-rec|) for $s(k)$
+because the coefficient of $k^j$ on the right is $(j+1+1/d)\alpha^j$ plus
+multiples of $\{\alpha_{j+1},\ldots,\alpha_d\}$. For example, when $d=2$
+the indefinite sum is $(3/2)!\,k!\,({2\over7}k^2-{26\over35}k+{32\over105})/
+(k-3/2)!+C$.
+\par
+Alternatively, we can try to sum the original terms,
+\g Look, any finite sequence is trivially summable, because we can find a
+polynomial that matches $t(k)$ for $0\le k<d$.\g
+but only in the range $0\le k<d$.
+Then we can replace $p(k)=k\_d$ by
+\begindisplay\advance\abovedisplayskip-2pt\advance\belowdisplayskip-2pt
+p'(k)=\sum_{j=1}^d(-1)^{d-j}j{d\brack j}k^{j-1}\,.
+\enddisplay
+This is justified since \equ(5.|tk-pqr|) still holds for
+$0\le k<d-1$; we have $p'(k)=\lim_{\epsilon\to0}\bigl((k+\epsilon)\_d
+-k\_d\bigr)/\epsilon=\lim_{\epsilon\to0}(k+\epsilon)\_d/\epsilon$, so this
+trick essentially cancels a $0$ from the numerator and denominator of
+\equ(5.|tk-pqr|) as in "L'Hospital's rule".
+ Gosper's method now yields an indefinite sum.
+
+\ansno5.98:
+ $nS_{n+1}=2nS_n$. (Beware: This gives no information about $S_1/S_0$.)
+\source{Ira "Gessel".*}
+
+\ansno5.99:
+ Let $p(n,k)=(n+1+k)\beta_0(n)+(n+1+a+b+c+k)\beta_1(n)=\phat(n,k)$,
+$\tbar(n,k)=t(n,k)/(n+1+k)$, $q(n,k)=(n+1+a+b+c+k)(a-k)(b-k)$,
+$r(n,k)=(n+1+k)(c+k)k$. Then \equ(5.|zeil-pqrs-rec|) is solved by
+$\beta_0(n)=(n+1+a+b+c)(n+1+a+b)$, $\beta_1(n)=-(n+1+a)(n+1+b)$,
+$\alpha_0(n)=s(n,k)=-1$. We discover \equ(5.|sym-saalschutz|) by observing
+that it is true when $n=-a$ and using induction on~$n$.
+
+\ansno5.100:
+ The Gosper-Zeilberger algorithm discovers easily that
+\begindisplay\advance\belowdisplayskip-3pt
+{n+2\over\displaystyle{n\choose k}}-
+{2n+2\over\displaystyle{n+1\choose k}}=
+{n-k\over\displaystyle{n\choose k+1}}-
+{n+1-k\over\displaystyle{n\choose k}}\,,\qquad\hbox{$0\le k<n$}.
+\enddisplay
+Summing from $k=0$ to $n-1$ yields $(n+2)(S_n-1)-(2n+2)(S_{n+1}-1-{1\over n+1})
+=-n$. Hence $(2n+2)S_{n+1}=(n+2)S_n+2n+2$. Applying a summation factor
+now leads to the expression $S_n=(n+1)2^{-n-1}\sum_{k=1}^{n+1}2^k\!/k$.
+
+\ansno5.101:
+ (a) If we hold $m$ fixed, the Gosper-Zeilberger algorithm discovers
+that $(n+2)S_{m,n+2}(z)=(z-1)(n+1)S_{m,n}(z)+(2n+3-z(n-m+1))S_{m,n+1}(z)$.
+We can also apply the method to the term
+\begindisplay
+\beta_0(m,n)t(m,n,k)+
+\beta_1(m,n)t(m{+}1,n,k)+\beta_2(m,n)t(m,n{+}1,k)\,,
+\enddisplay
+in which case we get a
+simpler recurrence,
+\begindisplay
+(m+1)S_{m+1,n}(z)-(n+1)S_{m,n+1}(z)=(1-z)(m-n)S_{m,n}(z)\,.
+\enddisplay
+(b)~Now we must work a little harder, with five equations in six unknowns.
+The algorithm finds
+\begindisplay\advance\abovedisplayskip-3pt\advance\belowdisplayskip-3pt
+&(n+1)(z-1)^2{n\choose k}^2z^k-(2n+3)(z+1){n+1\choose k}^2z^k\cr
+\noalign{\vskip-3pt}
+&\qquad\qquad{}+(n+2){n+2\choose k}^2z^k=T(n,k+1)-T(n,k)\,,\cr
+\noalign{\vskip3pt}
+&T(n,k)={n+1\choose k-1}^2{s(n,k)\over n+1}\,z^k\,,\cr
+&s(n,k)=(z{-}1)k^2-2((n{+}2)z{-}2n{-}3)k+(n{+}2)((n{+}2)z{-}4n{-}5)\,.\cr
+\enddisplay
+Therefore $(n+1)(z-1)^2S_n(z)-(2n+3)(z+1)S_{n+1}(z)+(n+2)S_{n+2}(z)=0$.
+Incidentally, this recurrence holds also for negative $n$, and we have
+$S_{-n-1}(z)=S_n(z)/(1-z)^{2n+1}$.\par
+The sum $S_n(z)$ can be regarded as a modified form of the "Legendre
+polynomial" $P_n(z)=\sum_k{n\choose k}^2(z-1)^{n-k}(z+1)^k\!/2^n$, since we
+can write
+% $S_n(z)=(1-z)^n P_n\bigl((1+z)/(1-z)\bigr)$. Similarly, $S_{m,n}(z)=
+% (1-z)^n P_n^{(0,m-n)}\bigl((1+z)/(1-z)\bigr)$ is a modified "Jacobi
+$S_n(z)=(1-z)^n P_n\bigl({1+z\over1-z}\bigr)$. Similarly, $S_{m,n}(z)=
+(1-z)^n P_n^{(0,m-n)}\bigl({1+z\over1-z}\bigr)$ is a modified "Jacobi
+polynomial".
+
+\ansno5.102:
+ The sum is $F(a-{1\over3}n,-n;b-{4\over3}n;-z)$, so we need not
+consider the case $z=-1$. Let $n=3m$. We seek solutions to
+\g How about $z=0$?\g
+\equ(5.|zeil-pqrs-rec|) when
+\begindisplay
+p(m,k)&=(3m+3-k)\_3(m+1-k)\beta_0+(4m+4-b-k)\_4\beta_1\,,\cr
+q(m,k)&=(3m+3-k)(m+1-a-k)z\,,\cr
+r(m,k)&=k(4m+1-b-k)\,,\cr
+s(m,k)&=\alpha_2k^2+\alpha_1k+\alpha_0\,.\cr
+\enddisplay
+The resulting five homogeneous equations have a nonzero solution
+$(\alpha_0,\alpha_1,\alpha_2,\allowbreak
+\beta_0,\beta_1)$ if and only if
+the determinant of coefficients is zero; and this
+determinant, a polynomial in~$m$, vanishes only in eight cases. One of
+those cases is, of course, \equ(5.|useless|); but we can now evaluate the
+sum for all nonnegative integers~$n$, not just $n\not\=2$ (mod~$3$):
+\begindisplay
+\sum_k{n\choose k}{{1\over3}n-{1\over6}\choose k}\,8^k\bigg/
+ {{4\over3}n-{2\over3}\choose k}=[1,1,{\textstyle-\half}]{2n\choose n}\bigg/
+ {{4\over3}n-{2\over3}\choose n}\,.
+\enddisplay
+Here the notation $[c_0,c_1,c_2]$ stands for the single value
+$c_{n\,\bmod\,3}$.
+Another case, $(a,b,z)=(\half,0,8)$, yields the identity
+\begindisplay
+\sum_k{n\choose k}{{1\over3}n-{1\over2}\choose k}\,8^k\bigg/
+ {{4\over3}n\choose k}=[1,0,0]\,16^{n/3}{{2\over3}n\choose{1\over3}n}\bigg/
+ {{4\over3}n\choose n}\,.
+\enddisplay
+(This sum, amazingly, is zero unless $n$ is a multiple of~$3$; and then the
+identity can be written
+\begindisplay
+\sum_k{3m\choose k}{2m\choose2k}{2k\choose k}\,2^k\bigg/
+{4m\choose k}{m\choose k}=16^m{(3m)!\,(2m)!\over(4m)!\,m!}\,,
+\enddisplay
+which might even be useful.) The remaining six cases generate even weirder
+sums
+\begindisplay
+&\sum_k{n\choose k}{{1\over3}n-a\choose k}\,z^k\bigg/
+ {{4\over3}n-b\choose k}\cr
+&\qquad=[c_0,c_1,c_2]{\displaystyle
+{{1\over3}n-a\choose\lfloor n/3\rfloor}{{1\over3}n-a'\choose\lfloor n/3\rfloor}
+_{\mathstrut}x^{\lfloor n/3\rfloor}
+\over\displaystyle{{4\over3}n-b\choose n}^{\mathstrut}
+{{1\over3}n-b\choose\lfloor n/3\rfloor}
+{{1\over3}n-b'\choose\lfloor n/3\rfloor}}
+\enddisplay
+where the respective values of $(a,b,z,c_0,c_1,c_2,a',b',x)$ are
+\begindisplay
+\vbox{\halign{&$(\hfil\textstyle{#}$&
+               $,\,\hfil\textstyle{#}$&
+               $,\hfil\textstyle{#}$&
+               $,\hfil\textstyle{#}$&
+               $,\hfil\textstyle{#}$&
+               $,\hfil\textstyle{#}$&
+               $,\,\hfil\textstyle{#}$&
+               $,\hfil\textstyle{#}$&
+               $,\hfil\textstyle{#})$&$\,#$\hfil\qquad\cr
+7\over12&1\over3&8&1&-1&0&1\over4&0&64&;&
+   1\over4&0&8&1&2&0&7\over12&1\over3&64&;\cr
+5\over12&2\over3&8&1&0&-3&3\over4&0&64&;&
+   1\over12&1\over3&8&1&3&0&3\over4&0&64&;\cr
+1\over2&0&-4&1&2&0&1\over6&1\over3&-16&;&
+   1\over6&2\over3&-4&1&0&-3&5\over6&0&-16&.\cr}}
+\enddisplay
+\source{H. S. "Wilf".*}
+
+\ansno5.103:
+ We assume that each $a'_i$ and $b'_i$ is nonzero, since the
+corresponding factors would otherwise have no influence on the degrees
+in~$k$. Let
+$\that(n,k)=\phat(n,k)\tbar(n,k)$ where
+\begindisplay
+\tbar(n,k)={\prod_{i=1_{\mathstrut}}^p
+          \bigl(a_in+a'_ik+a_il@\[a_i<0]+a''_i\bigr)!\over
+      \prod_{i=1}^{q^{\mathstrut}}\bigl(b_in+b'_ik+b_il@\[b_i>0]+b''_i\bigr)!}
+                  z^k\,.
+\enddisplay
+Then we have $\deg(\phat)=\deg(f)+\max\bigl(
+  \sum_{i=1}^q b_i\[b_i>0]-\sum_{i=1}^p a_i\[a_i<0],\allowbreak
+  \sum_{i=1}^p a_i\[a_i>0]-\sum_{i=1}^q b_i\[b_i<0]\bigr)
+\ge\deg(f)+\half l@\bigl(\vert a_1\vert+\cdots+\vert a_p\vert
+                      +\vert b_1\vert+\cdots+\vert b_q\vert\bigr)$, except in
+unusual cases where cancellation occurs in the leading coefficient. And
+$\deg(q)=\sum_{i=1}^p a'_i\[a'_i>0]-\sum_{i=1}^q b'_i\[b'_i<0]$,
+$\deg(r)=\sum_{i=1}^q b'_i\[b'_i>0]-\sum_{i=1}^p a'_i\[a'_i<0]$,
+again except in unusual cases.\par
+(These estimates can be used to show directly that, as $l$ increases, the
+degree of $\phat$ eventually becomes large enough to make a polynomial
+$s(n,k)$ possible, and the number of unknown $\alpha_j$ and $\beta_j$
+eventually becomes larger than
+the number of homogeneous linear equations to be solved. So we obtain another
+proof that the Gosper-Zeilberger algorithm succeeds, if we argue as in
+the text that there must be a solution with $\beta_0(n)$, \dots,~$\beta_l(n)$
+not all zero.)
+
+\ansno5.104:
+ Let $t(n,k)=(-1)^k(r-s-k)!\,(r-2k)!/\bigl((r-s-2k)!\,(r-n-k+1)!
+\,(n-k)!\allowbreak\,k!\bigr)$.
+Then $\beta_0(n)t(n,k)+\beta_1(n)t(n+1,k)$ is not summable in hypergeometric
+terms, because $\deg(\phat)=1$, $\deg(q-r)=3$,
+$\deg(q+r)=4$, $\lambda=-8$, $\lambda'=-4$;
+but $\beta_0(n)t(n,k)+\beta_1(n)t(n+1,k)+\beta_2(n)t(n+2,k)$
+is\dash---basically
+because $\lambda'=0$ when $q(n,k)=-(r-s-2k)(r-s-2k-1)(n+2-k)(r-n-k+1)$ and
+$r(k)=(r-s-k+1)(r-2k+2)(r-2k+1)@k$. The solution is
+\begindisplay
+\beta_0(n)&=(s-n)(r-n+1)(r-2n+1)\,,\cr
+\beta_1(n)&=(rs-s^2-2rn+2n^2-2r+2n)(r-2n-1)\,,\cr
+\beta_2(n)&=(s-r+n+1)(n+2)(r-2n-3)\,,\cr
+\alpha_0(n)&=r-2n-1\,,\cr
+\enddisplay
+and we may conclude that $\beta_0(n)S_n+\beta_1(n)S_{n+1}+\beta_2(n)S_{n+2}=0$
+when $S_n$ denotes the stated sum. This suffices to prove the identity by
+induction, after verifying the cases $n=0$ and $n=1$.\par
+\def\betabar{{\bar\beta}}
+But $S_n$ also satisfies the simpler recurrence
+$\betabar_0(n)S_n+\betabar_1(n)S_{n+1}=0$, where
+$\betabar_0(n)=(s-n)(r-2n+1)$ and $\betabar_1(n)=-(n+1)(r-2n-1)$. Why didn't
+the method discover this? Well, nobody ever said that such a recurrence
+necessarily forces the terms $\betabar_0(n)t(n,k)+\betabar_1(n)t(n+1,k)$ to be
+indefinitely summable. The surprising thing is that the Gosper-Zeilberger
+method actually does find the simplest recurrence in so many other cases.\par
+Notice that the second-order recurrence we found can be factored:
+\begindisplay
+&\beta_0(n)+\beta_1(n)@N+\beta_2(n)@N^2\cr
+&\qquad=
+\bigl((r-n+1)N+(r-s-n-1)\bigr)\;\bigl(\betabar_0(n)+\betabar_1(n)@N\bigr)\,,
+\enddisplay
+where $N$ is the shift operator in \equ(5.|ldo|).
+\source{Volker "Strehl".*}
+
+\ansno5.105:
+  Set $a=1$ and compare
+the coefficients of $z^{3n}$ on both sides of
+"Henrici"'s ``"friendly monster"'' identity,
+\begindisplay
+&f(a,z)\,f(a,\omega z)\,f(a,\omega^2z)\cr
+&\quad=\hyp{\half a-{1\over4},\,\,\,\half a+{1\over4}}
+{{1\over3}a,\,\,{1\over3}a{+}{1\over3},\,\,{1\over3}a{+}{2\over3},\,\,
+ {2\over3}a{-}{1\over3},\,\, {2\over3}a,\,\,{2\over3}a{+}{1\over3},\,\,
+  a\,\,}{\left(4z\over9\right)^{\!\!3}\,},
+\enddisplay
+where $f(a,z)=F(1;a,1;z)$. The identity can be proved by showing that both
+sides satisfy the same differential equation.
+\par
+Peter "Paule" has found another interesting way to evaluate the sum:
+\begindisplay
+  \sum_{k,l}{N\choose k,l,N-k-l}^{\!2}&\omega^{k+2l}
+=\sum_{k,l}{N\choose k-l,l,N-k}^{\!2}\omega^{k+l}\cr
+&=\sum_{k,l}{N\choose k}^{\!2}{k\choose l}^{\!2}\omega^{k+l}\cr
+&=\sum_k{N\choose k}^{\!2}\omega^{k}\,
+        [z^k]\,\bigl((1+z)(\omega+z)\bigr)^k\cr
+&=[z^0]\,\sum_k{N\choose k}^{\!2}
+        \left(\omega(1+z)(\omega+z)\over z\right)^{\!k}\cr
+&=[z^0]\,\sum_{k,j}{N\choose k}^{\!2}{k\choose j}
+        \left({\omega(1+z)(\omega+z)\over z}-1\right)^{\!j}\cr
+&=[z^0]\,\sum_{k,j}{N\choose k}{N-j\choose N-k}{N\choose j}
+        \left((\omega z-1)^2\over\omega z\right)^{\!j}\cr
+&=\sum_j{2N-j\choose N}{N\choose j}\,[z^j]\,(z-1)^{2j}\cr
+&=\sum_j{2N-j\choose N}{N\choose j}{2j\choose j}(-1)^j\,,\cr
+\enddisplay
+using the binomial theorem, Vandermonde's convolution, and the fact that
+$[z^0]g(az)=[z^0]g(z)$. We can now set $N=3n$ and apply the Gosper-Zeilberger
+algorithm
+to this sum~$S_n$, miraculously obtaining the first-order recurrence
+$(n+1)^2S_{n+1}=4(4n+1)(4n+3)S_n$; the result follows by induction.\par
+If $3n$ is replaced by $3n+1$ or $3n+2$, the stated sum is zero.
+Indeed, $\sum_{k+l+m=N}t(k,l,m)\omega^{l-m}$ is always zero when
+$N\bmod3\ne0$ and $t(k,l,m)=t(l,m,k)$.
+\source{"Henrici" [|henrici-bieberbach|, p.~118].}
+
+\ansno5.106:
+ (Solution by Shalosh B "Ekhad".) Let
+\begindisplay
+%T(r,j,k)&={(1{-}j{+}s{+}sk{+}n{-}jn{+}r{-}jr{-}kr{+}sr{+}nr)(j-l)@j\over
+T(r,j,k)&={((1{+}n{+}s)(1{+}r)-(1{+}n{+}r)@j+(s{-}r)@k)(j{-}l)@j\over
+(l-m+n-r+s)(n+r+1)(j-r-1)(j+k)}t(r,j,k)\,;\cr
+U(r,j,k)&={(s+n+1)(k+l)@k\over(l-m+n-r+s)(n+r+1)(j+k)}t(r,j,k)\,.
+\enddisplay
+The stated equality is routinely verifiable, and \equ(5.|bc-quad|) follows
+by summing with respect to $j$ and $k$. (We sum $T(r,j+1,k)-T(r,j,k)$ first
+with respect to~$j$, then with respect to~$k$; we sum the other terms
+$U(r,j,k+1)-U(r,j,k)$ first with respect to~$k$, then with respect to~$j$.)
+\par Well, we also need to verify \equ(5.|bc-quad|) when $r=0$. In that
+case it reduces via trinomial revision
+to $\sum_k(-1)^k{n\choose n+l}{n+l\choose k+l}{s+n-k\choose m}
+=(-1)^l{n\choose n+l}{s\choose m-n-l}$. We are assuming that $l$, $m$, and $n$
+are integers and $n\ge0$. Both sides are clearly zero unless
+$n+l\ge 0$. Otherwise we can replace $k$ by $n-k$ and use \equ(5.|bc-prod3|).
+
+\ansno5.107:
+ If it were proper, there would be a linear difference operator
+\g Noticee that $1/nk$ is proper, since it's\par
+$(n-1)!(k-1)!/$\par
+$n!\,k!$. Also\par $1/(n^2-k^2)$ is proper. But\vskip2pt $1/(n^2+k^2)$ isn't.\g
+that annihilates it. In other words, we would have a finite summation identity
+\begindisplay
+\sum_{i=0}^I\sum_{j=0}^J\alpha_{i,j}(n)\big/\bigl((n+i)(k+j)+1\bigr)=0\,,
+\enddisplay
+where the $\alpha$'s are polynomials in $n$, not all zero. Choose integers
+$i$, $j$, and $n$ such that $n>1$ and $\alpha_{i,j}(n)\ne0$. Then when
+$k=-1/(n+i)-j$, the $(i,j)$ term in the sum is infinite but the other
+terms are finite.
+
+\ansno5.108:
+ Replace $k$ by $m-k$ in the double sum, then
+use \equ(5.|bc-saalschutz|) to sum on~$k$, getting
+\begindisplay
+A_{m,n}=\sum_j{m\choose j}^2\,{m+n-j\choose m}^2\,;
+\enddisplay
+trinomial revision \equ(5.|bc-tc|) then yields one of the desired
+formulas.\par
+It appears to be difficult to find a direct proof that the two symmetrical
+sums for $A_{m,n}$ are equal. We can, however, prove the equation
+indirectly with the Gosper-Zeilberger
+algorithm, by showing that both sums satisfy the recurrence
+\begindisplay
+(n+1)^3A_{m,n}-f(m,n)A_{m,n+1}+(n+2)^3A_{m,n+2}=0\,,
+\enddisplay
+where $f(m,n)=(2n+3)(n^2+3n+2m^2+2m+3)$.
+Setting $t_1(n,k)={m\choose k}{n\choose k}{m+k\choose k}{n+k\choose k}$ and
+$t_2(n,k)={m+n-k\choose k}^2{m+n-2k\choose m-k}^2$, we find
+\begindisplay
+&(n+1)^2t_j(n,k)-f(m,n)t_j(n+1,k)+(n+2)^2t_j(n+2,k)\cr
+&\qquad=T_j(n,k+1)-T_j(n,k)\,,\cr
+\enddisplay
+where $T_1(n,k)=-2(2n+3)k^4t_1(n,k)/(n+1-k)(n+2-k)$ and
+$T_2(n,k)=-\bigl((n+2)(4mn+n+3m^2+8m+2)-2(3mn+n+m^2+6m+2)k+{(2m+1)k^2}\bigr)
+k^2(m+n+1-k)^2t_2(n,k)/(n+2-k)^2$. This proves the recurrence, so we
+need only verify equality when $n=0$ and $n=1$.
+(We could also have used the simpler recurrence
+\begindisplay
+m^3A_{m,n-1}-n^3A_{m-1,n}=(m-n)(m^2+n^2-mn)A_{m-1,n-1}\,,
+\enddisplay
+which can be discovered by the method of exercise |legendre-recs|.)\par
+The fact that the first formula for $A_{m,n}$ equals the third implies a
+remarkable identity between the
+generating functions $\sum_{m,n}A_{m,n}w^mz^n$:
+\begindisplay
+\sum_k{w^kS_k(z)^2\over(1-z)^{2k+1}}=
+\sum_k{2k\choose k}^2\!{w^k\over(1-w)^{2k+1}}{z^k\over(1-z)^{2k+1}}\,,
+\enddisplay
+where $S_k(z)=\sum_j{k\choose j}^2z^j$. It turns out, in fact, that
+\begindisplay
+\sum_k{w^k@S_k(x)@S_k(y)\over(1-x)^k(1-y)^k}=
+\sum_k{2k\choose k}{w^k\over(1-w)^{2k+1}}{\sum_j{k\choose j}^2x^jy^{k-j}\over
+(1-x)^k(1-y)^k}\,;
+\enddisplay
+this is a special case of an identity discovered by "Bailey" [|bailey-jacobi|].
+\source{"Ap\'ery" [|apery|].}
+
+\ansno5.109:
+ Let $X_n=\sum_k{n\choose k}^{a_0}{n+k\choose k}^{a_1}\ldots
+{n+lk\choose k}^{a_l}x^k$ for any positive integers $a_0$, $a_1$, \dots,~$a_l$,
+and any integer~$x$. Then if $0\le m<p$ we have
+\begindisplay \openup3pt
+X_{m+pn}&=\sum_{j=0}^{p-1}\sum_k{m+pn\choose j+pk}^{\!a_0}\ldots
+{m+pn+l(j+pk)\choose j+pk}^{\!a_l}x^{j+pk}\,,\cr
+X_mX_n&=\sum_{j=0}^{p-1}\sum_k{m\choose j}^{\!a_0}{n\choose k}^{\!a_0}\ldots
+{m+l@j\choose j}^{\!a_l}{n+lk\choose k}^{\!a_l}x^{j+k}\,.
+\enddisplay
+And corresponding terms are congruent (mod $p$), because exercise |bc-div-p|
+implies that they are multiples of~$p$ when $lj+m\ge p$, exercise |lucas-bc|
+implies that the binomials are congruent when $lj+m<p$, and
+\equ(4.|alt-fermat-theorem|) implies that $x^p\=x$.
+\source{"Gessel" [|gessel-apery|].}
+
+\ansno5.110:
+ The congruence surely holds if $2n+1$ is prime.
+\g Ilan "Vardi" notes that the condition holds for
+$2n+1=p^2$, where~$p$ is prime, if~and only~if\smallskip
+$2^{p-1}\bmod{p^2}=1$.\smallskip
+This yields two more examples:\smallskip
+$n=(1093^2-1)/2$;\par
+$n=(3511^2-1)/2$.\g
+Steven "Skiena" has also
+found the example $n=2953$, when $2n+1=3\cdt11\cdt179$.
+\source{R. William "Gosper", Jr.*}
+
+\ansno5.111:
+ See [|ruzsa-et-al|] for partial results. The computer experiments
+were done by V.\thinspace A. "Vyssotsky".
+\source{[|erdos-graham|, p.~71].}
+
+\ansno5.112:
+ If $n$ is not a power of $2$, $2n\choose n$ is a multiple of~$4$
+because of exercise~|bc-div-p|. Otherwise the stated phenomenon
+was verified for $n\le2^{22000}$ by A.~"Granville" and O.~"Ramar\'e",
+who also sharpened a theorem of S\'ark\"ozy [|sarkozy|]
+by showing that $2n\choose n$ is divisible by the square of a prime for
+all $n>2^{22000}$. This established a long-standing conjecture that
+$2n\choose n$ is never "squarefree" when $n>4$.\par
+The analogous conjectures for cubes are that $2n\choose n$ is divisible
+by the cube of a prime for all $n>1056$, and by either $2^3$ or $3^3$ for
+all $n>2^{29}+2^{23}$. This has been verified for all $n<2^{10000}$.
+Paul "Erd\H os" conjectures that, in fact,
+$\max_p \epsilon_p\bigl({2n\choose n}\bigr)$ tends to infinity as $n\to\infty$;
+this might be true even if we restrict $p$ to the values $2$ and~$3$.
+\source{[|erdos-graham|, p.~71].}
+
+\ansno5.113:
+ The theorem about generating functions in exercise 7.|d-finite-defined|
+may help resolve this conjecture.
+\source{"Wilf" and "Zeilberger" [|wilf-zeil|].}
+
+\ansno5.114:
+ "Strehl" [|strehl|] has shown that $c_n^{(2)}=\sum_k{n\choose k}^3
+=\sum_k{n\choose k}^2{2k\choose n}$
+is a so-called "Franel number"~[|franel|], and that $c_n^{(3)}=
+\sum_k{n\choose k}{}^2{2k\choose k}{}^2{2k\choose n-k}$.
+In another direction, H.\thinspace S. "Wilf" has shown that
+$c_n^{(m)}$ is an integer for all~$m$ when $n\le9$.
+\source{"Strehl" [|strehl|] credits A. "Schmidt".}

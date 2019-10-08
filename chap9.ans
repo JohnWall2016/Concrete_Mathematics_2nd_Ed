@@ -1,0 +1,796 @@
+
+\ansno9.1:
+ True if the functions are all positive. But otherwise we might
+have, say, $f_1(n)=n^3+n^2$, $f_2(n)=-n^3$, $g_1(n)=n^4+n$, $g_2(n)=-n^4$.
+\source{"Hardy" [|hardy-tract|, 1.3(g)].}
+
+\ansno9.2:
+ (a) We have $n^{\ln n}\prec c^n\prec(\ln n)^n$, since
+$(\ln n)^2\prec n\ln c\prec n\ln\ln n$. (b)~$n^{\ln\ln\ln n}\prec
+(\ln n)!\prec n^{\ln\ln n}$. (c)~Take logarithms to show that
+$(n!)!$ wins. (d)~$F^2_{\lceil H_n\rceil}\asymp \phi^{2\ln n}=n^{2\ln\phi}$;
+$H_{F_n}\sim n\ln\phi$ wins because $\phi^2=\phi+1<e$.
+\source{Part~(c) is from "Garfunkel" [|garfunkel|].}
+
+\ansno9.3:
+ Replacing $kn$ by $O(n)$ requires a different $C$ for each $k$;
+but each $O$ stands for a single~$C$. In fact, the context of this
+$O$ requires it to stand for a set of functions of two variables $k$ and~$n$.
+It would be correct to write
+$\sum_{k=1}^n kn=\sum_{k=1}^nO(n^2)=O(n^3)$.
+\source{[|knuth1|, exercise 1.2.11.1--6].}
+
+\ansno9.4:
+ For example, $\lim_{n\to\infty}O(1/n)=0$. On the left,
+$O(1/n)$ is the set of all functions $f(n)$ such that there are
+constants $C$ and~$n_0$ with $\bigl\vert f(n)\bigr\vert\le C/n$
+for all $n\ge n_0$. The limit of all functions in that set is~$0$, so
+the left-hand side is the singleton set $\{0\}$. On the right, there are no
+variables; $0$~represents~$\{0\}$, the (singleton) set of all
+``functions of no variables, whose value is zero.\qback''
+(Can you see the inherent logic here? If not, come back to it next year;
+you probably can still manipulate $O$-notation even if you can't shape
+your intuitions into rigorous formalisms.)
+
+\ansno9.5:
+ Let $f(n)=n^2$ and $g(n)=1$; then $n$ is in the left set
+but not in the right, so the statement is false.
+
+\ansno9.6:
+ $n\ln n+\gamma n+O(\sqrt n\ln n)$.
+\source{[|knuth1|, exercise 1.2.11.1--3].}
+
+\ansno9.7:
+ $(1-e^{-1/n})^{-1}=nB_0-B_1+B_2n^{-1}\!/2!+\cdots
+=n+\half+O(n^{-1})$.
+
+\ansno9.8:
+ For example, let $f(n)=\lfloor n/2\rfloor!^{@2}+n$,
+$g(n)=\bigl(\lceil n/2\rceil-1\bigr)!\,\lceil n/2\rceil!+n$. These
+functions, incidentally, satisfy $f(n)=O\bigl(ng(n)\bigr)$ and
+$g(n)=O\bigl(nf(n)\bigr)$; more extreme examples are clearly possible.
+\source{"Hardy" [|hardy-tract|, 1.2(iv)].}
+
+\ansno9.9:
+ (For completeness, we assume that there is a side condition
+$n\to\infty$, so that two constants are implied by each~$O$.)
+Every function on the left has the form $a(n)+b(n)$, where
+there exist constants $m_0$, $B$, $n_0$, $C$ such that
+$\bigl\vert a(n)\bigr\vert\le B\bigl\vert f(n)\bigr\vert$ for $n\ge m_0$ and
+$\bigl\vert b(n)\bigr\vert\le C\bigl\vert g(n)\bigr\vert$ for $n\ge n_0$.
+Therefore the left-hand function is
+at most $\max(B,C)\bigl(\bigl\vert f(n)\bigr\vert+
+\bigl\vert g(n)\bigr\vert\bigr)$, for $n\ge\max(m_0,n_0)$,
+so it is a member of the right side.
+\source{"Landau" [|landau-primes|, vol.~1, p.~60].}
+
+\ansno9.10:
+ If $g(x)$ belongs to the left, so that $g(x)=\cos y$ for some $y$,
+where $\vert y\vert\le C\vert x\vert$ for some $C$, then $0\le1-g(x)
+=2\sin^2(y/2)\le\half y^2\le\half C^2 x^2$;
+hence the set on the left is contained in the set
+on the right, and the formula is true.
+
+\ansno9.11:
+ The proposition is true. For if, say, $\vert x\vert\le\vert y\vert$,
+we have $(x+y)^2\le4y^2$. Thus $(x+y)^2=O(x^2)+O(y^2)$. Thus
+$O(x+y)^2=O\bigl((x+y)^2\bigr)=
+O\bigl(O(x^2)+O(y^2)\bigr)=O\bigl(O(x^2)\bigr)+O\bigl(O(y^2)\bigr)
+=O(x^2)+O(y^2)$.
+
+\ansno9.12:
+ $1+2/n+O(n^{-2})=(1+2/n)\bigl(1+O(n^{-2})/(1+2/n)\bigr)$
+by \equ(9.|o-prod-in|), and $1/(1+2/n)=O(1)$; now use \equ(9.|o-prod-in|).
+
+\ansno9.13:
+ $n^n\bigl(1+2n^{-1}+O(n^{-2})\bigr)^n=
+n^n\exp\bigl(n\bigl(2n^{-1}+O(n^{-2})\bigr)\bigr)=e^2n^n+O(n^{n-1})$.
+
+\ansno9.14:
+ It is $n^{n+\beta}\exp\bigl((n+\beta)\bigl(\alpha/n-\half\alpha^2\!/n^2
++O(n^{-3})\bigr)\bigr)$.
+\source{[|knuth1|, exercise 1.2.11.3--6].}
+
+\ansno9.15:
+ \g (It's interesting to compare this formula with the corresponding
+result for the middle \undertext{binomial} coefficient,
+exercise 9.60.)\g $\ln{3n\choose n,n,n}=3n\ln3-\ln n+\half\ln 3-\ln2\pi+
+\bigl({1\over36}-{1\over4}\bigr)n^{-1}+O(n^{-3})$, so the answer is
+\begindisplay
+{3^{3n+1/2}\over2\pi n}\bigl(\textstyle1-{2\over9}n^{-1}+{2\over81}n^{-2}
++O(n^{-3})\bigr)\,.
+\enddisplay
+
+\ansno9.16:
+ If\/ $l$ is any integer in the range $a\le l<b$ we have
+\begindisplay
+\int_0^1B(x)@f(l+x)\,dx&=
+\int_{1/2}^1B(x)@f(l+x)\,dx-
+\int_0^{1/2}B(1-x)@f(l+x)\,dx\cr
+&=\int_{1/2}^1B(x)\bigl(f(l+x)-f(l+1-x)\bigr)\,dx\,.
+\enddisplay
+Since $l+x\ge l+1-x$ when $x\ge\half$, this integral is positive
+when $f(x)$ is nondecreasing.
+\source{"Knopp" [|knopp|, edition $\ge2$, \S64C].}
+
+\ansno9.17:
+ $\sum_{m\ge0}B_m(\half)z^m\!/m!=ze^{z/2}\!/(e^z-1)=z/(e^{z/2}-1)
+-z/(e^z-1)$.
+
+\ansno9.18:
+ The text's derivation for the case $\alpha=1$ generalizes to give
+\begindisplay
+b_k(n)={2^{(2n+1/2)\alpha}\over(2\pi n)^{\alpha/2}}e^{-k^2\mskip-1mu\alpha/n}\,,
+\ c_k(n)=2^{2n\alpha}\,n^{-(1+\alpha)/2+3\epsilon}
+ e^{-k^2\mskip-1mu\alpha/n}\,;\cr
+\enddisplay
+the answer is $2^{2n\alpha}(\pi n)^{(1-\alpha)/2}\alpha^{-1/2}\bigl(
+1+O(n^{-1/2+3\epsilon})\bigr)$.
+\source{"Bender" [|bender|, \S3.1].}
+
+\ansno9.19:
+ $H_{10}=2.928968254\approx2.928968256$; $10!=3628800\approx
+3628712.4$; $B_{10}=0.075757576\approx0.075757494$;
+$\pi(10)=4\approx10.0017845$;
+$e^{0.1}=1.10517092\approx1.10517083$;
+$\ln 1.1=0.0953102\approx0.0953083$;
+$1.1111111\approx1.1111000$;
+$1.1^{0.1}=1.00957658\approx1.00957643$.
+(The approximation to $\pi(n)$ gives more significant figures when $n$ is larger;
+for example, $\pi(10^9)=50847534\approx50840742$.)
+
+\ansno9.20:
+ (a) Yes; the left side is $o(n)$ while the right side is equivalent to
+$O(n)$. (b)~Yes; the left side is $e\cdot e^{O(1/n)}$.
+(c)~No; the left side is about $\sqrt n$ times the bound on the right.
+\source{1971 final exam.}
+
+\ansno9.21:
+ We have $P_n=m=n\bigl(\ln m-1-1/\!@\ln m+O(1/\!@\log n)^2\bigr)$, where
+\begindisplay \openup3pt
+\ln m&=\ln n+\ln\ln m-1/\!@\ln n+\ln\ln n/(\ln n)^2+O(1/\!@\log n)^2\,;\cr
+\ln\ln m&=\ln\ln n+{\ln\ln n\over\ln n}
+ -{(\ln\ln n)^2\over2(\ln n)^2}
+ +{\ln\ln n\over(\ln n)^2}+O(1/\!@\log n)^2\,.
+\enddisplay
+It follows that
+\begindisplay
+P_n&=n\biggl(\ln n+\ln\ln n-1\cr
+&\hskip5em+{\ln\ln n-2\over\ln n}
+ -{\half(\ln\ln n)^2-3\ln\ln n\over(\ln n)^2}+O(1/\!@\log n)^2\biggr)\,.
+\enddisplay
+(A slightly better approximation
+\g What does a drowning analytic number theorist say?\par
+\medskip log log log log \dots\g
+ replaces this $O(1/\!@\log n)^2$ by the quantity
+$-5/(\ln n)^2+O(\log\log n/\!@\log n)^3$; then we estimate
+$P_{1000000}\approx15483612.4$.)
+
+\ansno9.22:
+ Replace $O(n^{-2k})$ by $-{1\over12}n^{-2k}+O(n^{-4k})$ in the
+expansion of $H_{n^k}$; this replaces $O\bigl(\Sigma_3(n^2)\bigr)$
+by $-{1\over12}\Sigma_3(n^2)+O\bigl(\Sigma_3(n^4)\bigr)$ in
+\equ(9.|golomb-pieces|). We have
+\begindisplay
+\textstyle\Sigma_3(n)={3\over4}n^{-1}+
+{5\over36}n^{-2}+O(n^{-3})\,,
+\enddisplay
+hence the term $O(n^{-2})$ in \equ(9.|golomb-ans|)
+can be replaced by % 1/12*3/4 + 1/2*5/36 = 19/144
+$-{19\over144}n^{-2}+O(n^{-3})$.
+
+\ansno9.23:
+ $nh_n=\sum_{0\le k<n}h_k/(n-k)+2cH_n/(n+1)(n+2)$. Choose $c=e^{\pi^2\!/6}
+=\sum_{k\ge0}g_k$ so that $\sum_{k\ge0}h_k=0$ and $h_n=O(\log n)/n^3$.
+The expansion of $\sum_{0\le k<n}h_k/(n-k)$ as in \equ(9.|boot2+|) now yields
+$nh_n=2cH_n/(n+1)(n+2)+O(n^{-2})$, hence
+\begindisplay
+g_n=e^{\pi^2\!/6}\left({n+2\ln n+O(1)\over n^3}\right)\,.
+\enddisplay
+
+\ansno9.24:
+ (a) If $\sum_{k\ge0}\bigl\vert f(k)\bigr\vert<\infty$
+and if $f(n-k)=O\bigl(f(n)\bigr)$ when $0\le k\le n/2$, we have
+\begindisplay
+\sum_{k=0}^n a_kb_{n-k}=\sum_{k=0}^{n/2}O\bigl(f(k)\bigr)@O\bigl(f(n)\bigr)
++\sum_{k=n/2}^{n}O\bigl(f(n)\bigr)@O\bigl(f(n-k)\bigr)\,,
+\enddisplay
+which is $2@@O\bigl(f(n)\sum_{k\ge0}\big\vert f(k)\big\vert\bigr)$,
+so this case is proved. (b) But in this case if $a_n=b_n=\alpha^{-n}$,
+the convolution $(n+1)\alpha^{-n}$ is not $O(\alpha^{-n})$.
+\source{[|greene-knuth|, \S4.1.6].}
+
+\ansno9.25:
+ $S_n\big/{3n\choose n}=\sum_{k=0}^n n\_k/(2n+1)\_^k$.
+We may restrict the range of summation to $0\le k\le(\log n)^2$, say.
+In this range $n\_k=n^k\bigl(1-{k\choose2}/n+O(k^4\!/n^2)\bigr)$ and
+$(2n+1)\lower2pt\hbox{$\_^k$}=(2n)^k\bigl(1+{k+1\choose2}/2n+O(k^4\!/n^2)\bigr)$,
+so the summand is
+\begindisplay
+{1\over2^k}\biggl(1-{3k^2-k\over4n}+O\Bigl({k^4\over n^2}\Bigr)\biggr)\,.
+\enddisplay
+Hence the sum over $k$ is $2-4/n+O(1/n^2)$. Stirling's approximation
+can now be applied to ${3n\choose n}=(3n)!/(2n)!\,n!$,
+proving \equ(9.|opening-asympt|).
+
+\ansno9.26:
+ The minimum occurs at a term $B_{2m}/(2m)(2m-1)n^{2m-1}$
+where $2m\approx2\pi n+{3\over2}$, and this term is approximately equal to
+$1/(\pi e^{2\pi n}\sqrt n\,)$. The absolute error in $\ln n!$ is therefore
+too large to determine $n!$ exactly by rounding to an integer, when
+$n$ is greater than about $e^{2\pi+1}$.
+
+\ansno9.27:
+ We may assume that $\alpha\ne-1$. Let $f(x)=x^\alpha$; the
+answer is
+\begindisplay\tightplus
+\sum_{k=1}^n k^\alpha\!=\!C_\alpha+{n^{\alpha+1}\over\alpha+1}+{n^\alpha\over2}
++\!\sum_{k=1}^m{B_{2k}\over 2k}{\alpha\choose 2k-1}n^{\alpha-2k+1}
++O(n^{\alpha-2m-1})\,.
+\enddisplay
+(The constant $C_\alpha$ turns out to be $\zeta(-\alpha)$, which is in fact
+\g In particular, $\zeta(0)=-1/2$, and
+$\zeta(-n)=-B_{n+1}/(n{+}1)$\par for integer $n>0$.\g
+{\it defined\/} by this formula when $\alpha>-1$.)
+\source{"Titchmarsh" [|zeta-function|].}
+
+\ansno9.28:
+ In general, suppose $f(x)=x^\alpha\ln x$ in Euler's summation formula,
+when $\alpha\ne-1$. Proceeding as in the previous exercise, we find
+\begindisplay\openup3pt
+\sum_{k=1}^n k^\alpha\ln k&=C'_\alpha+{n^{\alpha+1}\ln n\over\alpha+1}
+-{n^{\alpha+1}\over(\alpha+1)^2}+{n^\alpha\ln n\over2}\cr
+&\qquad{}+\sum_{k=1}^m{B_{2k}\over2k}{\alpha\choose2k-1}n^{\alpha-2k+1}
+(\ln n+H_\alpha-H_{\alpha-2k+1})\cr
+&\qquad{}+O(n^{\alpha-2m-1}\log n)\,;\cr
+\enddisplay
+the constant $C'_\alpha$ can be shown [|de-bruijn|, \S3.7] to be
+$-\zeta'(-\alpha)$. (The $\log n$ factor in the $O$~term can be removed when
+$\alpha$ is a positive integer $\le2m$; in that case we also replace the
+$k$th term of the right sum by $B_{2k}\alpha!\*\,({2k-2-\alpha})!\*(-1)^\alpha
+n^{\alpha-2k+1}/(2k)!$ when $\alpha<2k-1$.)
+To solve the stated problem, we let $\alpha=1$ and $m=1$,
+taking the exponential of both sides to get
+\begindisplay
+Q_n=A\cdot n^{n^2\!/2+n/2+1/12}e^{-n^2\!/4}\bigl(1+O(n^{-2})\bigr)\,,
+\enddisplay
+where $A=e^{1/12-\zeta'(-1)}\approx1.2824271291$
+is ``"Glaisher's constant".\qback''
+\source{"Glaisher" [|glaisher|].}
+
+\ansno9.29:
+ Let $f(x)=x^{-1}\ln x$. A slight modification of the calculation in
+the previous exercise gives
+\begindisplay
+\sum_{k=1}^n{\ln k\over k}&={(\ln n)^2\over2}+\gamma_1+{\ln n\over2n}\cr
+&\qquad{}
+-\sum_{k=1}^m{B_{2k}\over2k}n^{-2k}(\ln n-H_{2k-1})+O(n^{-2m-1}\log n)\,,\cr
+\enddisplay
+where $\gamma_1\approx-0.07281584548367672486$ is a ``"Stieltjes constant"''
+(see the answer to 9.|stieltjes-const|).
+Taking exponentials gives
+\begindisplay
+e^{\gamma_1}\sqrt{n^{\mathstrut\ln n}}\,\biggl(1+{\ln n\over2n}
++O\Bigl({\log n\over n}\Bigr)^2\biggr)\,.
+\enddisplay
+\source{"de Bruijn" [|de-bruijn|, \S3.7].} % probably not the best source
+
+\ansno9.30:
+ Let $g(x)=x^le^{-x^2}$ and $f(x)=g(x/\sqrt n\,)$. Then
+$n^{-l/2}\sum_{k\ge0}k^le^{-k^2\!/n}$ is
+\begindisplay
+&\int_0^\infty f(x)\,dx
+-\sum_{k=1}^m{B_k\over k!}f^{(k-1)}(0)
+-(-1)^m\int_0^\infty{B_m\bigl(\{x\}\bigr)\over m!}f^{(m)}(x)\,dx\cr
+&\qquad=n^{1/2}\int_0^\infty g(x)\,dx
+-\sum_{k=1}^m{B_k\over k!}n^{(k-1)/2}g^{(k-1)}(0)+O(n^{-m/2})\,.
+\enddisplay
+Since $g(x)=x^l-x^{2+l}\!/1!+x^{4+l}\!/2!-x^{6+l}\!/3!+\cdots\,$, the derivatives
+$g^{(m)}(x)$ obey a simple pattern, and the answer is
+\begindisplay
+\half n^{(l+1)/2\,}\Gamma\Bigl({l+1\over2}\Bigr)-{B_{l+1}\over(l+1)!\,0!}
++{B_{l+3}n^{-1}\over(l+3)!\,1!}-{B_{l+5}n^{-2}\over(l+5)!\,2!}+O(n^{-3})\,.
+\enddisplay
+
+\ansno9.31:
+ The somewhat surprising identity $1/(c^{m-k}+c^m)+1/(c^{m+k}+c^m)=1/c^m$
+makes the terms for $0\le k\le2m$ sum to $(m+\half)/c^m$. The remaining
+terms are
+\begindisplay
+\sum_{k\ge1}{1\over c^{2m+k}+c^m}&=\sum_{k\ge1}\biggl({1\over c^{2m+k}}
+-{1\over c^{3m+2k}}
++{1\over c^{4m+3k}}-\cdots\,\biggr)\cr
+&={1\over c^{2m+1}-c^{2m}}
+-{1\over c^{3m+2}-c^{3m}}
++\cdots\,,
+\enddisplay
+and this series can be truncated at any desired point, with an error not
+exceeding the first omitted term.
+
+\ansno9.32:
+ $H_n^{(2)}=\pi^2\!/6-1/n+O(n^{-2})$ by Euler's summation
+formula, since we know the constant; and $H_n$ is given by \equ(9.|harmonic-theta|).
+\g The world's top three constants, $(e,\pi,\gamma)$, all appear
+in this answer.\g
+So the answer is
+\begindisplay
+ne^{\gamma+\pi^2\!/6}\bigl(1-{\textstyle\half}n^{-1}+O(n^{-2})\bigr)\,.
+\enddisplay
+\source{1976 final exam.}
+
+\ansno9.33:
+ We have $n\_k/n\_^k=1-k(k-1)n^{-1}+\half k^2(k-1)^2n^{-2}+O(k^6n^{-3})$;
+dividing by $k!$ and summing over~$k\ge0$ yields
+$e-en^{-1}+{7\over2}en^{-2}+O(n^{-3})$.
+
+\ansno9.34:
+ $A=e^\gamma$; $B=0$; $C=-\half e^\gamma$; $D=\half e^\gamma(1-\gamma)$;
+$E={1\over8}e^\gamma$; $F={1\over12}e^\gamma(3\gamma+1)$.
+\source{1973 final exam.}
+
+\ansno9.35:
+ Since $1/k\bigl(\ln k+O(1)\bigr)
+=1/k\ln k+O\bigl(1/k(\log k)^2\bigr)$, the given sum is $\sum_{k=2}^n1/k\ln k
++O(1)$. The remaining sum is $\ln\ln n +O(1)$ by Euler's summation formula.
+\source{1975 final exam.}
+
+\ansno9.36:
+ This works out beautifully with Euler's summation formula:
+\begindisplay \openup5pt
+S_n&=\sum_{0\le k<n}{1\over n^2+k^2}+{1\over n^2+x^2}\bigg\vert_0^n\cr
+&=\int_0^n{dx\over n^2+x^2}
++{1\over2}{1\over n^2+x^2}\bigg\vert_0^n
++{B_2\over2!}{-2x\over(n^2+x^2)^2}\bigg\vert_0^n +O(n^{-5})\,.
+\enddisplay
+Hence $S_n={1\over4}\pi n^{-1}-{1\over4}n^{-2}-{1\over24}n^{-3}+O(n^{-5})$.
+\source{1980 class notes.}
+
+\ansno9.37:
+ This is
+\begindisplay
+&\sum_{k,q\ge1}(n-qk)\bigi[n/(q+1)<k\le n/q\bigr]\cr
+\noalign{\vskip-3pt}
+&\qquad=n^2-\sum_{q\ge1}q\biggl({\lfloor n/q\rfloor+1\choose 2}-
+{\lfloor n/(q+1)\rfloor+1\choose 2}\biggr)\cr
+&\qquad=n^2-\sum_{q\ge1}{\lfloor n/q\rfloor+1\choose 2}\,.
+\enddisplay
+The remaining sum is like \equ(9.|big-phi-repeat|) but without the factor
+$\mu(q)$. The same method works here as it did there,
+ but we get $\zeta(2)$ in place of
+$1/\zeta(2)$, so the answer comes to $\bigl(1-{\pi^2\over12}\bigr)n^2+O(n\log n)$.
+\source{[|knuth2|, eq.~4.5.3--21].}
+
+\ansno9.38:
+ Replace $k$ by $n-k$ and let $a_k(n)=(n-k)^{n-k}{n\choose k}$.
+Then $\ln a_k(n)=n\ln n-\ln k!-k+O(kn^{-1})$, and we can use tail-exchange with
+$b_k(n)=n^ne^{-k}\!/k!$, $c_k(n)=kb_k(n)/n$, $D_n=\{\,k\mid k\le\ln n\,\}$,
+to get $\sum_{k=0}^n a_k(n)=n^ne^{1/e}\bigl(1+O(n^{-1})\bigr)$.
+\source{1977 final exam.}
+
+\ansno9.39:
+ Tail-exchange with $b_k(n)=(\ln n-k/n-\half k^2\!/n^2)(\ln n)^k\!/k!$,
+\ $c_k(n)=n^{-3}(\ln n)^{k+3}\!/k!$, $D_n=\{\,k\mid 0\le k\le 10\ln n\,\}$.
+When $k\approx10\ln n$ we have $k!\asymp\sqrt k\,(10/e)^k(\ln n)^k$, so
+the $k$th term is $O(n^{-10\ln(10/e)}\log n)$. The answer is
+$n\ln n-\ln n-\half(\ln n)(1+\ln n)/n+O\bigl(n^{-2}(\log n)^3\bigr)$.
+\source{1975 final exam, inspired by "Reich"~[|asymptotic-query|].}
+
+\ansno9.40:
+ Combining terms two by two, we find that $H_{2k}^m-(H_{2k}-{1\over2k})^m
+={m\over2k}H_{2k}^{m-1}$ plus terms whose sum over all~$k\ge1$ is $O(1)$.
+Suppose $n$~is even. Euler's summation formula implies that
+\begindisplay
+\sum_{k=1}^{n/2}{H_{2k}^{m-1}\over k}
+&=\!\sum_{k=1}^{n/2}{(\ln 2e^\gamma k)^{m-1}{+}O(1/k)\over k}+O(1)\cr
+&={(\ln e^\gamma n)^m\over m}+O(1)\,;\cr
+\enddisplay
+hence the sum is $\half H_n^m+O(1)$. In general the answer is
+$\half(-1)^nH_n^m+O(1)$.
+\source{1977 final exam.}
+
+\ansno9.41:
+ Let $\alpha=\phihat/\phi=-\phi^{-2}$. We have
+\begindisplay\tightplus
+\sum_{k=1}^n\ln F_k&=\sum_{k=1}^n\bigl(\ln\phi^k-\ln\sqrt5+\ln(1-\alpha^k)\bigr)\cr
+&={n(n+1)\over2}\ln\phi-{n\over2}\ln5+\sum_{k\ge1}\ln(1-\alpha^k)
+ -\sum_{k>n}\ln(1-\alpha^k)\,.
+\enddisplay
+The latter sum is $\sum_{k>n}O(\alpha^k)=O(\alpha^n)$. Hence the answer is
+\begindisplay
+\phi^{n(n+1)/2}5^{-n/2}C+O(\phi^{n(n-3)/2}5^{-n/2})\,,
+\enddisplay
+where $C=(1-\alpha)(1-\alpha^2)(1-\alpha^3)\ldots\,\approx1.226742$.
+\source{1980 final exam.}
+
+\ansno9.42:
+ The hint follows since ${n\choose k-1}\big/{n\choose k}={k\over
+n-k+1}\le{\alpha n\over n-\alpha n+1}<{\alpha\over1-\alpha}$. Let
+$m=\lfloor\alpha n\rfloor=\alpha n-\epsilon$. Then
+\begindisplay\openup3pt
+{n\choose m}
+&<\sum_{k\le m}{n\choose k}\cr
+&<{n\choose m}\biggl(1+{\alpha\over1-\alpha}
++\Bigl({\alpha\over1-\alpha}\Bigr)^2+\cdots\,\biggr)
+={n\choose m}{1-\alpha\over1-2\alpha}\,.
+\enddisplay
+So $\sum_{k\le\alpha n}{n\choose k}={n\choose m}O(1)$, and it remains to
+estimate $n\choose m$. By Stirling's approximation we have
+$\ln{n\choose m}=-\half\ln n-(\alpha n-\epsilon)\ln(\alpha-\epsilon/n)
+-\bigl((1{-}\alpha)n{+}\epsilon\bigr)\*\ln(1-\alpha+\epsilon/n)+O(1)
+=-\half\ln n-\alpha n\ln\alpha
+-(1-\alpha)n\ln(1-\alpha)+O(1)$.
+\source{1979 final exam.}
+
+\ansno9.43:
+ The denominator has factors of the form $z-\omega$, where
+$\omega$ is a complex "root of unity". Only the factor $z-1$ occurs
+with multiplicity~$5$. Therefore by \equ(7.|gen-exp-a|), only one of
+the roots has a coefficient $\Omega(n^4)$, and the coefficient is
+$c=5/(5!\cdt1\cdt5\cdt10\cdt25\cdt50)=1/1500000$.
+
+\ansno9.44:
+ Stirling's approximation says that
+$\ln\bigl(x^{-\alpha}x!/(x-\alpha)!\bigr)$ has an asymptotic series
+\begindisplay \openup3pt
+&-\alpha-(x+{\textstyle\half}-\alpha)\ln(1-\alpha/x)
+-{B_2\over 2\cdot1}\bigl(x^{-1}-(x-\alpha)^{-1}\bigr)\cr
+&\hskip15em-{B_4\over 4\cdot3}\bigl(x^{-3}-(x-\alpha)^{-3}\bigr)-\cdots
+\enddisplay
+in which each coefficient of $x^{-k}$ is a
+polynomial in~$\alpha$. Hence $x^{-\alpha}x!/(x-\alpha)!=c_0(\alpha)+
+c_1(\alpha)x^{-1}+\cdots+c_n(\alpha)x^{-n}+O(x^{-n-1})$
+as $x\to\infty$, where $c_n(\alpha)$ is
+a polynomial in~$\alpha$. We know that $c_n(\alpha)={\alpha\brack\alpha-n}(-1)^n$
+whenever $\alpha$ is an integer, and $\alpha\brack\alpha-n$ is a polynomial
+in $\alpha$ of degree~$2n$; hence $c_n(\alpha)={\alpha\brack\alpha-n}(-1)^n$
+for all real~$\alpha$. In other words, the asymptotic formulas
+\g (See [|knuth-tnn|] for further discussion.)\g
+\begindisplay \openup3pt
+x\_\alpha&=\sum_{k=0}^n{\alpha\brack\alpha-k}(-1)^kx^{\alpha-k}+O(x^{\alpha-n-1})\,,\cr
+x\_^\alpha&=\sum_{k=0}^n{\alpha\brack\alpha-k}x^{\alpha-k}+O(x^{\alpha-n-1})\cr
+\enddisplay
+generalize equations \equ(6.|expand-falling-to-ord|)
+and \equ(6.|expand-rising-to-ord|), which hold in the all-integer case.
+\source{"Tricomi" and "Erd\'elyi"~[|tricomi-erdelyi|].}
+
+\ansno9.45:
+ Let the partial quotients of $\alpha$ be $\<a_1,a_2,\ldots\,\>$,
+and let $\alpha_m$ be the continued fraction
+$1/(a_m+\alpha_{m+1})$ for $m\ge1$. Then
+$D(\alpha,n)=D(\alpha_1,n)<D\bigl(\alpha_2,\lfloor\alpha_1 n\rfloor\bigr)+a_1+3
+<D\bigl(\alpha_3,\lfloor\alpha_2\lfloor\alpha_1 n\rfloor\rfloor\bigr)+
+a_1+a_2+6<\cdots<D\bigl(\alpha_{m+1},\allowbreak
+\lfloor\alpha_m\lfloor\ldots\lfloor\alpha_1
+n\rfloor\ldots\rfloor\rfloor\bigr)+a_1+\cdots+a_m+3m<\alpha_1\ldots\alpha_m\,n
++a_1+\cdots+a_m+3m$, for all~$m$. Divide by~$n$ and let $n\to\infty$; the
+limit is less than $\alpha_1\ldots\alpha_m$ for all~$m$. Finally we have
+\begindisplay
+\alpha_1\ldots\alpha_m={1\over K(a_1,\ldots,a_{m-1},a_m+\alpha_m)}<
+%{1\over K(a_1,\ldots,a_{m-1},a_m)}\le
+{1\over F_{m+1}}\,.
+\enddisplay
+
+\ansno9.46:
+ For convenience we write just $m$ instead of $m(n)$.
+By Stirling's approximation, the maximum value of $k^n\!/k!$ occurs
+when $k\approx m\approx n/\!@\ln n$, so we replace $k$ by $m+k$ and find that
+\begindisplay \openup3pt
+\ln{(m+k)^n\over(m+k)!}&=n\ln m-m\ln m+m-{\ln2\pi m\over2}\cr
+&\hskip5em-{(m+n)k^2\over2m^2}
++O(k^3m^{-2}\log n)\,.
+\enddisplay
+Actually we want to replace $k$ by $\lfloor m\rfloor+k$; this adds
+a further $O(km^{-1}\log n)$. The tail-exchange method with
+$\vert k\vert\le m^{1/2+\epsilon}$ now allows us to sum on~$k$,
+\g A truly Bell-shaped summand.\g
+giving a fairly sharp asymptotic estimate in terms of the quantity $\Theta$ in
+\equ(9.|theta-by-euler|):
+\begindisplay\openup4pt
+\varpi_n&={e^{m-1}m^{n-m}\over\sqrt{2\pi m}^{\mathstrut}}\bigl(
+ \Theta_{2m^2\!/(m+n)}+O(1)\bigr)\cr
+&=e^{m-n-1/2}m^n\sqrt{m\over m+n}
+ \biggl(1+O\Bigl({\log n\over n^{1/2}}\Bigr)\biggr)\,.
+\enddisplay
+The requested formula follows, with relative error
+$O(\log\log n/\!@\log n)$.
+\source{"de Bruijn" [|de-bruijn|, \S6.3].}
+
+\ansno9.47:
+ Let $\log_m n=l+\theta$, where $0\le\theta<1$. The floor
+sum is $l(n+1)+1-(m^{l+1}-1)/(m-1)$; the ceiling sum is $(l+1)n
+-(m^{l+1}-1)/(m-1)$; the exact sum is $(l+\theta)n-n/\!@\ln m+O(\log n)$.
+Ignoring terms that are $o(n)$, the difference between ceiling and
+exact is $\bigl(1-f(\theta)\bigr)n$, and the difference between
+exact and floor is $f(\theta)n$, where
+\begindisplay
+f(\theta)={m^{1-\theta}\over m-1}+\theta-{1\over\ln m}\,.
+\enddisplay
+This function has maximum value $f(0)=f(1)=m/(m-1)-1/\!@\ln m$, and its
+minimum value is $\ln\ln m/\!@\ln m+1-\bigl(\ln(m-1)\bigr)/\!@\ln m$.
+The ceiling value is closer when $n$ is nearly a power of~$m$, but the
+floor value is closer when $\theta$ lies somewhere between $0$ and~$1$.
+\source{1980 homework; [|knuth3|, eq.~5.3.1--34].}
+
+\ansno9.48:
+ Let $d_k=a_k+b_k$, where $a_k$ counts digits to the left of
+the decimal point. Then $a_k=1+\lfloor\log H_k\rfloor=\log\log k+O(1)$,
+where `log' denotes $\log_{10}$. To estimate $b_k$, let us look at the
+number of decimal places necessary to distinguish $y$ from nearby numbers
+$y-\epsilon$ and $y+\epsilon'$: Let $\delta=10^{-b}$ be the length of the
+interval of numbers that round to $\hat y$.
+We have $\vert y-\hat y\vert\le\half\delta$; also
+$y-\epsilon<\hat y-\half\delta$ and
+$y+\epsilon'>\hat y+\half\delta$.
+Therefore $\epsilon+\epsilon'>\delta$. And if $\delta<\min(\epsilon,\epsilon')$,
+the rounding does distinguish $\hat y$ from both $y-\epsilon$ and $y+\epsilon'$.
+Hence $10^{-b_k}<1/(k-1)+1/k$ and $10^{1-b_k}\ge1/k$; we have
+$b_k=\log k+O(1)$.
+Finally, therefore, $\sum_{k=1}^n d_k=\sum_{k=1}^n(\log k+\log\log k+O(1))$,
+which is $n\log n+n\log\log n+O(n)$ by Euler's summation formula.
+\source{1980 final exam.}
+
+\ansno9.49:
+ We have $H_n>\ln n+\gamma+\half n^{-1}-{1\over12}n^{-2}=f(n)$,
+where $f(x)$ is increasing for all $x>0$; hence if $n\ge e^{\alpha-\gamma}$
+we have $H_n\ge f(e^{\alpha-\gamma})>\alpha$. Also $H_{n-1}<\ln n+\gamma
+-\half n^{-1}=g(n)$, where $g(x)$ is increasing for all $x>0$; hence if
+$n\le e^{\alpha-\gamma}$ we have $H_{n-1}\le g(e^{\alpha-\gamma})<\alpha$.
+Therefore $H_{n-1}\le\alpha\le H_n$ implies that $e^{\alpha-\gamma}+1>n
+>e^{\alpha+\gamma}-1$. (Sharper results have been obtained by
+"Boas" and "Wrench"~[|boas-wrench|].)
+\source{1974 final exam.}
+
+\ansno9.50:
+ (a) The expected return is $\sum_{1\le k\le N}k/(k^2H_N^{(2)})
+=H_N/H_N^{(2)}$, and we want the asymptotic value to $O(N^{-1})$:
+\begindisplay
+{\ln N+\gamma+O(N^{-1})\over\pi^2\!/6-N^{-1}+O(N^{-2})}
+={6\ln 10\over\pi^2}n+{6\gamma\over\pi^2}+{36\ln10\over\pi^4}{n\over10^n}
++O(10^{-n})\,.
+\enddisplay
+The coefficient $(6\ln 10)/\pi^2\approx1.3998$ says that we expect
+about 40\% profit.
+\par(b) The probability of profit is $\sum_{n<k\le N}1/(k^2H_N^{(2)})=
+1-H_n^{(2)}/H_N^{(2)}$, and since $H_n^{(2)}={\pi^2\over6}-n^{-1}
++\half n^{-2}+O(n^{-3})$ this is
+\begindisplay
+{n^{-1}-\half n^{-2}+O(n^{-3})\over\pi^2\!/6+O(N^{-1})}
+={6\over\pi^2}n^{-1}-{3\over\pi^2}n^{-2}+O(n^{-3})\,,
+\enddisplay
+actually {\it decreasing\/} with $n$. (The expected value in~$(a)$ is
+high because it includes payoffs so huge that the entire world's economy
+would be affected if they ever had to be made.)
+\source{1984 final exam.}
+
+\ansno9.51:
+ Strictly speaking, this is false, since the function represented
+by $O(x^{-2})$ might not be integrable. (It might be `$\[x\in S]/x^2$',
+where $S$ is not a measurable set.) But if we stipulate that $f(x)$
+is an integrable function
+\g(As opposed to an execrable function.)\g
+such that $f(x)=O(x^{-2})$ as $x\to\infty$, then $\bigl\vert\int_n^\infty
+f(x)\,dx\bigr\vert\le\int_n^\infty\bigl\vert f(x)\bigr\vert\,dx\le
+\int_n^\infty Cx^{-2}\,dx=Cn^{-1}$.
+\source{[|greene-knuth|, \S4.2.1].}
+
+\ansno9.52:
+ In fact, the stack of $n$'s can be replaced by any function $f(n)$
+that approaches infinity, however fast. Define the sequence $\<m_0,m_1,
+m_2,\ldots\,\>$ by setting $m_0=0$ and letting $m_k$ be the least
+integer $>m_{k-1}$ such that
+\begindisplay
+\Bigl({k+1\over k}\Bigr)^{\!m_k}\ge f(k+1)^2\,.
+\enddisplay
+Now let $A(z)=\sum_{k\ge1}(z/k)^{m_k}$. This power series converges for all~$z$,
+because the terms for $k>\vert z\vert$ are bounded by a geometric series.
+Also $A(n+1)\ge{\bigl((n+1)/n\bigr){}^{m_n}}\ge f(n+1)^2$, hence
+$\lim_{n\to\infty}f(n)/A(n)=0$.
+\source{"Poincar\'e" [|poincare|]; "Borel" [|borel|, p.~27].}
+
+\ansno9.53:
+ By induction, the $O$ term is $(m-1)!^{-1}\int_0^x t^{m-1}
+f^{(m)}(x-t)\,dt$. Since $f^{(m+1)}$ has the opposite sign to $f^{(m)}$,
+the absolute value of this integral is bounded by $\bigl\vert f^{(m)}(0)
+\bigr\vert \int_0^xt^{m-1}\,dt$; so the error is bounded by the
+absolute value of the first discarded term.
+\source{"P\'olya" and "Szeg\H o" [|polya-szego|, part 1, problem 140].}
+
+\ansno9.54:
+ Let $g(x)=f(x)/x^\alpha$. Then $g'(x)\sim-\alpha g(x)/x$ as $x\to
+\infty$. By the mean
+\g Sounds like a nasty theorem.\g
+ value theorem, $g(x-\half)-g(x+\half)=-g'(y)\sim
+\alpha g(y)/y$ for some $y$ between $x-\half$ and $x+\half$. Now $g(y)
+=g(x)\bigl(1+O(1/x)\bigr)$, so $g(x-\half)-g(x+\half)\sim\alpha g(x)/x
+=\alpha f(x)/x^{1+\alpha}$. Therefore
+\begindisplay
+\sum_{k\ge n}{f(k)\over k^{1+\alpha}}=
+O\Bigl(@\sum_{k\ge n}\textstyle\bigl(g(k-\half)-g(k+\half)\bigr)\Bigr)
+=O\bigl(g(n-\half)\bigr)\,.
+\enddisplay
+
+\ansno9.55:
+ The estimate of $
+(n+k+\half)\ln(1+k/n)+
+(n-k+\half)\ln(1-k/n)$ is extended to
+$k^2\!/n+k^4\!/6n^3+O(n^{-3/2+5\epsilon})$, so we apparently want to have
+an extra factor $e^{-k^4\!/6n^3}$ in $b_k(n)$, and $c_k(n)=
+2^{2n}n^{-2+5\epsilon}e^{-k^2\!/n}$. But it turns out to be better
+to leave $b_k(n)$ untouched and to let
+\begindisplay
+c_k(n)=2^{2n}n^{-2+5\epsilon}
+e^{-k^2\!/n}+2^{2n}@n^{-5+5\epsilon}k^4e^{-k^2\!/n}\,,
+\enddisplay
+thereby replacing $e^{-k^4\!/6n^3}$ \kern-1ptby $1+O(k^4\!/n^3)$. The sum
+$\sum_k\kern-1.5pt k^4e^{-k^2\!/n}$ is $O(n^{5/2})$, as shown in exercise~|theta-sums|.
+
+\ansno9.56:
+ If $k\le n^{1/2+\epsilon}$ we have $\ln(n\_k/n^k)=
+-\half k^2\!/n+\half k/n-{1\over6}k^3\!/n^2+O(n^{-1+4\epsilon})$
+by Stirling's approximation, hence
+\begindisplay
+n\_k/n^k=e^{-k^2\!/2n}\bigl(1+k/2n
+ -{\textstyle{2\over3}}k^3\!/(2n)^2+O(n^{-1+4\epsilon})\bigr)\,.
+\enddisplay
+Summing with the identity in exercise |theta-sums|, and remembering to
+omit the term for $k=0$, gives
+$-1+\Theta_{2n}+\Theta_{2n}^{(1)}-{2\over3}\Theta_{2n}^{(3)}
++O(n^{-1/2+4\epsilon}) =\sqrt{\pi n/2}-{1\over3}+O(n^{-1/2+4\epsilon})$.
+
+\ansno9.57:
+ Using the hint, the given sum becomes $\int_0^\infty ue^{-u}\zeta
+(1+u/\!@\ln n)\,du$. The zeta function can be defined by the series
+\begindisplay
+\zeta(1+z)=z^{-1}+\sum_{m\ge0}(-1)^m\gamma_mz^m\!/m!\,,
+\enddisplay
+where $\gamma_0=\gamma$
+and $\gamma_m$ is the "Stieltjes constant" [|stieltjes|, |keiper|]
+\begindisplay
+\lim_{n\to\infty}\biggl(\sum_{k=1}^n
+{(\ln k)^m\over k}\;-\;{(\ln n)^{m+1}\over m+1}\biggr)\,.
+\enddisplay
+Hence the given sum is
+\begindisplay
+\ln n+\gamma-2\gamma_1(\ln n)^{-1}+3\gamma_2(\ln n)^{-2}-\cdots\,.
+\enddisplay
+\source{Andrew M. "Odlyzko".*}
+
+\ansno9.58:
+ Let $0\le\theta\le1$ and $f(z)=e^{2\pi iz\theta}\!/(e^{2\pi iz}-1)$.
+We have
+\begindisplay \openup6pt
+\bigl\vert f(z)\bigr\vert&={e^{-2\pi y\theta}\over1+e^{-2\pi y}}\le 1\,,
+&\qquad\hbox{when $x\bmod1=\half$};\cr
+\bigl\vert f(z)\bigr\vert&\le{e^{-2\pi y\theta}\over\vert e^{-2\pi y}-1\vert}
+\le {1\over 1-e^{-2\pi\epsilon}}\,,
+&\qquad\hbox{when $\vert y\vert\ge\epsilon$}.
+\enddisplay
+Therefore $\bigl\vert f(z)\bigr\vert$ is bounded on the contour, and the integral
+is $O(M^{1-m})$. The residue of $2\pi if(z)/z^m$ at $z=k\ne0$ is $e^{2\pi ik\theta}
+/k^m$; the residue at $z=0$ is the coefficient of $z^{-1}$ in
+\begindisplay
+{e^{2\pi iz\theta}\over z^{m+1}}\Bigl(B_0+B_1{2\pi iz\over1!}+\cdots\,\Bigr)
+={1\over z^{m+1}}\Bigl(B_0(\theta)+B_1(\theta){2\pi iz\over1!}+\cdots\,\Bigr)\,,
+\enddisplay
+namely $(2\pi i)^mB_m(\theta)/m!$. Therefore the sum of residues inside the
+contour is
+\begindisplay
+{(2\pi i)^m\over m!}B_m(\theta)\;+\;2\sum_{k=1}^M e^{\pi i m/2}
+ {\cos(2\pi k\theta-\pi m/2)\over k^m}\,.
+\enddisplay
+This equals the contour integral $O(M^{1-m})$,
+so it approaches zero as $M\to\infty$.
+\source{"Henrici" [|henrici|, exercise 4.9.8].}
+
+\ansno9.59:
+ If $F(x)$ is sufficiently
+well behaved, we have the general identity
+\begindisplay
+\sum_k F(k+t)=\sum_n G(2\pi n)e^{2\pi int}\,,
+\enddisplay
+where $G(y)=\int_{-\infty}^{+\infty}e^{-iyx}F(x)\,dx$.
+(This is ``"Poisson's summation formula",\qback'' which can be found in
+standard texts such as "Henrici"~[|henrici|, Theorem 10.6e].)
+
+\ansno9.60:
+ The stated formula is equivalent to
+\begindisplay
+n\_^{1/2}=n^{1/2}\biggl(1-{1\over8n}+
+{1\over128n^2}+{5\over1024n^3}-{21\over32768n^4}+O(n^{-5})\biggr)
+\enddisplay
+by exercise 5.|factorial-dup|. Hence the result
+follows from exercises 6.|half-stirling-upper| and 9.|factorial-power-asymp|.
+\source{[|knuth-vardi|].}
+
+\ansno9.61:
+ The idea is to make $\alpha$ ``almost'' rational. Let
+$a_k=2^{2^{2^k}}$ be the $k$th partial quotient of~$\alpha$, and let
+$n=\half a_{m+1}q_m$, where $q_m=K(a_1,\ldots,a_m)$ and $m$~is even.
+Then $0<\{q_m\alpha\}<1/K(a_1,\ldots,a_{m+1})<1/(2n)$, and if we take
+$v=a_{m+1}/(4n)$ we get a discrepancy $\ge{1\over4}a_{m+1}$. If this
+were less than $n^{1-\epsilon}$ we would have
+$a_{m+1}^\epsilon=O(q_m^{1-\epsilon})$;
+but in fact $a_{m+1}>q_m^{2^m}$.
+
+\ansno9.62:
+ See "Canfield" [|canfield|];
+ see also "David" and "Barton"~[|david-barton|, Chapter~16] for asymptotics
+of "Stirling numbers" of both kinds.
+\source{"Canfield" [|canfield|].}
+
+\ansno9.63:
+ Let $c=\phi^{2-\phi}$. \kern-1.7pt
+The estimate $cn^{\phi-1}+o(n^{\phi-1})$ was proved by "Fine"~[|golomb-self|].
+Ilan~"Vardi" observes that the sharper estimate stated can be deduced from the
+fact that the error term $e(n)=f(n)-cn^{\phi-1}$ satisfies the approximate
+recurrence $c^\phi n^{2-\phi}e(n)\approx-\sum_k e(k)\[1\le k<cn^{\phi-1}]$.
+The function
+\begindisplay
+{n^{\phi-1}u(\ln\ln n/\!@\ln\phi)\over\ln n}
+\enddisplay
+satisfies this
+recurrence asymptotically, if $u(x+1)=-u(x)$.
+(Vardi conjectures that
+\begindisplay
+f(n)=n^{\phi-1}\biggl(c+u\Bigl({\ln\ln n\over\ln\phi}\Bigr)(\ln n)^{-1}
+ +O\bigl((\log n)^{-2}\bigr)\biggr)
+\enddisplay
+for some such function $u$.) Calculations for small $n$ show that
+$f(n)$ equals the nearest integer to $cn^{\phi-1}$ for $1\le
+n\le400$ except in one case: $f(273)=39>c\cdot273^{\phi-1}\approx38.4997$. But the
+small errors are eventually magnified, because of results like those in
+exercise 2.|self-descr|. For example, $e(201636503)\approx35.73$;
+$e(919986484788)\approx-1959.07$.
+\source{"Vardi" [|vardi-self|].}
+
+\ansno9.64:
+ (From this identity for $B_2(x)$ we can easily derive
+\g\noindent\llap{``}The paradox is now fully established that the utmost
+\hbox{abstractions} are
+the true~weapons with which to control our thought of concrete~fact.''
+\par"!philosophy"
+\hfill\dash---A.\thinspace N. "!Whitehead"White-\par
+\hfill head [|whitehead-science|]\g
+the identity of exercise~|bernoulli-sines-and-cosines| by
+induction on~$m$.) If $0<x<1$, the integral $\smash{\int_x^{1/2}}
+\sin N\pi t\,dt/
+\!\sin\pi t$ can be expressed as a sum of $N$ integrals that are each $O(N^{-2})$,
+so it is $O(N^{-1})$; the constant implied by this~$O$ may depend on~$x$.
+Integrating the identity $\sum_{n=1}^N\cos2n\pi t=
+\Re\bigl(e^{2\pi it}(e^{2N\pi it}-1)/(e^{2\pi it}-1)\bigr)
+=-\half+\half\sin(2N+1)\pi t
+/\!\sin\pi t$ and letting $N\to\infty$ now gives $\sum_{n\ge1}(\sin2n\pi x)/n
+={\pi\over2}-\pi x$, a relation that
+"Euler" knew ([|euler-fourier|] and [|euler-diff-calc|, part~2, \S92]).
+Integrating again yields the desired formula. (This solution
+was suggested by E.\thinspace M.\thinspace E. "Wermuth"~[|wermuth|];
+Euler's original derivation did not meet modern standards of rigor.)
+
+\ansno9.65:
+ Since $a_0+a_1n^{-1}+a_2n^{-2}+\cdots=1+(n-1)^{-1}(a_0+a_1(n-1)^{-1}
++a_2(n-1)^{-2}+\cdots\,)$, we obtain the recurrence $a_{m+1}=\sum_k
+{m\choose k}a_k$, which matches the recurrence
+ for the "Bell numbers". Hence $a_m=\varpi_m$.
+\par A slightly longer but more informative proof can be based on the fact that
+$1/(n-1)\ldots(n-m)=\sum_k{k\brace m}/n^k$, by \equ(7.|stirl2-gf|).
+\source{"Comtet" [|comtet|, chapter~5, exercise~24].} % not in the French ed
+
+\ansno9.66:
+ The expected number of distinct elements in the sequence $1$, $f(1)$,
+$f(f(1))$,~\dots, when $f$ is a random mapping of $\{1,2,\ldots,n\}$ into
+itself, is the function $Q(n)$ of exercise~|q-of-n|, whose value
+is $\half\sqrt{2\pi n}+O(1)$; this might account somehow for the
+factor $\sqrt{2\pi n}$.
+\source{M.\thinspace P. "Sch\"utzenberger".*}
+
+\ansno9.67:
+ It is known that $\ln\chi_n\sim{3\over2}n^2\ln{4\over3}$;
+the constant $e^{-\pi/6}$ has been verified empirically to eight
+significant digits.
+\source{"Lieb" [|lieb|]; "Stanley" [|stanley|, exercise 4.37(c)].}
+
+\ansno9.68:
+ This would fail if, for example, $e^{n-\gamma}=m+\half+\epsilon/m$
+for some integer~$m$ and some $0<\epsilon<{1\over8}$;
+ but no counterexamples are known.
+\source{"Boas" and "Wrench" [|boas-wrench|].}
